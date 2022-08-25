@@ -1,0 +1,133 @@
+5- Formatos gráficos
+
+Formatos gráficos para páginas web
+
+las nociones básicas para el uso de archivos gráficos son sencillas, conocerlas, aunque sea ligeramente, nos ayudará a crear sitios agadables y rápidos. No cometer errores en el uso de las imágenes es fundamental, aunque no seas un diseñador, su buen uso también redundadá en una carga del sitio más ágil y dinámica.
+
+Tipos de archivos
+
+En Internet se utilizan principalmente los tipos de archivos PNG, GIF y JPG, pensandos especialmente para optimizar el tamaño que ocupan en disco, ya que los archivos pequeños se transmiten más rápidamente por la Red. Actualmente, también el uso de formatos SVG, se está incrementando debido a que se caracterizan por su pequeño tamaño, sencillez y nitidez.
+
+Hay varios formatos de imágenes o gráficos vectoriales, el más usado de ellos es el SVG.
+
+El formato de archivo GIF se usa para las imágenes que tengan dibujos,  mientras que el formato JPG se usa para las fotografías. Los dos comprimen las imágenes para guardarlas. La forma de comrpimir la imagen que utilizan daca formato es lo que los hace ideales para unos u otros propósitos.
+
+Adicionalmente, se pueden usar un tercer formato gráfico en las páginas web, PNG. Este formato no tiene tanta aceptación como el GIF o JPG por varias razones, entre las que destacan el desconocimiento del formato por parte de los desarrolladores, que la herramientas habituales para tratar gráficos (como por ejemplo Photoshop) generalmente no lo soportan y que los navegadores antiguos también tienen problemas para visualizarlos.
+
+Sin embargo, el formato se comporta muy bien en cuanto a compresión y calidad del gráfico conseguido, por lo que resulta muy útil en infinidad de casos. Todos estos problemas han pasado y ya sólo Internet Explorer tiene algunos fallos cuando trata con PNG, pero la aceptación actual es más que suficiente para incorporarlo a nuestras posibilidades reales de trabajo con formatos y optimización de archivos.
+
+
+Formato GIF
+
+Además de ser un archivo ideal para las imágenes que estén digujadas tiene muchas otras características que son importantes y útiles.
+
+Compresión: es muy buena para dibujos, como ye hemos dicho. Incluso puede ser interesante si la imagen es muy pequeña, aunque sea una foto.
+
+Transparencia: es una utilidad para definir ciertas partes del dibujo como transparentes. De este modo podemos coloca las imágenes sobre distintos fondos sin que se fea el cuadrado donde está inscrito el dibujo, mostrando la silueta del dibujo en cuestión.
+
+Para crear un gif transparente debemos utilizar un programa de diseño gráfico, con el que podemos indicar qué colores del dibujo queremos que sean transparentes. Generalmente, definimos la transparencia cuando vamos a guardar el gráfico.
+
+Colores: con este formato gráfico podemos utilizar paletas, conjuntos, de 256 colores o menos. Este es un detalle muy importante, puesto que cuantos menos colores utilicemos en la imagen, por lo general, menos ocupará el archivo. En ocasiones, aunque utilicemos menos colores en un gráfico, este no pierde mucho en calidad, llegando a ser inapreciable a la vista.
+
+En algunos programas podemos modificar la cantidad de colores al guardar el archivo, en otros lo hacemos mientras creamos el gráfico.
+
+En esta imagon, tomada con distintas paletas de colores, se puede apreciar como con pocos colores se ven bien el gráfico y cómo pierde un poco a medida que le resamos colores.
+
+
+Formato JPG
+
+Compresión: cuenta con un algoritmo de compresión casi ideal. Este formato, es ideal para fotografías. Además, con JPG podemos definir la calidad de la imagen, con calidad baja el fichero ocupará menos, y viceversa.
+
+Colores: JPG trabaja siempre con 16 millones de colores, ideal para fotografías.
+
+
+Otimizar ficheros
+
+Para que las imágenes ocupen lo menos posible y se transfieran rápidamente por la Red debemos aprender a optimizar los ficheros gráficos. Para ello debemos hacer lo siguiente:
+
+Para los archivos GIF y PNG:
+
+Reduciremos el número de colores de nuestra paleta. Esto se hace con nuestro editor gráfico, en muchos casos podremos hacerlo al guardar el archivos.
+
+Para los archivos JPG:
+
+Ajustaremos la calidad del archivo cuando lo estemos guardando. Este formato nos permite bajar mucho la calidad de la imagen sin que esta pierda mucho en su aspecto visual.
+
+Es imprescindible disponer para optimizar la imagen de una herramienta buena que nos permita configurar estas características de la imagen con libertad y fácilmente. Hay muchas herramientas de uso libre que incorporan una opción de "Exportar para Web" con la que podemos definir los colores del gif, calidad del JPG y PNG u otras opciones en varias muestras a la vez. Así con todas las opciones disponibles podemos otimizar la imagen de una manera precisa con los resultados que deseamos.
+
+
+Qué es el formato PNG
+
+El formato PNG (Portable Network Graphics) es un formato de archivos de gráficos de mapa de bits (una trama). Fue desarrollado en 1995 como una algernativa gratuita al formato GIF, cuyos derechos perteneces a Unisys (propietario del algoritmo de compresión LZW) y a quién los editores de software deben pagar regalías por usar este formato. Por lo tanto, PGN (o PNG?) es un acrónimo recursibo de PNG No es GIF.
+
+
+Caracter´sticas del formato PNG
+
+El formato PNG permite almacenar imágenes en blanco y negro (una profundidad de color de 16 bis por píxel) y en color real (una profundidad de color de 48 bits por píxel), así como también imágenes indexadas, utilizando una paleta de 256 colores. Además, soporta la transparencia de canal alfa, es decir, la posibilidad de definir 256 niveles de transparencia, mientras que el formato GIF permite que se defina como transparente solo un color de la paleta. También posee una función de entrelazado que permite mostrar la imagen de forma gradual.
+
+La compresión que ofrece este formato es (compresi´n sin pérdida) de 5 a 25% mejor que la compresión GIF.
+
+Por última, PNG almacena información gama de la imagen, que posibilita una corrección de gama y permite que sea independiente del dispositivo de visualización. Los mecanismos de corrección de errores también están almacenado en el archivo para garantizar la integridad.
+
+
+Características del formato SVG
+
+SVG es la abreviatura en inglés de Scalable Vecto Graphics (Gráficos Vectoriales Escalables).
+
+Es un nuevo estándar usado para la ceación y representación de gráficos e imágenes vectoriales en las páginas web y aplicaciones de internet, aunque también se pueden emplear en la computadora offline.
+
+SVG es un lenguaje gráfico que emplea el formato XML.
+
+Las imágenes en este formato a diferencia de las tradicionales se pueden editar usando editores de texto plano como NotePad+ o hasta con el Bloc de Notas de Windows.
+
+El formato SVG es recomendado por el W3C y es compatible por la mayoría de los navegadores web modernos.
+
+Las imágenes SVG se caracterizan por su tamaño y por ser imágenes vectoriales.
+
+Son usadas en las páginas cuando se necesita mostrar o representar elementos sencillos que no necesitan de alta resolución como gráficos, diagramas, mapas, logotipos, íconos, texto, etc..
+
+En este artículo compartimos de forma sencilla, de forma tal que pueda ser entendido por todos, como crear las imágene SVG, como insertarlas en las páginas web o usarlas offline en la computadora.
+
+-----------------
+
+6.Imágenes en HTML
+
+Atributos básicos para imágenes en HTML
+
+La etiqueta que utilizaremos para insertar una imagen es IMG (imagen). Esta etiqueta no posee su cierre correspondiente y en ella hemos de especificar obligatoriamente el paradero de nuestro archivo gráfico mediante el atributo src (source).
+
+La sintaxis queda entonces de la siguiente forma:
+
+<img src="logo.png">
+
+Para expresar el camino, lo haremos de la misma forma que vimos para los enlaces. Las reglas siguien siendo las mismas, lo único que cambia es que, en lugar de una página de destino, el destino es un archivo gráfico. En el código anterior estamos enlazando con un archivo con extensión .png, pero podrá ser otro tipo de archivo como .gif o .jpg.
+
+
+Aparte de este atributo, indispensable obviamente para la visualización de la imagen, la etiqueta IMG nos propone otra serie de atributos de mayor o menos utilidad, que listamos a continuación:
+
+
+Atributo alt
+
+Dentro de las comillas de este atributo colocaremos una brevísima descripción de la imagen. Esta etiqueta nos es indispensable pero presenta varias utilidades. La sintaxis te quedaría de esta manera:
+
+<img src="logo.png" alt="Descripción del logo o imagen">
+
+Primeramente, sirve para el posicionamieto de la página en buscadores. De los atributos alt el buscador puede extraer palabras clave y le ayuda a entender qué función o contenido tiene la imagen, y por lo tanto la página.
+
+Otra utilidad importante la encontramos en determinadas aplicaciones, usadas por personas con discapacidad. Navegadores para ciegos, por ejemplo, no muestran las imágenes y por tanto los alt ofrecen la posibilidad de leerlas. Nunca está de más pensar en crear páginas accesibles.
+
+
+Atributos height y width
+
+Estos atributos definen la altura y anchura respectivamente de la imagen en píxeles. Aunque estás dimensiones forman parte del estilo de la imagen, y por tanto podrían ir en el CSS, todavía puede ser interesante definirlas dentro del HTML.
+
+Todos los archivos gráficos poseen unas dimensiones de ancho y alto. Estas dimensiones pueden obtenerse a partir del propio diseñoador gráfico o bien haciendo click con el botón derecho sobre la imagen, vista desde el explorador de archivos de tu ordenador, para luego elegir "propiedades" o "información de la imagen" sobre el menú que se despliega.
+
+Un ejemplo de eitqueta IMG con sus valores de anchura y altura declarados te quedaría así:
+
+<img src="logo.gif" width="200" height="300">
+
+Cuando las dimensiones de las imágenes han sido proporcionadas, durante el proceso de carga, el navegador reservara el espacio correspondiente a cada imagen creando una maquetación concreta.
+
+Además de esta utilidad, el altear los valores de estos dos atributos, es una forma inmediata de redimansionar nuesta imagen. Este tipo de utilidad no es siempre aconsejable dado que, si lo que pretendemos es aumentar el tamaño, la pérdida de calidad de la imagen será sensible. Inversamente, si deseamos disminuir su tamaño, estaremos usando un archivo más pesado en KB de lo necesario para la imagen que estamos mostrando con lo que aumentamos el tiempo de descarga de nuestro documento innecesarioamente.
+
