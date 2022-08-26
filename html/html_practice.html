@@ -63,7 +63,7 @@
             <li>alg (descripción del logo o imagen)</li>
             <li>height y width (definen altura y anchura, respectivamente.</li>
         </li>
-        <li>Listas: 
+        <li><a name="nested_lists">Listas:</a> 
             <br>&lt;lu&gt;(listas desordenadas),
             <br>&lt;ol&gt; (listas ordenadas),
                 <ol type="A">
@@ -86,17 +86,66 @@
                     <li>elemento 2</li>
                     <li>elemento 3</li>
                 </ol>
-            <br>&lt;&gt;(listas de definición),
-            <br>&lt;li&gt; (item de lista)</li>
-            <br>Estilos de viñetas (type="circle"): circle, disc, square
+            <br><a href="#deflist">&lt;dt&gt;</a>,
+            <br>&lt;li&gt; (item de lista),
+            <br><a href="#nested_lists">Estilos de viñetas (type="circle"): circle, disc, square</a>
+        </li>
+        <hr>
+        <li type="none">
+            <h2>Tablas</h2>
+            <table bordercolor="violet">
+                <thead height="30">
+                    <th width="110"align="left">atributos</th>
+                    <th width="50" align="right">definición</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td valign="top">cellspacing</td>
+                        <td>es el espacio entre celdas de la tabla</td>
+                    </tr>
+                    <tr>
+                        <td valign="middle">cellpadding</td>
+                        <td>es el espacio entre el borde de la celda y su contenido</td>
+                    </tr>
+                    <tr>
+                        <td valign="bottom">bordercolor</td>
+                        <td>es el color a asignar al borde de la tabla</td>
+                    </tr>
+                    <tr>
+                        <td>width</td>
+                        <td>define la anchura de la celda en píxels o porcentaje</td>
+                    </tr>
+                    <tr>
+                        <td>height</td>
+                        <td>define la altura de la celda en píxels o porcentaje</td>
+                    </tr>
+                    <tr>
+                        <td>align</td>
+                        <td>justifica el texto de una celda del mismo modo que si fuera un texto.</td>
+                    </tr>
+                    <tr>
+                        <td>rowspan</td>
+                        <td>expande y fusiona una celda verticalmente</td>
+                    </tr>
+                </tbody>
+                <tfoot>Esto es un pie de tabla.</tfoot>
+            </table>
+            
+        </li>
         <hr>
     <h2>Etiquetas semánticas</h2>
     <h2>Atributos</h2>
         <ul>
-            Atributos del body:
-            <li>bgcolor: para especificar el color del fondo de la página.</li> 
-            <li>background="fondo.jpg": para agregar una imagen de fondo.</li>
-            <li>text: para poner un color al texto dentro.</li>
+            <a name="deflist">Atributos del body:</a>
+
+            <dl>
+                <dt>bgcolor</dt>
+                <dd>para especificar el color del fondo de la página.</dd>
+                <dt>background</dt>
+                <dd>para agregar una imagen de fondo (background="fondo.jpg")</dd>
+                <dt>text</dt>
+                <dd>para poner un color al texto dentro</dd>
+            </dl>
             <li>Estilo para enlaces:
                 <li>link(enlaces sin visitar):<a href="https://aulasvirtuales.bue.edu.ar/mod/book/view.php?id=275365&chapterid=36700">Codo a Codo</a></li>
                 <li>vlink(enlaces visitados):<a href="https://github.com/SandraFz/cac001-presentation">Mi presentación</a></li>
