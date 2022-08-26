@@ -1,0 +1,63 @@
+viewport
+layout
+
+etiquetas
+
+titles (h1, h2, h3, h4, h5, h6)
+jerarquizar contenido con títulos y subtítulos
+
+Ejercicio
+Descripción de nosotros
+Buscar contenido
+Jerarquizar
+Utilizar las etiquetas que aprendimos en esta clase
+
+------------------------------------
+HTML
+
+Clase 6
+
+Etiquetas semánticas. La importancia de su uso:
+
+Ordenamiento, SEO, navegadores, posicionamiento.
+
+---------------------
+Favicom
+
+<link rel="shortcut icon" href="">
+
+Se guarda al mismo nivel que el index y llama favicom.ico
+
+-----------
+TABLAS
+
+etiquetas
+
+table
+thead
+th(row del head)
+tbody
+tfoot
+tr(row)
+td(columna)
+
+
+
+atributos:
+
+colspan=número(puede ocupar la cantidad de columnas que le indiquemos en el número)
+-----------
+
+FORMULARIOS
+
+Etiquetas
+
+-form[atributos: action]
+-input[atributos: type(text, submit, reset, password, checkbox), name, value, autofocus, required, placeholder]
+-textarea[atributos: name, id, cols(número de columnas), rows(número de filas)]
+-select
+	-option
+-label[atributos: for]
+
+
+
