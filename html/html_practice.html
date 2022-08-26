@@ -6,23 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ensayos html</title>
 </head>
-<body bgcolor="#ffbb99" text="web" link="red">
+<body bgcolor="#ffbb99" text="web" link="red" vlink="blue" alink="green" topmargin="100" marginwidth="100">
     <div>
         <h1>Ensayos HTML</h1>
     <h2>Estructura básica:</h2>
     <p>&lt;html&gt;</p>
-    <p>&lt;head&gt;</p>
-    <p>&lt;title&gt;Mi documento básico&lt;/title&gt;</p>
-    <p>&lt;head&gt;&lt;/head&gt;</p>
-    <p>&lt;body&gt;</p>
-    <p>&lt;p&gt;Este es el cuerpo de mi primera página HTML&lt;p&gt;</p>
-    <p>&lt;p&gt;Este segundo párrafo también forma parte del documento&lt;/p&gt;</p>
-    <p>&lt;/body&gt;</p>
+        <p>&lt;head&gt;</p>
+        <p>&lt;title&gt;Mi documento básico&lt;/title&gt;</p>
+        <p>&lt;/head&gt;</p>
+        <p>&lt;body&gt;</p>
+            <p>&lt;p&gt;Este es el cuerpo de mi primera página HTML&lt;p&gt;</p>
+            <p>&lt;p&gt;Este segundo párrafo también forma parte del documento&lt;/p&gt;</p>
+        <p>&lt;/body&gt;</p>
     <p>&lt;/html&gt;</p>
     </div>
     <hr>
     <h2>Etiquetas de texto</h2>
-    <ul>
+    <ul type="circle">
         <li>Títulos: &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, &lt;h6.&gt;</li>
         <li>Párrafo: &lt;p&gt;</li>
         <li>Supraíndices y subíndices: &lt;sup&gt; y &lt;sub&gt;</li>
@@ -31,17 +31,65 @@
             <li>Itálica: &lt;i&gt;</li>
             <li>Colores: una de las maneres es el método hexadecimal:
                  <p>&lt;font color="#FF0000"&gt;Rojo&lt;/font&gt;</p></li>
-            <li></li>
-            <li></li>
         </li>
     </ul>
+    <hr>
     <h2>Etiquetas de enlace</h2>
-    <ul>
-        <li>Absoluto</li>
-        <li>Relativo</li>
-        <li>Ancla</li>
+    <ul type="disc">
+        <h3>Tipos de enlace según el atributo href:</h3>
+        <li>Absoluto, se escribe la url completa: <a href="https://www.typingclub.com/sportal/program-54.game">Typiclub</a></li>
+        <li>Relativo, depende de la ubicación del archivo con relación al enlace que lo señala: <a href="./Unidad 1.pdf">Un pdf sobre html</a></li>
+        <li>Ancla, se usa para señalar un elemento interno a la página: </li>
     </ul>
+    <ul type="square">
+        <h3>Tipos de enlaces según el origen:</h3>
+        <li>Internos(similar a como se llama el modal en Bootstrap, pero con anclas de ambos lados: href=#nombre en el que llama, y name=nombre en el llamado): <a href="#margenes">margenes</a><br>
+        Se puede, incluso, anclar a un elemento específico de otra página del mismo sitio de la siguiente manera: &lt;a href="arcivo.html#seccion"&gt;
+        </li>
+        <li>Locales</li>
+        <li>Remotos</li>
+        <li>Emails (se agrega el prefijo "mailto:"): &lt;a href="mailto:juan@gmail.com"&gt;<br>
+            Se puede agregar argumentos como contacto y otros destinatarios con método get:
+            &lt;a href="mailto:juang@gmail.com?subject=contacto por mail&cc=roberto@gmail.com"&gt;
+        </li>
+        <li>A archivos</li>
+    </ul>
+    <hr>
     <h2>Etiquetas contenedores</h2>
+        <li>&lt;a&gt;</li>
+        <li>&lt;img&gt;
+            <h4>Atributos de img</h4>
+            <li>src (ubicación o url de la imagen)</li>
+            <li>alg (descripción del logo o imagen)</li>
+            <li>height y width (definen altura y anchura, respectivamente.</li>
+        </li>
+        <li>Listas: 
+            <br>&lt;lu&gt;(listas desordenadas),
+            <br>&lt;ol&gt; (listas ordenadas),
+                <ol type="A">
+                    <li>elemento 1</li>
+                    <li>elemento 2</li>
+                    <li>elemento 3</li>
+                </ol>
+                <ol type="a" start="2">
+                    <li>elemento 1 que empieza en b</li>
+                    <li>elemento 2</li>
+                    <li>elemento 3</li>
+                </ol>
+                <ol type="I">
+                    <li>elemento 1</li>
+                    <li>elemento 2</li>
+                    <li>elemento 3</li>
+                </ol>
+                <ol type="i">
+                    <li>elemento 1</li>
+                    <li>elemento 2</li>
+                    <li>elemento 3</li>
+                </ol>
+            <br>&lt;&gt;(listas de definición),
+            <br>&lt;li&gt; (item de lista)</li>
+            <br>Estilos de viñetas (type="circle"): circle, disc, square
+        <hr>
     <h2>Etiquetas semánticas</h2>
     <h2>Atributos</h2>
         <ul>
@@ -51,10 +99,15 @@
             <li>text: para poner un color al texto dentro.</li>
             <li>Estilo para enlaces:
                 <li>link(enlaces sin visitar):<a href="https://aulasvirtuales.bue.edu.ar/mod/book/view.php?id=275365&chapterid=36700">Codo a Codo</a></li>
-                
-
+                <li>vlink(enlaces visitados):<a href="https://github.com/SandraFz/cac001-presentation">Mi presentación</a></li>
+                <li>alink(enlaces activos):<a href="https://argentinaprograma.inti.gob.ar/login/index.php">Argentina Programa</a></li>
             </li>
-            <li></li>
+            <li><a name="margenes">Estilos de márgenes:</a>
+                <li>leftmargin</li>
+                <li>topmargin</li>
+                <li>marginwidht</li>
+                <li>marginheight</li>
+            </li>
         </ul>
 </body>
 </html>
