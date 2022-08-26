@@ -248,3 +248,36 @@ Del mismo modo que para las listas desordenadas, las listas ordnadas ofrecen la 
 Para realizar dicha selección hemos de utilizar, cono para el caso precedente, el atributo type, el cual será situado dentro de la etiqueta OL. Los valores que puede tomar el atributo en este caso son:
 
 <ol>números(1, 2, 3...)
+
+<ol type="A">mayúsculas (A, B, C,...)
+
+<ol type="a">minúsculas (a, b, c...)
+
+<ol type="I">mayúsculas (I, II, III...)
+
+<ol type="i">minúsculas (i, ii, iii...)
+
+Nota: recordamos que en algunos navegadores no funciona la opción de cambiar el tipo de viñeta a mostrar.
+
+Puede que en algún caso deseemos comenzar nuestra enumeración por un número o letra que no tiene por qué ser necesariamente el primero de todos. Para ello podemos utilizar un segundo atributo, llamado start, que tendrá como valor un número.
+
+Este número, que por defecto es 1, corresponde al valor a partir del cual comenzamos a definir nuestra lista. Para el caso de las letras o los números romanos, el navegador se encarga de hacer la traducción del número a la letra correspondiente.
+
+<p>Reglas de convivencia</p>
+
+<ol start="2" type="A">
+
+<li>No hacer ruidos molestos
+
+<li>Ser amable con los vecinos
+
+</ol>
+
+Nos arrojaría en pantalla:
+
+Reglas de convivencia
+
+No hacer ruidos molestos
+
+ser amable con los vecinos
+
