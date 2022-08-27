@@ -280,4 +280,223 @@ Reglas de convivencia
 No hacer ruidos molestos
 
 ser amable con los vecinos
+-------------------------
 
+Listas de definición
+
+Las listas de definición sirven para un conjunto de elementos con pares concepto-descripción. Es decir, se especificarán varios términos por su nombre y se escribirá una definición para cada uno. Cada elemento es presentado junto con su definición, uno detrás de otro.
+
+Para realizar una lista de definición, la etiqueta principal es DL y su cierre (definition list). Las etiquetas del elemento y su definición son DT (definicition term) y DD (definition definition) respectivamente.
+
+Aquí un código de ejemplo y su resultado:
+
+<p>Alimentos lácteos</p>
+
+<dl>
+
+<dt>Leche
+
+<dd>entera
+
+<dt>Queso
+
+<dd>Fontina
+
+<dd>Muzzarella
+
+</dl>
+
+El resultado obtenido:
+
+Alimentos lácteos
+Leche
+descremada
+entera
+Queso
+Fontina
+Muzzarella
+
+Veremos que cada línea DD se ubica más hacia la izquierda. Este tipo de etiquetas son usadas a menudo con el propósito de crear textos más o menos desplazados hacia la izquierda.
+
+
+Anidando listas
+
+Podemos anidar estas etiquetas obteniendo listas de la manera deseada, como por ejemplo:
+
+<p>Ciudades del mundo</p>
+
+<ul>
+
+<li>Argentina
+
+<ol>
+
+<li>Bariloche
+
+</ol>
+
+<li>Uruguay
+
+<ol>
+
+<li>Montevideo
+
+<li>Punta del Este
+
+</ol>
+
+</ul>
+
+obteniendo:
+
+Ciudades del mundo
+Argentina
+	Buenos Aires
+	Bariloche
+Uruguay
+	Montevideo
+	Punta del Este	
+
+----------------------------
+
+8.TABLAS
+
+Tablas en HTML
+
+Una tabla es un conjunto de celdas dentro de las cuales podemos incorporar contenidos.
+
+HTML dispone de una gran variedad de etiquetas para crear tablas, con su atributos, de las cuales veremos una introducción de este artículo.
+
+En general, se utilizan para representar información tabulada, en filas y columnas. Esto es una realidad en los últimos años, desde que las tablas se han descartado para fines relacionados con la maquetación.
+
+Nota: durante un tiempo, gran parte de los diseñadores de páginas basaron sus maquetaciones en este tipo de artilugios. En efecto, una tabla nos permite organizar y distribuir los espacios de la manera más adecuada. Nos puede ayudar a generar texto en columnas como los periódicos, prefijar los tamaños ocupados por distintas secciones de la página o poner de una manera sencilla un pie de foto a una  imagen.
+
+Hablar hoy de tablas como solución para maquetación ha pasado a la historia. Las webs actuales han acabado con técnicas que incrementen el tamaño del código fuente de las  páginas web, mezclando presentación y contenido. Actualmente toda la maquetación de una página se organiza con CSS, lo que nos da un mayor control de todos los elementos de la página y la posibilidad de separar todos los estilos para definir el aspecto de una web en un fichero aparte del HTML.
+
+Por ello, en el momento actual las tablas se utilizan mucho menos que en el pasado y realmente la recomencación es usarlas solo en los casos en los que necesitemos incluir en una página información tabulada, es decir, dispuesta en filas y columnas. Todo uso basado en tablas para procurar colocar elementos en determinadas posiciones de la página sería incorrecto en las técnicas actuales de diseño de páginas web.
+
+Como veremos, existen diversas etiquetas que se deben utilizar en una forma determinada para la creación de tablas. Por ello, puede que en eun principio nos resulte un poco complicado trabajar con estas estructuras. Si deseamos mostrar datos de una maneera sencilla de leer, dispuestos en filas y columnas, tade o temprano observaremos que las tablas on una rápida solución y apreciremos las posibilidades que nos ofrecen, por otro lado, las tablas han dejado de utilizarse debido a su falta de correlación con el desarrollo Responsive, entre otras características.
+
+
+Etiquetas básicas para tablas en HTML
+
+Para empezar, nada más sencillo que por el principio: las tablas son definidas por las etiquetas TABLE y su cierre.
+
+Dentro de estas dos etiquetas colocaremos todas las otras etiquetas de las tablas,  hasta llegar a las celdas. Dentro de las celdas ya es permitido colocar textos e imágenes que darán el contenido a la tabla.
+
+Las tablas son descritas por líneas de arriba abajo (y luego por columnas de izquierda a derecha). Cada una de estas líneas, llamada fila, es definida por otra etiqueta y su cierre: TR.
+
+Asimismo, dentro de cada línea, habrá diferentes celdas. Cada una de estas celdas será definida por otra etiqueta: TD. Dentro de ésta y su cierre será donde coloquemos nuestro contenido, el contenido de cada celda.
+
+Ejemplo de estructura de tabla:
+
+<table>
+
+<tr>
+
+<td>Celda 1, linea 1</td>
+
+<td>Celda 2, línea 1</td>
+
+</tr>
+
+<tr>
+
+<td>Celda 1, línea 2</td>
+
+<td>Celda 2, línea 2</td>
+
+</tr>
+
+</table>
+
+El resultado:
+
+Celda 1, línea 1	Celda 2, línea 1
+Celda 1, línea 2	Celda 2, línea 2
+
+También es parte de una tabla etiqueta TH (Table Header), que sirve para crear uan celda cuyo contenido posea un título o cabecera de la tabla.
+
+Ejemplo:
+
+<table>
+	<tr>
+		<th>Celda 1, línea 1</th>
+		<th>Celda 2, línea 2</th>
+	</tr>
+	<tr>
+		<td>Celda 1, línea 2</td>
+		<td>Celda 2, línea 2</td>
+	</tr>
+</table>
+-------------------------
+
+Atributos para tablas, filas y celdas
+
+A partir de esta idea simple y sencilla, las tablas adquieren otra magnitud cuando les incorpporamos toda una lista de atributos aplicados sobre cada tipo de etiquetas que las componen.
+
+cellspacing: es el espacio entre celdas de la tabla.
+cellpadding: es el espacion entre el borde de la celda y su contenido.
+border: es el número de píxeles que tendra´el borde de la tabla.
+bordercolor: es el color a asignar al borde de la tabla.
+
+
+Podemos usar prácticamante cualquiert tipo de etiqueta dentre de la etiqueta TD para, de esta forma, escribir su contenido.
+
+Las etiquetas situadas en el interior de la celda no modifican el resto del documento.
+
+Las etiquetas de fuera de la celdo no son tenidas en cuenta por ésta.
+
+Podemos especificar el formato de nuestras celdas a partir de etiquetas introducidas en su interior o mediante atributos colocados dentro de la etiqueta de celda TD o bien, dentro de la etiqueta TR, si deseamos que el atributo sea válido para toda la línea.
+
+La forma más útil y actual de dar forma a las celdas es a partir de CSS que veremos más adelante.
+
+A continuación algunos atributos útiles para la construcción de nuestas tablas:
+
+align: justifica el texto de la celda del mismo modo que si fuese el de un párrafo.
+valign: podemos elegir si queremos que el texto apareza arriba (top), en el centro (middle) o abajo (bottom) de la celda.
+bgcolor: da color a la celda o línea elegida.
+bordercolor: define el color del borde.
+background: nos permite colocar un formdo para la celda a partir de un enlace a una imagen.
+height: define la altura de la celda en píxels o porcentaje.
+width: define la anchura de la celda en píxels o porcentaje.
+coslpan: expande una celda horizontalmente.
+rowspan:expande una celda verticalmente.
+
+Es de destacar que si definimos una celda de un ancho 100 por ejemplo, y colocamos en la celda un contenido como una imagen que mida más de 100 píxeles, la celda crecerá en horizontal todo lo necesario para que la imagen quepa. Si el elemento, aunque más ancho, fuera divisible (como un texto) el ancho sería respetado y el texto crecería hacia abajo o lo que es lo mismo, en altura, como señalábamos en el anterior párrafo.
+
+Ejemplo:
+
+<td width="70">
+
+Define un ancho de 70 píxeles a la celda. Sin embargo,
+
+<td width="80%">
+
+define un ancho a la celda del 80% de la anchura del total de la tabla.
+
+Los atributos rowspan y colspan son también utilizados frecuentemente. Gracias a ellos es posible expandir celdas fusionando éstas con sus vecinas. El valor que pueden tomar estas etiquetas es numérico. El número representa la cantidad de celdas fusionadas.
+
+Así:
+
+<td colspan="2">
+
+fusionará la celda en cuestión con su vecina derecha.
+
+Del mismo modo,
+
+<td rowspan="2">
+
+expandirá la celda hacia abajo fuionándose con la celda inferior.
+
+No debes maquetar con tablas.
+
+En HTML (antes de incorporar el código CSS) se utilizaban las tablas para maquetar páginas.
+
+Con maquetar nos referimos al proceso por el cual se posicionan contenidos en la pantalla atendiendo a una estructura. Este proceso se conoce como maquetación y a la estructura muchas veces se la conoce como layout.
+
+Con las tablas podemos generar una serie de columnas, espacios como cabecera o pie donde podemos mostrar contenidos estructurados que den la sensación de un diseño bien realizado, dividido en columnas y filas, como la  maquetación de una revista o un portal. Sin embargo, usar las tablas NO es una práctica recomendada.
+
+Esta sección sirve para estudiar cómo se hacián las cosas antes y para practicar con HTML, pero hoy ya no se utiliza este tipo de técnicas.
+
+Actualmente se usa el lenguaje CSS y sus múltiples herramientas para producir un contenido correctamente maquetado.
