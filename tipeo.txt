@@ -67,3 +67,15 @@ Para acabar, aquí vemos otro ejemplo de iframe con unos cuantos atributos más:
 <iframe name=miframeflotante src="colabora.htm" widht=400 height=550 frameborder=" scrolling=yes marginwidth=2 marginheight=4 align=left>Tu navegador no soporte frames!!</iframes>
 
 Es de destacar, que pueden existir páginas web que tengan bloqueados los accesos desde páginas web externas para mostrar un iframe con información de ese sitio.
+
+-----------------------
+
+10.FORMULARIOS
+
+Formularios HTML
+
+Hasta ahora hemos visto la forma en la que el HTML	 gestiona y muestra la información, esencialmente mediante texto, imágenes y enlaces. Nos queda por ver de qué forma podemos intercambiar información con el usuario. Desde luego, este nuevo aspecto resulta primordial para gran cantidad de acciones que se pueden llevar a cabo mediante la Web: comprar artículos, rellenar una encuesta, enviar un comentario al autor...
+
+Hemos visto anteriormente que podíamos, mediante los enlaces a direcciones de email, contactar directamente con un correo electrónico. Sin embargo, esta opción puede resultar en algunos casos poco versátil, si lo que deseamos es que el navegante nos envíe una información bien precisa y además requiere que el visitante tenga instalado en su ordenador algún correo electrónico en un programa como Outlook Express. Es por ello que el HTML propone otra solución mucho más amplia: los formularios.
+
+Los formularios son cajas de texto y botones que podemos encontrar en muchas páginas web y se utilizan para realizar búsquedas o bien para introducir datos personales o claves de acceso. Los datos que el usuario introduce en estos campos son enviados al correo electrónico del administrador del formulario o bien a un programa que se encarga de procesarlo automáticamente.
