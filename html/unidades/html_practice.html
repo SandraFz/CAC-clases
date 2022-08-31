@@ -96,7 +96,7 @@
             <table bordercolor="violet">
                 <thead height="30" bgcolor="green">
                     <th width="110"align="left">atributos</th>
-                    <th width="50" align="right">definición</th>
+                    <th width="450" align="right">definición</th>
                 </thead>
                 <tbody>
                     <tr>
@@ -143,7 +143,11 @@
                         <td>bgcolor</td>
                         <td>le da color a la celda o la línea elegida.</td>
                     </tr>
-                    <tfoot>Esto es un pie de tabla.</tfoot>
+                    <tfoot>
+                       
+                            <td>Esto es un pie de tabla.</td>
+                        
+                    </tfoot>
                 </tbody>
                 
             </table>
@@ -151,6 +155,7 @@
         </li>
         <hr>
     <h2>Etiquetas semánticas</h2>
+    <hr>
     <h2>Atributos</h2>
         <ul>
             <a name="deflist">Atributos del body:</a>
@@ -175,5 +180,155 @@
                 <li>marginheight</li>
             </li>
         </ul>
+        <hr>
+        <section>
+            <h2>
+                Formularios
+            </h2>
+            <dl>
+                <dt>
+                    <b>&lt;form&gt;</b>
+                </dt>
+                <dd>
+                    es la etiqueta dentro de la cual definiremos los elementos y funciones del un formulario.
+                    <br>
+                    &lt;form action="archivo.java" method="post"&gt;&lt;/form&gt;
+                </dd>
+                <dt>
+                    <b>action</b>
+                </dt>
+                <dd>
+                    atributo que indica qué acción realizará el formulario.
+                </dd>
+                <dt>
+                    <b>method</b>
+                </dt>
+                <dd>
+                    a través de qué método se realizará la acción. Pueden ser get o post.
+                </dd>
+                <dt>
+                    <b>&lt;input&gt;</b>
+                </dt>
+                <dd>
+                    etiqueta que recibe dato o instrucción, según se indique en su atributo type.
+                </dd>
+                <dt>
+                    <b>type</b>
+                </dt>
+                <dd>uno de los dos atributos más importantes y fundamentales para el correcto funcionamiento del formulario e indica el tipo de dato que debe introducirse en el input.
+                    Algunos de sus valores pueden ser:
+                    <ul>
+                        <li>text: &lt;input type="text" name="nombre" size="15" maxlength="20" value="Sandra"&gt;
+                            <br>
+                            <input type="text" name="nombre" size="15" maxlength="20" value="Sandra">
+                        </li>
+                        <li>password: type="password"
+                            <br>
+                            <input type="password">
+                        </li>
+                    </ul>
+                </dd>
+                <dt>
+                    <b>name</b>
+                </dt>
+                <dd>
+                    el otro de los atributos fundamentales y se trata de asignarle un nombre al input para identificarlo más adelante.
+                </dd>
+                <dt>
+                    <b>size</b>
+                </dt>
+                <dd>atributo que indica la cantidad de caracteres visibles.
+                </dd>
+                <dt>
+                    <b>maxlength</b>
+                </dt>
+                <dd>
+                    atributo que indica la extensión real del input, contado en caracteres. O sea, la cantidad de caracteres que puede recibir el input.
+                </dd>
+                <dt>
+                    <b>value</b>
+                </dt>
+                <dd>
+                    atributo que permite que el input tenga un valor predeterminado. Útil para hacer más rápido el llenado del formulario.
+                </dd>
+                <dt>
+                    <b>&lt;textarea&gt;</b>
+                </dt>
+                <dd>
+                    etiqueta input que permite ingresar textos largos, a diferencia del tipo text.
+                    <br>
+                    &lt;textarea rows="4" cols="30" name="mensaje"&gt;El valor predeterminado se escribe aquí&lt;/textarea&gt;
+                    <br>
+                    <textarea name="mensae" id="" cols="30" rows="4"></textarea>
+                    <br>
+                    Atributos:
+                    <ul>
+                        <li>rows: define el número de líneas del campo texto.</li>
+                        <li>cols: define el número de columnas del campo.</li>
+                        <li>name: igual que el atributo que el input tipo text.</li>
+                    </ul>
+                </dd>
+                <dt>
+                    <b>Lista de opciones</b>
+                </dt>
+                <dd>
+                    tipo de menús desplegables que permite seleccionar un valor de una serie de valores predeterminados.
+                    <br>
+                    &lt;select name="estación"&gt;<br>
+                    &lt;option&gt;Primavera&lt;/option&gt;<br>
+                    &lt;option&gt;Verano&lt;/option&gt;<br>
+                    &lt;option&gt;Otoño&lt;/option&gt;<br>
+                    &lt;option&gt;Invierno&lt;/option&gt;<br>
+                    &lt;/select&gt;<br>
+                    Atributos:
+                    <ul>
+                        <li>size: número de valores mostrados a la vez. Si no asignamos valor a este atributo, cuando se haga click se veremos las opciones en foma de menú desplegable <br>
+                            size="2" <br>
+                            <select name="estación" size="2">
+                                <option>Primavera</option>
+                                <option>Verano</option>
+                                <option>Otoño</option>
+                                <option>Invierno</option>
+                            </select>
+                            <br>
+                            size="" <br>
+                            <select name="estación" size="">
+                                <option>Primavera</option>
+                                <option>Verano</option>
+                                <option>Otoño</option>
+                                <option>Invierno</option>
+                            </select>
+                        </li>
+                        <li>
+                            multiple: permite la selección de varios elementos a la vez. <br>
+                            &lt;select name="estación" size="2" multiple&gt; <br>
+                            <select name="estación" size="2" multiple>
+                                <option>Primavera</option>
+                                <option>Verano</option>
+                                <option>Otoño</option>
+                                <option>Invierno</option>
+                            </select>
+                        </li>
+                        <li>
+                            &lt;option&gt;: dentro se indica cada elemento de la lista.
+                        </li>
+                        <li>
+                            selected: muestra una opción elegida por defecto: 
+                            <br>
+                            &lt;option selected&gt;Otoño&lt;/option&gt; 
+                            <br>
+                            <select name="estación">
+                                <option>Primavera</option>
+                                <option>Verano</option>
+                                <option selected>Otoño</option>
+                                <option>Invierno</option>
+                            </select>
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+            <div>
+            </div>
+        </section>
 </body>
 </html>
