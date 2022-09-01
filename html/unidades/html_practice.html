@@ -86,8 +86,10 @@
                     <li>elemento 2</li>
                     <li>elemento 3</li>
                 </ol>
-            <br><a href="#deflist">&lt;dt&gt;</a>,
-            <br>&lt;li&gt; (item de lista),
+            <br><a href="#deflist">listas de definición:</a><br>
+            &lt;dt&gt; definiendo &lt;/dt&gt;<br>
+            &lt;dd&gt; definiens &lt;/dd&gt;
+            <br><br>&lt;li&gt; (item de lista),
             <br><a href="#nested_lists">Estilos de viñetas (type="circle"): circle, disc, square</a>
         </li>
         <hr>
@@ -207,6 +209,12 @@
                     a través de qué método se realizará la acción. Pueden ser get o post.
                 </dd>
                 <dt>
+                    <b>enctype</b>
+                </dt>
+                <dd>
+                    indica la forma en la que viajará la información; por ejemplo: text/plain.
+                </dd>
+                <dt>
                     <b>&lt;input&gt;</b>
                 </dt>
                 <dd>
@@ -324,8 +332,123 @@
                                 <option>Invierno</option>
                             </select>
                         </li>
+                        <li>
+                            value: define la opción que será enviado al programa de procesamiento en caso de que el usuario elija esa opción. Aquí se puede asociar la opción a un valor más manejable como un número o carácter.
+                            <br>
+                            &lt;option value:"1"&gt;Primavera&lt;/option&gt;
+                            <br>
+                            <select name="estación">
+                                <option value="1">Primavera</option>
+                                <option value="2">Verano</option>
+                                <option value="3">Otoño</option>
+                                <option value="4">Invierno</option>
+                            </select>
+                        </li>
+                        <li>
+                            type="radio": aporta el elemento clickeable y para eso reemplazamos la etiqueta option por input. Por lo demás, puede tener los mismos atributos que una lista de opciones normal.
+                            <br>
+                            Por ejemplo: &lt;input type="radio" name="estacion" value="3" checked&gt;Otoño&lt;/input&gt;
+                            <br>
+                                <input type="radio" name="estacion" value="1">Primavera</input><br>
+                                <input type="radio" name="estacion" value="2">Verano</input><br>
+                                <input type="radio" name="estacion" value="3" checked>Otoño</input><br>
+                                <input type="radio" name="estacion" value="4">Invierno</input><br>
+                        </li>
                     </ul>
                 </dd>
+                <dt>
+                    <b>
+                        Cajas de validación
+                    </b>
+                </dt>
+                <dd>
+                    Similar al las type="radio" pero con el valor "checkbox": <br>
+                    &lt;input type="checkbox" name="jamon"&lt;/input&gt;Me gusta el jamón.
+                    <br>
+                    <input type="checkbox" name="jamon">Me gusta el jamón.
+                </dd>
+                <dt>
+                    <b>
+                        Botón de enviar o de submit
+                    </b>
+                </dt>
+                <dd>
+                    &lt;input type="submit" value="Enviar">
+                    <input type="submit" value="Enviar">
+                </dd>
+                <dt>
+                    <b>
+                        Botón de borrado (reset)
+                    </b>
+                </dt>
+                <dd>
+                    &lt;input type="reset" value="Borrar">
+                    <input type="reset" value="Borrar">
+                </dd>
+                <dt>
+                    <b>
+                        Datos ocultos(hidden camps)
+                    </b>
+                </dt>
+                <dd>
+                    &lt;input type=hidden value="1234">
+                    <input type=hidden value="1234">
+                </dd>
+                <dt>
+                    <b>Botones normales</b>
+                </dt>
+                <dd>
+                    No tienen una función definida por lo que sirven para trabajar con lenguajes de programación.
+                    <br>
+                    &lt;input type=button value="Texto escrito en el botón"&gt;
+                    <br>
+                    <input type=button value="Texto escrito en el botón">
+                </dd>
+                <dt>
+                    <br>
+                    <br>
+                    <b>Ejemplo de formulario completo:</b>
+                    
+                    <div>
+                        <form action="mailto:juan@gmail.com" method="post" enctype="textplain">
+                            Nombre<input type="text" name="nombre" size="30" maxlength="100">
+                             <br>
+                            Email<input type="text" name="email" size="25" maxlength="100" value="@">
+                            <br>
+                            Población<input type="text" name="poblacion" size="20" maxlength="60">
+                            <br>
+                            Sexo
+                            <br>
+                            <input type="radio" name="sexo" value="Varon" checked>Hombre
+                            <br>
+                            <input type="radio" name="sexo" value="Hembra">Mujer
+                            <br>
+                            <br>
+                            Frecuencia de los viajes
+                            <br>
+                            <select name="utilizacion">
+                                <option value="1">Varias veces al día
+                                <option value="2">Una vez al día
+                                <option value="3">Varias veces a la semana
+                                <option value="4">Varias veces al mes
+                            </select>
+                            <br>
+                            <br>
+                        
+                            Comentarios sobre su satisfacción personal
+                        
+                            <br>
+                            <br>
+                            <input type="checkbox" name="recibir_info" checked>Deseo recibir notificación de las novedades en las líneas de autobuses.
+                            <br>
+                            <br>
+                            <input type="submit" value="Enviar formulario">
+                            <br>
+                            <br>
+                            <input type="Reset" value="Borrar todo">
+                        </form>
+                    </div>
+                </dt>
             </dl>
             <div>
             </div>
