@@ -1,243 +1,26 @@
-9.FRAMES
+2.Introducción a CSS
 
-Etiqueta Iframe
+Introducción a CSS
 
-Los frames (en inglés = marcos) son herramientas que han pasado a ser soportada por todos los navegadores y formar parte de las especificaciones de HTML,  para luego retirarse de nuevo del estándar de HTML5.
+Css es el segundo lenguaje más básico y esencial para crear páginas web.
 
-No obstante, los frames, han permanecido en uso y dentro del estándar con la etiqueta IFRAME que vamos a ver en este artículo, que todavía hoy tiene mucha utilidad.
+El primero sería HTML, con el que se define el contendio de la página.
 
-En concreto ifreme sirve para crear un espacio dentro de la página donde se puede incrustar otra web. Es un cuadrado cuyas dimensiones debe especificar el desarrollador en la propia página, incluidas por los atributos width y height en la propia etiqueta IFRAME.
+El segundo CSS, con el que se define la parte de la presentación, es decir, cómo deben mostrarse los elementos de la página, suposición, forma, espaciados, colores y en resumen, toda la parte estética.
 
-El iframe tiene asociada una página web, que se carga en el espacio y operará de manera totalmente independiente. Esa página web tendrá sus propios contenidos y estilos. Además será perfectamente funcional: si tiene enlaces se mostrarán en ese mismo espacio y si tiene scripts o aplicaciones dento se ejecutarán también de manera autónoma en el espacio reservado al iframe.
+CSS es un lenguaje que consiste en una serie de elementos mediante los cuales se declaran los estilos, básicamente éstos son los más importantes:
 
-Iframe se utiliza en muchos contextos. Dentro de un iframe podemos mostrar contenidos de otras páginas, cono si estuvieran en la nuestra, por lo que sirven para ejemplos como:
+-Selectores, mediante los cuales podemos especificar a qué elementos de la página nos estamos refiriendo.
+-Atributos de estilos para definir qué cosas queremos estilizar sobre los selectores indicados.
+-Una serie de valores, que indican qué estilo se debe aplicar a cada atributo sobre cada selector.
 
--Visualizar contenidos de terceros, como bloques de noticias o novedades que ofrecen en otras webs.
+Los valores se expresan con unidades CSS, que sirven para cuantificar los valores (píxeles, puntos...).
 
--Interfaces de usuarios, en el que ciertas actividades se realizan de forma autónoma y el procesamiento está en otra página web.
+Aprender CSS no es difícil, pero cuando se usa profesionalmente se deben tener en cuenta muchos detalles y buenas prácticas, como la organización del código, la reutilización, la optimización, etc..
+------------------------------
 
--Incrustar videos desde Youtube.
+Separar el código CSS del código HTML
 
--Incrustar mapas de Google Maps.
+El enfoque de CSS es servir para definir la capa de presentación, es decir, la parte relacionada con el aspecto. Es algo que cualquier estudiante suele tener claro cuando está aprendiendo CSS, ya que al enseñar HTML probalbemente se haya insistido, pero que siempre conviene reforzar.
 
--Banners de publicidad desde otro sitio, etc..
-
-
-Construcción de la etiqueta iframe
-
-Como decimos, el iframe se coloca directamente en el código HTML, en el lugar donde queremos que aparezca.
-
-Se coloca con un código como este:
-
-<iframe src="pagina_fuente.html" width=290 height=250>Texto para cuando el navegador no conoce la etiqueta iframe</iframe>
-
-Los agributos principales de iframe son la página web que se va a mostrar en el espacio y el ancho y alto del recuadro que reservemos para el frame flotante.
-
-La etiqueta iframe tiene su correspondiente etiqueta de cierre. Todo el texto que coloquemos entre la etiqueta de inicio y la de cierre es texto alternativo, que sólo se mostrará en caso de que el navegador del visitante no acepte la etiqueta iframe.
-
-
-Atributos de iframe
-
-Agributos desponibles para la etiqueta iframe. No obstante, cabe ya señalar que algunos de los atributos que vamos a ver se engloban más en el terreno de los estilos y por tanto se podrían, y sería más correcto, especifica dentro de las CSS.
-
-src: para indicar la página web que se mostará en el espacio del frame flotante.
-
-width: para definir la anchura del recuadro del iframe.
-
-height: para definir la altura del iframe.
-
-name: para especificar el nombre del frame, que podemos utilizar luego para referirnos a él con el target de los links, o mediante javascript.
-
-id: para indicar el identificador del iframe, y poder referirnos a él desde javascript.
-
-frameborder: para definir si queremos o no que haya un borde en el frame. Los valores posibles son 0 | 1. frameborder=0 indicaría que no queremos borde y frameborder=1 que sí.
-
-scrolling: indica si se quiere que aparezcan barras de desplazamiento para ver los contenidos del iframe completo, en el caso que no aparezcan en el espacio reservado para el iframe. Los valore posibles son: yes | no | auto. El valor "yes" es para que aparezcan siempre las barras de despalazamiento o barras de scroll, "no" sirve para que no aparezcan nunca y "auto" es para que aparezcan sólo cuando son necesarias (es el valor por defecto).
-
-marginwidth: para definir el margen a izquierda y derecha que debe tener la página que va dentro del iframe, con respecto al borde. Este margen va en pixels, pero prevalecerá en margen que pueda tener asignada la página web que mostremos en el frame flotante.
-
-marginheight: los mismo que marginwidth, pero en este caso para el tamaño del margen por la parte de arriba y abajo.
-
-margin: para especificar alineación del frame, igual que se especifíca para las imágenes. 
-
-style y class: los atributos para definir el aspecto del iframe por medio de hojas de estilos css.
-
-Para acabar, aquí vemos otro ejemplo de iframe con unos cuantos atributos más:
-
-<iframe name=miframeflotante src="colabora.htm" widht=400 height=550 frameborder=" scrolling=yes marginwidth=2 marginheight=4 align=left>Tu navegador no soporte frames!!</iframes>
-
-Es de destacar, que pueden existir páginas web que tengan bloqueados los accesos desde páginas web externas para mostrar un iframe con información de ese sitio.
-
------------------------
-
-10.FORMULARIOS
-
-Formularios HTML
-
-Hasta ahora hemos visto la forma en la que el HTML	 gestiona y muestra la información, esencialmente mediante texto, imágenes y enlaces. Nos queda por ver de qué forma podemos intercambiar información con el usuario. Desde luego, este nuevo aspecto resulta primordial para gran cantidad de acciones que se pueden llevar a cabo mediante la Web: comprar artículos, rellenar una encuesta, enviar un comentario al autor...
-
-Hemos visto anteriormente que podíamos, mediante los enlaces a direcciones de email, contactar directamente con un correo electrónico. Sin embargo, esta opción puede resultar en algunos casos poco versátil, si lo que deseamos es que el navegante nos envíe una información bien precisa y además requiere que el visitante tenga instalado en su ordenador algún correo electrónico en un programa como Outlook Express. Es por ello que el HTML propone otra solución mucho más amplia: los formularios.
-
-Los formularios son cajas de texto y botones que podemos encontrar en muchas páginas web y se utilizan para realizar búsquedas o bien para introducir datos personales o claves de acceso. Los datos que el usuario introduce en estos campos son enviados al correo electrónico del administrador del formulario o bien a un programa que se encarga de procesarlo automáticamente.
----------------------------
-
-
-Aqué se puede hacer con un formulario?
-
-Usando HTML podemos enviar el contenido del formulario a un correo electrónico, es decir, construir un formulario con diversos campos y, a la hora de pulsar el botón de enviar, generar una ventana de redacción de un email con los datos que el usuario haya escrito en cada uno de esos campos.
-
-A menudo desearemos hacer cosas más complejas con los formularios y para ello tendremos que procesar el formulario mediante un programa.
-
-Entonces, tendremos que emplear otro lenguajes más sofisticados que el propio HTMl. En este caso, la solución más sencilla es utilizar los programas presiseñados que nos ofrecen un gran número de servidores de alojamiento y que nos permiten almacenar y procesar los datos en forma de archivos u otros formatos. si tenemos una web alojada en un servidor que no nos propone este tipo de ventajas, siempre es posible recurrir a servidores de terceros que ofrecen este u otro tipo de servicios gratuitos para webs. Por supuesto, existe otra alternativa que es la de aprender lenguajes cono JavaScript o PHP que nos permitián, entre otras cosas, el tratamiento de formularios.
-
-Así pues, en resumen, con HTML podremos construir los formularios, con diversos tipos de campos, como cajas de texto, botones de radio, cajas de selección, menús desplegables, etc... Sin embargo, debe quedar claro que desde HTML no se puede procesar la información, sino que deberemos contar co las herramientas de programación de Back-End que también veremos en este curso. Entonces, si deseamos que el formulario se envíe automáticamente o se procese en el servidor para generar otro tipo de respuesta, necesitaremos lenguajes de programación. Por el momento, estamos viendo Front-End por lo que nos limitaremos a explicar la creación de formularios y estudiaremos proximamente cómo procesar esa información.
-
-
-Cómo hacer un formulario en HTML
-
-Los formularios son definidos por edio de las etiquetas FORM y su cierre. Entre estas dos etiquetas colcoaremos todos los campos y botones que componen el formulario. Dentro de esta etiqueta FORM debemos especificar algunos atributos:
-
--action: define el tipo de acción a llevar a cabo con el formulario. Existen dos formas de enviar la información a que sea procesada:
-
-El formulario es enviado a una dirección de correo electrónico.
-
-El formulario es enviado a un programa o script que procesa su contenido.
-
-En el primer caso, el contenido del formulario es enviado a la dirección de correo electrónico especificada por medio de una sintaxis de este tipo:
-
-<form action="mailto:direcciton@correo.com"...>
-
-Si lo que queremos es que el formulario sea procesado por un programa, hemos de especificar la dirección del archivo que contiene dicho programa. La etiqueta quedarí en este caso de la siguiente forma:
-
-<form action="dirección del archivo"...>
-
-La forma en la que se expresa la localización del archivo que contiene el programa es la misma que la vista para los enlaces.
-
--method: este atributo se encarga de especificar la forma en la que el formulaio es enviado. Los dos valores posibles que puede tomar este atributo son post y get. A efectos prácticos y, hasta tanto no veamos Back-End utilizaremos el valor post.
-
--enctype: se utiliza para indicar la forma en la que viajará la información que se mande por el formulario. En el caso más corriente, enviar el formulario por correo electrónico, el valor de este atributo debe de ser "text/plain". Así conseguiremos que se envíe el contenido del formulario como texto plano dentro del email.
-
-Si queremos que el formulario se procese automáticamente por un programa, generalmente no utilizaremos este atributo, de modo que tome su valor por defecto, es decir, no incluiremos enctype dentro de la etiqueta FORM.
-
-Entre esta etiqueta y su cierre colocaremos el resto e etiquetas que darán forma a nuestro formulario, las cuales serán vistas en capítulos siguientes.
-
-
-Elementos de Formularios. Campos de texto
-
-El lenguaje HTML nos propone una gran diversidad de alternativas a la hora de crear nuestros formularios, es decir, una gran variedad de elementos para diferentes propósitos. Estas van desde la clásica caja de texto, hasta la lista de opciones en un menú desplegable, pasando por las cajas de validación, etc..
-
-
-
-Etiqueta INPUT para texto corto
-
-Las cajas de texto son colocadas por medio de la eitqueta INPUT. Dentro de esta etiqueta hemos de especificar el valor de dos atributos: type y name.
-
-La etiqueta tendrá la siguiente forma:
-
-<input type="text" name="nombre">
-
-De este modo expresamos nuestro deseo de crear una caja de texto cuyo contenido será llamado "nombre"
-(por ejemlo, en el caso de la etiqueta anterior, pero podemos poner distintos nombres a cada uno de los campos de textos que habrán en los formularios).
-
-El nombre del elemento del formulario es de gran impotancia para poder identificarlo en nuestro programa de procesamiento. Por otra parte, es importante indicar el atributo type, ya que, como veremos, existen otras modalidades de elementos de formulario que usan esta misma etiqueta INPUT.
-
-El empleo de estas cajas está fundamentalmente destinado a la toma de datos breves: palabras o conjuntos de palabras de longitud relativamente corta.
-
-Además de estos dos atributos, esenciales para el correcto funcionamiento de nuestra etiqueta, existen otra serie de atributos que pueden resultar de utilidad pero que son obligatorios:
-
--size: define el tamaño de la caja de texto, en número de caracteres visibles. si al escribir el usuario llega al final de la caja, el texto que escriba a continuación tambié cabrá dentro dle campo pero irá desfilando, a medida que se escribe, haciendo desaparecer la parte del texto que queda a la izquierda.
-
--maxlength: indica el tamaño máximo del texto, en número de caracteres, que puede sesr escrito en el campo. En caso que el campo de texto tenga definido el atributo maxlength, el navegador no permitirá escribir más caracteres en ese campo que los que hayamos indicado.
-
-Nota: es importante no comfundir el atributo maxlength con el atributo size. Mientras size define el tamaño visible de la caja de texto, maxlength indica el tamaño máximo real del texto que sepuede escribit. Podemos tener una caja de texto con un tamaño aparente (size) que es menor que el tamaño máximo (maxlength). Lo que ocurrirá en este caso es que, al escribit, si sibrepasamos el espacio marcado por size, el texto irá desfilando dentro de la caja hasta que lleguemos a su tamaño máximo definido por maxlength, momento en el cual nos será imposible continuar escribiendo.
-
--value: en algunos casos puede resultarnos interesante asignar un valor definido al campo en cuestrión. Esto puede ayudar al usuario a rellenar más rápidamente el formulario o darle alguna idea sobre la naturaleza de datos que se requieren. Este valor inicial del campo puede ser expresado mediante el atributo value. Veamos su efecto con un ejemplo sencillo:
-
-<form>
-	<input type="text" name="nombre" value="Juan Perez">
-</form>
-
-
-
-Etiqueta INPUT, modalidad de texto oculto
-
-Hay determinados casos en los que podemos desear esconder el texto en el campo INPUT, por medio de asteriscos, de manera que aporte una cierta confidencialidad. Este tipo de campos son análogos a lso de texto, con una sola diferencia: reemplazamos el atributo type="text" por type="password".
-
-<input type="password" name="nombre">
-
-En este caso, al escribir dentro del campo, en lugar de texto se desplegarán asteriscos.
-
-
-Etiqueta TEXTAREA
-
-Si deseamos poner a la disposición de usuario un campo de texto donde pueda escribir cómodamente sobre un espacio compuesto de varias líneas, hemos de invocar una nueva etiqueta: TEXTAREA y su cierre correspondiente.
-
-Este tipo de campos son prácticos cuando el contenido a enviar no es un nombre, teléfono, edad o cualquier otro dato breve, sino más bien, un comentario, opinión, etc. en los que existe la posibilidad de que el visitante desee rellenar varias líneas.
-
-Dentro de la etiqueta textarea deberemos indicar, como para el caso visto anteriormente,e l atributo name para asociar el contenido a un nombre que será asemajado a una variable en los programas de proceso. Ademas, podemos definir las dimensiones del campo a partir de los atributos siguiente:
-
-rows: define el número de líneas del campo de texto.
-
-cols: define el núemro de comumnas del campo de texto.
-
-
-La etiqueta queda por tanto de esta forma:
-
-<textarea name="comentario" rows="10" cols="40"></textarea>
-
-Asimismo, es posible predefinir el contenido del campo. Para ello, no usaremos el atributo value, sino que escribiremos dentro de la etiqueta el contenido que deseamos atribuirle:
-
-<textarea name="comentario" rows="10" cols="40">Escribe tu comentario... </textarea>
-
-
-Otros elementos de formulario
-
-Listas de opciones
-
-Las listas de opciones son ese tipo de menús desplegables que nos permiten elegir una (o varias) de las múltiples opciones que nos proponen. Para construirlas emplearemos una etiqueta SELECT, consu respectivo cierre:
-
-Podemos ver, a partir de estas directivas, la forma más típica y sencilla d esta etiqueta:
-
-<select name="estación>
- <option>Primavera</option>
- <option>Verano</option>
- <option>Otoño</option>
- <option>Invierno</option>
-</select>
-
-Esta estructura puede verse modificada principalmente a partir de otros dos atributos:
-
-size:
-
-Indica el número de valores mostrados a la vez en la lista. Lo típico es que no se incluya ningún vlaor en el atributo size, en ese caso tendremos un campo de opciones desplegable, pero si indicamos size aparecerá un campo donde veremos las opciones definidas por size y el resto podrán ser vistos por medio de la barra lateral de desplazamiento.
-
-multiple:
-
-Permite la seleción de varios elementos de la lista. La elección de más de un elemento se hace como con el explorador de Windows, a partir de las teclas ctrl o mayúsculas (la flecha hacia arriba,  también llamada shift). Este atributo se expresa sin valor alguno, es decir, no se utiliza con el igual; simplemente se pone para conseguir el efecto, o no se pone si queremos una lista desplegable común.
-
-La etiqueta OPTION puede asimismo ser matizada por medio de otros atributos
-
-selected:
-
-Del mismo modo que multiple, este atributo no toma ningún valor sino que simplemente indica que la opción que lo presenta esta elegida por defecto.
-
-Así, si cambiamos la línea del código anterior:
-
-<option>Otoño</option>
-
-por:
- 
-<optión selected>Otoño</option>
-
-El resultado será que Otoño se desplegue como la opción inical.
-
-value:
-
-Define el valor de la opción que será enviado al programa si el usuario elige esa opción. Este atributo pued eresultar muy útil si el formulario es enviado a un programa para su procesamiento, puesto que a cada opicón se le puede asociar un múmero o letra, lo cual es más fácilmente manipulable que una palabra o texto, podríamos así escirbir líneas del tipo:
-
-<option value="1">Primavera</option>
-
-De este modo, si el usuario elige primavera, lo que le llegará al programa es una variable llamada estación que tendrá con valor 1:
-
-estacion=1
-
+En el código HTML colocamos el contenido, es decir, qué debe visualizarse, mientras que con CSS definimos la presentación, es decir, cómo debe visualizarse. Esto nos lleva a una serie de usos de CSS que debemos de respetar como buenas prácticas.
