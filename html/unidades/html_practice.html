@@ -11,7 +11,11 @@
         <h1>Ensayos HTML</h1>
     <h2>Estructura básica:</h2>
     <p>&lt;html&gt;</p>
-        <p>&lt;head&gt;</p>
+        <p>&lt;head&gt;:
+            <br>Favicom: se guarda al mismo nivel que el index.html bajo el nombre de favicom.ico
+            <br>&lt;link rel="shortcut icon" href=""&gt;
+        </p>
+
         <p>&lt;title&gt;Mi documento básico&lt;/title&gt;</p>
         <p>&lt;/head&gt;</p>
         <p>&lt;body&gt;</p>
@@ -234,6 +238,16 @@
                             <br>
                             <input type="password">
                         </li>
+                        <li>
+                            submit
+                        </li>
+                        <li>
+                            reset
+                        </li>
+                        <li>
+                            checkbox
+                        </li>
+
                     </ul>
                 </dd>
                 <dt>
@@ -259,6 +273,37 @@
                 <dd>
                     atributo que permite que el input tenga un valor predeterminado. Útil para hacer más rápido el llenado del formulario.
                 </dd>
+                <dt>
+                    <b>label</b>
+                </dt>
+                <dd>
+                    Etiqueta que aparece arriba con el nombre del campo: <br>
+                    &lt;label for="nombre"&gt;Nombre:&lt;/label&gt;
+                    &lt;input type="text" name="nombre"&gt;
+                    <br>
+                    <div style="border:2px solid black;">
+                        <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre">
+                    </div>
+                </dd>
+                <dt>
+                    <b>placeholder</b>
+                </dt>
+                <dd>
+                    Es el texto que aparece dentro del input que orienta el tipo de dato a ingresar: placeholder="Texto que aparecerá dentro del input"
+                    <br>
+                    <input type="text" name="nombre" placeholder="Ingrese su nombre">
+                </dd>
+                <dt>
+                    <b>autofocus</b>
+                </dt>
+                <dd>
+                    <input type="text" name="nombre" placeholder="Ingrese su nombre" autofocus/>
+                    <input type="text" name="apellido" placeholder="Ingrese su apellido">
+                </dd>
+                <dt>
+                    <b>required</b>
+                </dt>
                 <dt>
                     <b>&lt;textarea&gt;</b>
                 </dt>
@@ -411,9 +456,9 @@
                     
                     <div>
                         <form action="mailto:juan@gmail.com" method="post" enctype="textplain">
-                            Nombre<input type="text" name="nombre" size="30" maxlength="100">
+                            Nombre<input type="text" name="nombre" size="30" maxlength="100" autofocus required>
                              <br>
-                            Email<input type="text" name="email" size="25" maxlength="100" value="@">
+                            Email<input type="text" name="email" size="25" maxlength="100" value="@" required>
                             <br>
                             Población<input type="text" name="poblacion" size="20" maxlength="60">
                             <br>
