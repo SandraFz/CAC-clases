@@ -24,3 +24,546 @@ Separar el código CSS del código HTML
 El enfoque de CSS es servir para definir la capa de presentación, es decir, la parte relacionada con el aspecto. Es algo que cualquier estudiante suele tener claro cuando está aprendiendo CSS, ya que al enseñar HTML probalbemente se haya insistido, pero que siempre conviene reforzar.
 
 En el código HTML colocamos el contenido, es decir, qué debe visualizarse, mientras que con CSS definimos la presentación, es decir, cómo debe visualizarse. Esto nos lleva a una serie de usos de CSS que debemos de respetar como buenas prácticas.
+
+-Lo adecuado cuando trabajamos con CSS es escribir el código en ficheros independienes, que tendrán extensión .css.
+
+-No conviene colocar código CSS por tanto dentro de archivos HTML. Debemos evitar colocar estilos en etiquetas <style> dentro del propio código HTML.
+
+-Por supuesto, mucho menos acosejable es colocar estilos en los atributos "style" de las etiquetas HTML.
+
+La aparición de CSS3 sólo se materializó en el año 2014 con el movimiento de HTML5. Vendría a aportar soluciones a la mayoría de las necesaidades de lso diseñadores y a permitir finalmente cubrir el objetivo princiipal del lenguaje, la separación del contenido de la presentación. No obstante cabe decir que CSS3 se presentó por medio de un nutrido grupo de especificaciones, que han ido mejorándose e incrementándose hasta la fecha, por lo que no es tanto un lanzamiento puntual, sino una continua mejora del estándar a diversos niveles.
+---------------------
+
+USOS DE LAS CSS
+
+hemos denominado a este apartado los diferentes usos de las CSS y relata justamente eso, los distintos niveles a los que podemos usar las Hojas de Estilo, que van desde definir los estilos de manera específica, para un pequeño fragmento de una página, hasta los estilos para todo un sitio web completo.
+
+Para definir estilos en secciones reducidas de uan página se puede utilizar el atributo style en la etiqueta sobre la que queremos aplicar estilos.
+
+Como valor de ese atributo indicamos en sintaxis CSS las características de estilos.
+
+Lo vemos con un ejemplo, pondremos un párrafo en el que determinadas palabras las vamos avisualizar en color verde.
+
+<p>
+
+Esto es un párrafo en varias palabras <span style="color:green">en colcor Verde</span>. resulta muy fácil
+
+</p>
+
+Nota: la etiquete <span> del HTML quizás no sean tan conocida como otras. es una etiqueta que, por si solo, no tiene ninguna representación en la página. Es muy habitual usarla justamente para lo que hemos hecho en el anterior ejemplo, separar partes del contenido del texto de una etiquete, para aplicarle estilos determinados a esa parte de dentro de la etiqueta.
+------------
+
+ESTILOS
+
+Estilo definido para una etiqueta
+
+De este modo podemos hacer que toda una etiqueta muestre un estilo determinado. Por ejemplo, podemos definir un párrafo entero en color rojo y otro en azul. Para ello utilizaremos el atributo style, que es admintido por todas las etiquetas del THML.
+
+Nota: este uso de las CSS podríasmo decir que es en realidad el mismo que el anterior. Solo que la etiqueta es de bloque y no una etiqueta inline (en línea) como <span>.
+
+<p style="color:#990000">
+	Esto es un párrafo de color rojo.
+</p>
+
+<p style="color:#000099">
+	Esto es un párrafo de color azul.
+</p>
+
+
+
+Estilo definido en una parte de la página
+
+con la etiqueta <div> podemos definir secciones de una página y aplicarle estilos con el atributo styel, es decir, podemos definir estilos de una vez a todo el bloque de la página.
+
+El uso de la etiqueta div es enblobar partes de un documento HTML para que podamos aplicar estilos a todo el grupo de etiquetas, como el posicionamiento, color, borde, tamaño de letra...
+
+<div style="color:#000099; font-weight:bold">
+	<h3>Estas etiquetas van en <i>azul y negrita</i></h3>
+
+<p>
+Seguimos dento del div, luego permaneces los estilos
+</p>
+</div>
+
+Hasta aquí hemos visto los usos de las CSS más específicos, que se consiguen usando el atributo styele en la etiqueta. Realmente todos los usos anteriores eran el misno, pero el enfoque era distinto ya que las etiquetas del HTML que hemos usado tienen distintos alcances. Sin enbargo, hay otras formas más avanzadas de usar las CSS, que deberías tener en cuenta porque son todavía más versátiles y recomendadas.
+---------------------------
+
+
+Estilo definido para toda una página
+
+Una de las características más potentes del desarrollo con hojas de estilos es la posibiidad de definir los estilos de todo un sitio web en una única declaración.
+
+Esto se consigue creando un archivo donde tan sólo colocamos las declaraciones de estilos de la página y enlazando todas las páginas del sitio con ese archivo. De este modo, todas las páginas comparten una misma declaración de estilos, reutilizando el código CSS de una manera mucho más potente.
+
+Este es el modelo más ventajoso de aplicar estlos al documento THML y por lo tanto el más recomendable. De hecho, cualquier otro modo de definir estilo no es considerado una buena práctica y lo tenemos que evitar siempre que se pueda.
+
+Las ventajas de este modelo de definición de estilos son las siguientes:
+
+Se ahorra en líneas de código HTML, ya que no tenemos que escribir el CSS en la propia página (lo que educe el peso del documento y mejora la velocidad de descarga).
+
+Se mantine separado correctamente lo que es el contenido (HTML) y lo que es más importante, si cambianmos la declaración de estilos, cambiarán automáticamente todas las páginas del sitio web.
+
+Esto es una característica muy deseable, porque aumenta considerablemente la facilidad de mantenimiento del sitio web. Si en cualquier momento se desea cambiar el contenido, no tenemos que preocuparnos por los estilos y viceversa, si queemos cambiar el contenido del situi web, no necesitamos preocuparnos ni andar editando el contenido.
+--------------------------
+
+
+INCLUIR ESTILOS CON UN FICHERO EXTERNO
+
+1-Creamos el fichero con la declaración de estilos
+
+Es un fichero de texto normal, que puede tener cualquier extensión, aunque le podemos asignar la extensión .css para aclararnos qué tipo de archivo es. El texto que debemos incluir debe ser escrito exclusivamente en sintaxis CSS, es decir, sería erróneo incluir código HTML en él: etiqueta y demás. Podemos ver un ejemplo a continuación.
+
+p{
+font-size: 12pt;
+font-weight:normal;
+}
+
+h1{
+font-size: 36pt;
+font-family: verdana, arial;
+text-decoration: underline;
+text-align: center;
+background-color: Teal;
+}
+
+td{
+font-size: 10pt;
+font-family: verdana, arial;
+tct-align: center;
+background-color:666666;
+}
+
+body{
+background-color;#006600;
+font-family: arial;
+color: white;
+}
+
+
+2-Enlazamos la página web con la hoja de estilos
+
+Para ello, vamos a colocar la etiqueta <link>con los atributos siguientes:
+
+rel="STYLESHEET" indicando que el enlace es con una hoja de estilos,
+
+href="estilos.css" indica en nombre del fichero fuente de lso estilos.
+
+Veamos una página web entera que enlaza con la declaración de estilos anterior:
+
+
+<!DOCTYPE html>
+	<html>
+		<head>
+			<link rel="STYLESHEET" href="estilos.css">
+			<title>Página con estilos.css incorporado</title>
+		</head>
+		<body>
+			<h1>página con estilos.css</h1>
+			Esta página tiene un enlace a estilos.css
+
+			<br>
+			<br>
+		</body>
+	</html>
+
+---------------
+
+
+REGLAS DE IMPORTANCIA EN LOS ESTILOS
+
+Los estilos se heredan de una etiqueta a ota, como se indicó anteriormente. Por ejemplo, si tenemos declarado en el <BODY> unos estilos, en muchos casos, estas declaraciones también afectarán a etiquetas que estén dentro de este etiqueta.
+
+La herencia de estilos desde padres a hijos no ocurre siempre. Depende del estilo utilizado.
+
+Por ejemplo, el color del texto se hereda en todos los componentes, aunque no ocurre con el borde de un elemento.
+
+Pero las declaraciones de estilos se pueden realizar de múltiples modos y con varias etiquetas, también entre estos modos hay una jerarquía de importancia para resolver conflictos entre varias declaraciones de estilos distintas para una misma porción de página. Se puede ver a continuación esta jerarquía, primemro ponemos las formas de declaración más generales, y por tanto menos respetadas en caso de conflicto:
+
+Declaración de estilos con fichero externo (para todo un sitio web).
+
+Declaración de estilos para toda la página (con la etiqueta <style> en la cabecera de la página).
+
+Definidos en una etiqueta en concreto (utilizando el atributo style en la etiqueta en cuestión).
+
+
+
+Para definir un estilo se utilizan atributos como font-size, text-decoration... seguidos de dos puntos y el valor que lo deseemos asignar. Podemos definir un estilo a base de definir muchos atributos separados por punto y coma.
+
+Ejemplo:
+
+font-size: 10pt; text-decoration: underline; color: black;
+
+(el último punto y coma de la lista de atributos es opcional)
+
+Para definir el estilo de una etiqueta se escribe la etiqueta seguida de la lista de atributos encerrados entre llaves.
+
+Ejemplo:
+
+h1{text-align: center; color: black}
+
+Los valores que se pueden asignar a los atributos de estilo se pueden ver en una tabla en el siguiente capítulo.
+------------------------
+
+
+MEDICIÓN Y UNIDADES EN CSS
+
+Muchos de estos valores son unidades de medida (unidades CSS), por ejemplo, el valor del tamaño de un margen o el tamaño de la fuente. Las unidades de medida CSS se pueden clasificar en dos grupos, las relativas y las absolutas. Más la posibilidad de expresar valores en porcentaje.
+
+Relativas: se llaman así porque son unidades relativas al medio o soporte sobre el que se está viendo la página web, que dependiendo de cada usuario puede ser distinto, puesto que existen muchos dispositivos que pueden acceder a la web, como ordenadores o teléfonos móviles. En principio las unidades relativas son más aconsejables, porque se ajustarán mejor al medio con el que el usuario está accediendo a nuestra web. Son las siguientes:
+
+Fuente actual: em - es la fuente que se está trabajando por defecto, si la fuente es de 10 puntos y se coloca 2em se estaría trabajando con una fuente de 20 puntos.
+
+Altura de la letra: ex - 1ex sería igual a la altura de la letra de la fuente actual del usuario.
+
+Píxeles: px - varían su tamaño real en base a la resoluci´n de la pantalla del usuario.
+
+
+Absolutas: las unidades absolutas son medidas fijas, que deberían verse ingual en todos los dispositivos. Como ls centímetro, que son una convención de medida internacional. Pese a que en principio pueden parecer más útiles, puesto que se verían en todos los sistemas igual, tienen el problema de adaptarse menos a las distintas particularidades de los dispositivos que pueden acceder a una web y restan accesibilidad a nuestra web.
+
+Puede que en tu ordenador 1 centímetro sea una medida razonable, pero en un móvil puede ser un espacio exageradamente grande, puesto que la pantalla es mucho menor. Se aconseja utilizar, por tanto, medidas relativas.
+
+Puntos pt - un puto equivale a 1/72 pulgadas
+
+Pulgadas in
+
+Centímetros cm
+
+Milímetros mm
+
+Picas pc (equivale a 12 puntos)
+
+
+Porcentajes: el porcentaje se utiliza para definir una unidad en función de la que esté definida en un momento dado. Imaginemos que estamos trabajando en 12 pt y definimos una unidad como 150%. Esto sería igual al 150% de los 12pt actuales, que equivale a 18pt..
+-------------------
+
+
+COLORES EN CSS
+
+Los colores se expersan con valores RGB, igual que los que conocemos para los colores HTML. Con la salvedad de que un color se puede especificar también con tres números hexadecimales, en lugar de 6, como era obligatorio en HTML.
+
+Por ejemplo #fff equivaldría a #ffffff, o #123 sería #112233.
+
+Además, los coloes se pueden especificar también en valores RGB decimales, con la notación rgb(r,g,b), siendo los valores de r, g, b números entre 0 y 255, por ejemplo rgb(100,0,255).
+
+Otra notación posible es
+
+rgb(r%, g%, b%), siendo cada uno de los r%, g% y b% un valor entre 0 y 100, por ejemplo rgt(100%, 50%, 0%), que sería todo de rojo, la mitad verde y cero azul.
+
+Porque lo más habitual es que especifiquemos un color con su valor RGB, de una manera similar a como aprendimos a definir colores en HTML. Pero en CSS tenemos otras maneras de declarar colores que pueden interesarnos, como mínimo para poder entender el código CSS cuando lo veamos escrito.
+
+
+
+Notación hexadecimal RGB
+
+Esta notación es la que ya conocemos. Se especifican los tres valores de color (rojo, verde y azul) con valores en hexadecimal entre 00 y FF.
+
+background-color:#ff8800;
+
+
+
+Notación hexadecimal abreviada
+
+Esta notación es muy parecida a la anterior, pero permite abreviar un poco la declaración del color, indicando sólo un número para cada valor rojo, verde y azul. Por ejemplo, para especificar el color de antes (#ff8800) podríamos haber escrito:
+
+background-color: #f80;
+
+
+Nombre del color
+
+También podemos definir un color por su nombre. Los nombres de colores son en inglés, los mismos que sirven para especificar colores con HTML.
+
+color: red;
+
+border-color: Lime;
+
+
+Notación del color con porcentajes de RGB
+
+Se puede definir un color por los distintos porcentajes de valores RGB. Si todos los valores están al 100% el color es blanco. Si todos están al 0% obtendríamos el negro y con combinaciones de distintos porcentajes de RGB obtendríasmo cualquier matiz de color.
+
+color: rgb(33%, 0%, 0%);
+
+
+Notación por valores decimales de RGB, de 0 a 255
+
+De una manera similar a la notación por porcenajes de RGB se puede definir un color directamente con valores decimales en un rango desde 0 a 255.
+
+color: rgb(200, 255, 0);
+
+De entre todas estas notaciones podemos utilizar la que más nos interese o con la que nos sintamos más a gusto. NOsotros en nuestros ejemplos venimos utilizando la notación hexadecimal RGB por habernos acostumbrado a ella en HTML.
+
+
+Color transparente
+
+Para finalizar, podemos comentar que también existe el color tansparente, que no es ningún color, sino que especifica que el elemento debe tener el mismo color que el fondo donde está. Este valor, tansparent, sustituye al color. Podemos indicarlo en principio sólo para fondos de elementos, es decir para el atributo background-color.
+
+background-color:transparent;
+-----------------------
+
+
+MÁRGENES DE PÁGINA
+
+La propiedad CSS margin establece el margen para los cuatro lados. Es una abreviación para evitar tener que establecer cada lado por separado con las otras propiedades de margen: margin-top, margin-right, margin-bottom y margin-left.
+
+También se permiten valores negativos.
+
+/*Aplica a todos cuatro lados*/
+margin: 1em;
+
+/*Vertical | Horizontal */
+margin: 5% auto;
+
+/*Arriba | Derecha | Abajo | Izquierda*/
+margin: 2px 1em 0 auto;
+
+/*Valores globales*/
+margin: inherint;
+margin: initial;
+margin: unset;
+
+
+Valores
+
+Acepta uno, dos, tres o cuatro valores de los siguientes:
+
+<length> - especifica un ancho fijo. Valores negativos son permitidos.
+
+<perdentage> - un <percentage> relativo al ancho del bloque contenedor. Se permiten valores negativos.
+
+auto - es reemplazado por algún valor apropiado. Por ejemplo, puede usarse para centrar horizontalmente un elemento bloque.
+
+div{width:50%; margin:0 auto;} centrará el div horizontalmente.
+
+
+Un único valor aplicará para todos los cuatro lados.
+
+Dos valores aplicarán: el primer valor para arriba y abajo, el segundo valor para izquierda y derecha.
+
+Tres valores aplicarán: el primero para arriba, el segundo para izquerda y derecha, el tercero para abajo.
+
+Cuatro valores aplicarán en sentido de las manecillas del reloj empezando desde arriba (arriba, derecha, abajo, izquierda).
+
+
+Sintaxis formal
+ 
+[<length> | <percentage> | auto ]{1,4}
+
+HTML
+
+<div class="ex1">
+
+margin: auto;
+
+background: gold;
+
+width: 66%;
+
+</div>
+
+<div class="ex2">
+
+margin: 20px 0 0 -20px;
+
+background: gold;
+
+width: 66%;
+
+</div>
+
+CSS
+
+.ex1{
+margin:auto;
+background: gold;
+width: 66%;
+}
+
+.ex2{
+margin:20px 0px 0 -20px;
+background: gold;
+width: 66%;
+}
+
+Otro ejemplo:
+
+margin: 5%; /*5% para todos los lados*/
+
+margin:10px; /*10px para todos los lados*/
+
+margin:1.6em 20px; /*1.6em arriba y abajo, 20px izquierda y derecha*/
+
+margin:10px 3% 1em; /*10px arriba, 3% izquierda y derecha, 1em abajo*/
+
+margin: 10px 3px 30px 5px; /*10px ariba, 3px derecha, 30px abajo, 5px izquierda*/
+
+margin: 1em auto; /*1em arriba y abajo, centrado horizontalmente*/
+
+margin: auto; /*0px de margen vertical, centrado horizontalmente*/
+
+
+Centrado horizontalmente con margin: 0 auto;
+
+Para centrar algo horizontalmente en navegadores modernos, se utiliza flex, una tecnología más moderna cn la sentencia: display: flex; justify-content: center;.
+
+La propiedad position de CSS especifica cómo un elemento es posicionado en el documento. Las propiedades top, right, bottom y left determinan la ubicación final de los elementos posicionados.
+------------------------
+
+
+TIPOS DE POSICIONAMIENTO
+
+Un elemento posicionado es un elemento cuyo valor compuado de position es relative, absolute, fixed, o sticky (en otras palabras, cualquiera excepto static).
+
+Un elemento posicionado relativamente es un elemento cuyo valor computado de position es relative.
+
+Las propiedades top y bottom especifican es desplazamiento vertical dede su posición original; las propiedades left y right especifican su desplazamiento horizontal.
+
+Un elemento posicionado absolutamente es un elemento cuyo valor computado de position es absolute o fixed. Las propiedades top, right, bottom y left especifican el desplazamiento desde los bordes del bloque contenedor del elemento (el bloque contenedor es el ancestro relativo al cual el elemento está posicionado).
+
+Si el elemento tiene márgenes, se agregarán al desplazamiento. El elemento establece un nuevo contexto de formato de bloque para su contenido.
+
+Un elemento posicionado fijamente es un elemento cuyo valor de position computado es sticky.
+
+Es tratado como un elemento posicionado relativamente hasta que su bloque contenedor cruza un límite establecido (como por ejemplo dando a top cualquier valor distinto de auto), dentro de su flujo principal (o el contenedor dentro del cual se mueve), desde el cual es tratado como "fijo" hasta que alcance el borde opuesto de su bloque contenedor.
+
+La mayoría de las veces, los elementos absolutamente posicionados que tienen su height y width establecidos en auto son ajustados hasta acomodarse a su contenido.
+
+Sin embargo, elementos non-replaced y absolutamente posicionados se pueden crear para llenar el espacio vertical disponible, especificando tanto top como bottom, y dejando height sin especificar (es decir, auto). De igual manera se pueden utilizar para llenar el espacio horizontal disponible especificando tanto left como right, y dando a width el valor de auto.
+
+A excepcón del caso anteriormente descrito (de elementos posicionados absolutamente rellenando el espacio disponible):
+
+Si ambos, top y bottom están especificados (técnicamente, no auto), top gana.
+
+Si ambos, left y right, están especificados, left gana cuando es ltr (inglés, japonés horizontal, etc.) y right gana cuando direction es rtl (persa, árabe, hebreo, etc,).
+
+
+Sintaxis
+
+La propiedad position es especificada como una palabra única elegida de la siguiente lista de valores.
+
+Valores
+
+static
+
+El elemento es posicionado de acuerdo al flujo normal del documento. Las propiedades top, right, bottom, left, y z-index no tienen efecto. Este es el valor por defecto.
+
+relative
+
+El elemento es posicionado de acuerdo al flujo normal del documento, y luego es desplazado con la relación a sí mismo, con base en los valores de top, right, bottom, y left. El desplazamiento no afecta la posición de ninún otro elemento; por lo que, el espacio que se le da al elemento en el esquema de la página es el mismo como si la posición fuera static. Este valor crea un nuevo contexto de aplilamiento, donde el valor de z-index no es auto. El efecto que tiene relative sobre los elementos table-*-group, table-row, table-column, table-cell, y table-caption no está definido.
+
+absolute
+
+El elementod es removido del flujo normal del documento, sin crearse espacio alguno para el elemento en el esquema de la página. Es posicionado relativo a su ancestro posicionado más cercano, si lo hay; de lo contrario, se ubica relativo al bloque contenedor inicial, Su posición final está determinada por los valores de top, right, bottom y left.
+
+Este valor crea un nuevo contexto de apilamiento cuando el valor z-index no es auto. Elementos absolutamente posicionados pueden tener margen, y no colapsan con ningún otro margen.
+
+fixed
+
+el elemento es removido del flujo normal del documento, din crearse espacio alguno para el elemento en ele esquema de la página. Es posicionado con relación al bloque contenedor inicial establecido por el viewport, excepto cuando uno de sus ancestros tiene una propiedad transform, perspective, o filter establecida en algo que no sea none (ver CSS Transforms Spec), en cuyo caso ese ancestro se comporta como el bloque contenedor (notar que hay inconsistencias del navegador con respective y filter contribuyendo a la formación del bloque contenedor). Su posición final es determinada por los valores de top, right, bottom, y left.
+
+Estos valores siempre crean un nuevo contexto de apilamiento. En documentos impresos, el elemento se coloca en la misma posición en cada página.
+
+sticky
+
+El elemento es posicionado de acuerdo al flujo normal del documento, y luego es desplazado con relación a su ancestro que se desplace más cercano y su bloque contenedor (ancestro en nivel de bloque más cercano) incluyendo elementos relacionados a tablas, basados en los valores de top, right, bottom y left. El desplazamiento no afecta la posición de ningún otro elemento.
+
+Estos valores siempre crean un nuevo contexto de apilamiento. Nótese que un elemento sticky se "adhiere" a su ancestro más cercano que tiene un "mecanismo de desplazamiento" (creado cuando el overflow es hidden, scroll, auto o bien overlay), aún si ese ancestro no es el ancestro con desplazamiento más cercano.
+
+
+HTML
+
+<div class="caja" id="uno">uno</div>
+<div class="caja" id="dos">dos</div>
+<div class="caja" id="tres">tres</div>
+<div class="caja" id="cuatro">cuatro</div>
+
+CSS
+
+.caja{
+display:inline-block;
+width:100px;
+height:100px;
+background:red;
+color:green;
+}
+
+#dos{
+position:relative;
+top:20px;
+left:20px;
+bakcground:black;
+}
+
+------------------------------------
+
+
+POSICIONAMIENTO ABSOLUTO
+
+Los elementos posicionados relativamente se mantienen en el flujo normal del documento. Por el contrario, un elemento posicionado absolutamente es removido del flujo de esta manera, los demás elementos se posicionana como si el mismo no existiera. El elemento posicionado absolutamente se posiciona relativamente a su ancestro posicionado más cercano (es decir, el ancestro más cercano que no es static). Si no hay ningún ancestro posicionado se ubica relativo al bloque contenedor inicial. En el ejemplo siguiente, la caja "Two" no tiene un ancestro posicionado, por lo tanto se posiciona relativo al <body> del documento.
+
+HTML
+
+<div class="caja" id="uno">uno</div>
+<div class="caja" id="dos">dos</div>
+<div class="caja" id="tres">tres</div>
+<div class="cada id="cuatro">cuatro</div>
+
+CSS
+
+.caja{
+display:inline-block;
+width:100px;
+height:100px;
+background:black;
+color:orange;
+}
+
+#two{
+position:absolute;
+top:20px;
+left:20px;
+background:green;
+}
+
+-----------------------
+
+
+POSICIONAMIENTO FIJO
+
+El posicionamiento fijo es similar al posicionamiento absoluto, con la excepción de que el bloque contenedor del elemento es el viewport. Esto puede usarse para crear un elemento flotante que se mantiene en la misma posición independientemente del desplazamiento. En el ejemplo siguiente, la caja "uno" está fijada a 80 pixels del límite superior de la página y 10 pixels a la izquierda. Aún luego de desplazarse, se mantiene en el mismo lugar relativo al viewport.
+
+
+HTML
+
+<div class="vista">
+	<p>
+	Funcionamiento de un avión
+	</p>
+	div class="caja" id="uno">Los aviones vuelan gracias a la actuación de una serie de fuerzas, tanto en el plano horizontal como en el plano vertical. Para que el aparato se eleve es imprescindible que la fuerza que se produce en el eje vertical (sustentación en lenguaje aeronáutico) supere al peso del avió. Por otra parte, en el eje horizontal y gracias a los motores que expulsan gases, tiene lugar el principio de acción-reacción que provoca una fuerza hacia adelante que vence la resistencia del aire. Cuando el avión asciende y llega a su altura de crucero y a una velocidad constante es porque se ha alcanzado el equilibrio de fuerzas tanto en el eje vertical, en el que la sustentación se iguala al peso, como en el eje horizontel, en el que el empuje del motor es igaul a la resistencia que nos ofrece el aire.
+
+La magia se produce al conseguir esa fuerza de sustentación. Ahí tenemos que acudir a una serie de principios que lo explican. Básicamente, la sustentación se consigue gracias a las alas del avión. Si las conráramos tendríamos lo que se llama el perfil del ala, la sección que tiene el ala por dentro. Esta sección tiene una forma muy eficiente desde el punto de vista aerodinámico. El borde por donde entra el aire según va volando el avión es redondeado y la parte de atrás del perfil es afilada y además está curvada por la parte de arriba (en lenguaje aeronáutico esta parte de arriba se llama extradós y la parte de abajo se llama intradós). Esa curvatura del perfil del ala hace que cuando la corriente de aire se encuentra con ella, se divida en dos caminos, una parte del flujo de aire se va por arriba del ala y otra parte, por abajo. Debido a la curvatura del ala, el camino que tiene que recorrer el flujo que va por arriba es más largo que el que va por debajo. Existe un teorema, el de Bernouilli, que es básicamente de conservación de la energía y que dice que para que esto ocurra, el flujo de aire que va por arriba tiene que ir a más velocidad. Eso implica que haya menos presión que en la parte de abajo donde va a menor velocidad y ejerce más presión. Esa diferencia de presión entre el flujo de airre por arriba y el de abajo genera una sustentación. Aunque esta sustentacióndebida al principio de Bernouilli no llega a explicar toda la que necesitamos para que el avión se eleve. Para explicar la elevación hay que ecurrir a otra serie de principio físicos.</div>
+</div>
+
+
+CSS
+
+.caja{
+width: 100px;
+height: 100px;
+background: red;
+color: white;
+}
+
+#uno{
+position: fixed;
+top: 80px;
+left: 10px;
+background: blue;
+width: 500px;
+}
+
+.vista{
+width: 500px;
+height: 300px;
+padding-left: 150px;
+background: red;
+}
