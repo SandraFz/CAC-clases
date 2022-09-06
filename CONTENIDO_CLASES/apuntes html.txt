@@ -14,3 +14,30 @@ overflow:auto; agrega scroll solo si se desborda el contenido.
 
 margin:0 auto; centra.
 
+------------------------------
+
+UNIDADES DE MEDIDA
+
+Absolutas
+Relativas
+	Flexibles (para usar esta necesita una unidad fija en el contenedor padre y se da con las siguientes unidades)
+
+vh
+vw
+Son relativas al viewport.
+
+(Unidad de vh o vw en el padre y el porcentaje en el hijo)
+
+object-fit:center (adapta la imágen pero la deforma)
+object-fit:contain (respeta la relación de aspecto dentro de las medidas que le doy pero pierde estética)
+
+Las imágenes deberían venir en el formato que necesito y no tratarlas en CSS.
+
+Los EM y REM son para las fuentes.
+
+•rem: relativo al tamaño que el navegador tiene establecido para las fuentes. Eso está configurado en cada cliente y por defecto es 16px=1rem.
+
+Se puede pisar la configuración asignando un tamaño a las fuentes en el elemento html, el máximo contenedor.
+
+•em:es relativo a la font-size determinada en el padre; si el padre no tiene definido nada, va a la configuración del navegador.
+
