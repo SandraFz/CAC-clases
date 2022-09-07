@@ -567,3 +567,459 @@ height: 300px;
 padding-left: 150px;
 background: red;
 }
+--------------------
+
+3. TEORÍA DE SELECTORES
+
+Selectores CSS
+
+Los selectores en CSS nos permiten acceder a cualquier elemento o grupo de elementos, para aplicar estilos en una única declaración y como su nombre indica, permiten seleccionar aquellos elementos sobre los que se van a aplicar las reglas de estilo.
+
+Dentro del código CSS podemos usar selectores y aplicarles un conjunto de estilos determinado.
+
+Para ello escribimos el selector y colocamos los atributos de estilos encerrados entre llaves:
+
+selector{
+color:red;
+width:auto;
+}
+
+Existen selectores de lo más variados, que permiten ajustar de una manera muy precisa qué elementos se desea seleccionar.
+
+Los más importantes son los siguientes:
+
+•Etiqueta: sirven par seleccionar todos los elementos de una misma etiqueta o tag HTML.
+
+h1{
+font-size:26px;
+}
+
+•Clase: selecciona todos los elementos de una clase determinada (class de CSS).
+
+.destacado{
+font-weight:bold;
+color:orange;
+}
+
+•Identificador: permiten seleccionar etiquetas individuales por el atributo Id de la etiqueta.
+
+#miformulario{
+border: 1px solid #99c;
+}
+
+•Atributo: permiten seleccionar todas las etiquetas que tengan un atributo dado, o bien un atributo con un valor determinado.
+
+[title]{
+text-decoration:none;
+}
+
+[align="center"]{
+border: 1px solid red;
+}
+
+Además, los selectores se pueden combinar entre sí para conseguir selectores mucho más precisos:
+
+Estos selectores obtienen las imágenes que tengan el atributo alt y los párrafos que tengan la clase "desactivado".
+
+img[alt]{
+border: none;
+}
+
+p.desactivado{
+color: #ddd;
+}
+
+También podemos relacionar los selectores con un espacio y entonces el significado cambia totalmente, ya que se estaría indicando que un elemento tiene que estar dentro de otro.
+
+Este selector aplicaría estilos a todos los elementos <h2> que estén dentro de contenedores que tienen la clase "nota".
+
+.nota h2{
+
+font-weight: normal;
+}
+
+También podemos cambiar los selectores de CSS usando una coma. Entonces estamos indicando que los atributos de estilos debe aplicarse a los dos selectores por separado.
+
+Así estaríamos indicando que queremos aplicar estilos sobre todos los párrafos y todas las divisiones con la clase "bloque".
+
+p, div.bloque{
+margin-bottom: 25px;
+}
+
+En este artículo veremos las distintas formas con las que puedes incluir estilos CSS en una página web, desde lo más específico a los más general.
+
+CSS sirve para definir el aspecto de las páginas web, eso ya debe haber quedado claro. No obstante, hay diferentes niveles a los que podemos aplicar los estilo y es algo que vamos a describir ahora.
+---------------------
+
+
+4. TIPO DE SELECTORES
+
+Tipo de selectores
+
+Nota: en el desarrollo de esta sección de la unidad encontrarás ejercicios que te permitirán comprender mejor y de manera más práctica el tema de selectores. Algunos de estos ejercicios podrán realizarlos con los docentes en los encuentros semanales.
+-------------------
+
+Selector de Tipo
+
+Selecciona todos los elementos que coinciden con el nombre del elemento especificado.
+
+Ejemplo: input se aplicará a cualquier elemento <input>.
+
+El selector de tipo CSS hace coincidir elementos por nombre de nodo. En otras palabras, selecciona todos los elementos del tipo dado dentro de un documento.
+
+/*Todos los <a> elements.*/
+
+a{
+color: red;
+}
+
+Ejercicio
+
+CSS
+
+span{
+background-color: skyblue;
+}
+
+HTML
+
+<span> Acá hay un texto con color de fondo</span>
+<p>Este es su segundo renglón</p>
+<span>Acá la publicidad de Codo a Codo</span>
+---------------
+
+
+Selectores de clase
+
+Selecciona todos los elementos que tienen el atributo de class especificado.
+
+Sintaxis: .classname
+
+Ejemplo: .index seleccionará cualquier elemento que tenga la clase "index".
+
+El selector de clases de CSS hace coincidir los elementos en función del contenido de su atributo.class
+
+/*Todos los elementos de class="espacios"*/
+
+.espacios{
+margin: 2em;
+}
+
+/*All <li> elements with class="espacios"*/
+
+li.espacios{
+margin: 2em;
+}
+
+/*Todos los elementos <li> con una clase que incluya a ambos "espacios" y "elegante"*/
+
+/*For example, class="elegant retro spacious"*/
+
+li.espacios.elegante{
+margin: 2em;
+}
+
+Ejercicio
+
+CSS
+
+.red{
+color: #f33;
+}
+
+.yellow-bg{
+background: #ffa;
+}
+
+.fancy{
+font-weight: bold;
+text-shadow: 4px 4px 3px #77f;
+}
+
+HTML
+
+<p class="red">Este texto es rojo.</p>
+<p class="red yellow-bg">Este texto es rojo con fondo amarillo.</p>
+<p class="red fancy">Este renglón es rojo con sombre.</p>
+<p>Este renglón no tiene ningún formato.</p>
+-----------
+
+
+Selector de ID
+
+Selecciona un elemento basándose en el valor de su atributo id. Solo puede haber un elemento con un determinado ID dentro de un documento.
+
+Sintaxis: #idname
+
+Ejemplo: #toc se aplicará a cualquier elemento que tenga el ID "toc".
+
+El selector de ID de CSS conincide con un elemento en función del valor del id atributo del elemento. Para que el elemento sea seleccionado, su id atributo debe coincidir exactamente con el valor dado en el selector.
+
+/*El elemento con id="demo"*/
+
+#demo{
+border: red 2px solid;
+}
+
+Ejercicio
+
+CSS
+
+#confondo{
+background-color:skyblue;
+
+HTML
+
+<div id="confondo">Este rengón tiene color de fondo azul</div>
+<div>Este renglón no tiene fondo.</div>
+---------------
+
+
+Selector universal
+
+Selecciona todos los elementos. Opcionalmente, puede estar restringido a un espacio de nombre específico o a todos los espacios de nombres.
+
+Sintaxis: *ns|**|*
+
+Ejemplo: *se aplicará a todos los elementos del documento.
+
+El selector universl de CSS (*) coincide con elementos de cualquier tipo.
+
+/*Seleccionar todos los elementos*/
+
+*{
+color: green;
+}
+
+A partir de CSS3, el asterisco se puede utilizar en combinación con namespaces:
+
+ns|*-coincide con todos los elementos en el espacio de nombres ns
+
+*|*- coincide con todos los elementos
+
+|*-coincide con todos los elementos sin ningún espacio de nombres declarado
+
+sintaxis
+
+*{style properties}
+
+El asterisco es opcional con selectores simples. Por ejemplo, *.warning y . warning son equivalentes.
+
+Ejercicio
+
+CSS
+
+*[lang^=en]{
+color:green;
+}
+
+*.warning{
+color:red;
+}
+
+*#maincontent{
+border: 1px solid blue;
+}
+
+HTML
+
+<p class="warnint">
+<span lang="en-us>Esto es verde</span> en una línea roja.
+</p>
+<p id="maincontent" lang="en-gb">
+<span class="warning">Esto es rojo</span> en una línea verde.
+</p>
+
+-----------------
+
+
+Selector de atributo
+
+Selecciona elementos basándose en el valor de un determinado atributo.
+
+Sintaxis: [attr][attr=value][attr˜=value][attr|=value][attr^=value][attr$=value][attr*=value]
+
+Ejemplo:[autoplay] seleccionará todos los elementos que tengan el atributo "autoplay" establecido (a cualquier valor).
+
+El selector de atributos CSS hace coincidir los elementos en funci´no de la presencia o el valor de un atributo determinado.
+
+/*<a>elementos que tengan una */
+
+a[title]{
+color: purple;
+}
+
+/*<a>elementos que vayan a la url "https://ejemplo.com.ar"*/
+
+a[href="https://ejemplo.com.ar"]{
+color: green;
+}
+
+/*<a> ejemplos que apunten a una rl que contenga "ejemplo"*/
+
+a[href*="ejemplo"]{
+font-size: 2em;
+}
+
+/*<a> elementos que su atributo clase contenga la palabra "logo"*/
+
+a[class˜="logo"]{
+padding: 2px;
+}
+
+
+Sintaxis
+
+[attr] Representa elementos con un nombre de atributo de attr.
+
+[attr=value] Representa elementos con un nombre de atributo de attr cuyo valor es exactamente value.
+
+[attr˜=value] Representa elementos con un nombre de atributo de attr cuyo valor es una lista de palabras separadas por espacios en blanco, una de las cuales es exactamente valor.
+
+[attr|=value] Representa elementos con un nombre de atributo de attr cuyo valor puede ser exactamente value opuede comenzar con value seguido inmediatamente por un guión, -(U + 002D). A menudo se utiliza para coincidencias de subcódigo de idioma.
+
+[attr^=value] Representa elementos con un nombre de atributo de attr cuyo valor está prefijado (precedido) por valor.
+
+[attr$=value] Representa elementos con un nombre de atributo de attr cuyo valor tiene el sufijo (seguido) por valor.
+
+[attr*=value] Representa elementos con un nombre de atributo de attr cuyo valor contiene al menos una aparición de valor dentro de la cadena.
+
+[attr operattor value i] Agregar un i (o I) antes del corchete de cierre hace que el valor se compare sin distinción entre mayúsculas y minúsculas (para caracteres dentro del rango ASCII).
+
+[attr operator value s] Agregar un s (o S) antes del corchete de cierre hace que el valor se compare entre mayúsculas y minúsculas (para caracteres dentro del rango ASCII).
+
+
+Ejercicio
+
+Enlaces
+
+CSS
+
+a{ coor: black;
+}
+
+/*Links internos que comienzan con "#"*/
+
+a[href^="#"]{
+background-color: gold;
+}
+
+/* Links con "ejemplo" en la URL */
+
+a[href*="ejemplo"]{
+background-color: silver;
+}
+
+/* Link con la palabra "sinmayusculas" en la URL, sin chequear mayúsculas */
+
+a[href*="insensitive" i]{
+color: blue;
+}
+
+/*Link con la palabra "ConMayusculas" en la URL, con chequeo de mayúscules*/
+
+a[href*="ConMayusculas"]{
+color: orange;
+}
+
+/* Links que terminen en ".org"*/
+
+a[href$=".org"]{
+color: red;
+}
+
+/* Links que comienzan con "https" y terminan en ".org"*/
+
+a[href^="https"][href$=".org"]{
+color: green;
+}
+
+
+HTML
+
+<ul>
+	<li><a href="#interno">Link Interno</a></li>
+	<li><a href="http://ejemplo.com">Link a ejemplo.com</a></li>
+	<li><a href="#sinMayusculas">Sin chequear mayúsculas link</a></li>
+	<li><a href="http://ejemplo.org">Ejemplo org link</a></li>
+	<li><a href="http://ConMayusculas.com">ConMayusculas link</a></li>
+	<li><a href="https://ejemplo.org">ejemplo https org link</a></li>
+</ul>
+-------------------------------------
+
+
+5. ATRIBUTOS GLOBALES HTML Y CSS
+
+Atributos Globales HTML y CSS
+
+Los atributos globales son atributos comunes a todos los elementos HTML y pueden usarse en todos los elementos, aunque pueden no tener efecto en algunos de ellos.
+
+Los atributos globales pueden especificarse en todos los elementos HTML, e incluso en aquellos no especificados en el estándar. Esto significa que cualquier elemento no estándar también debe permitir estos atributos, aún cuando el uso de tales elementos significa que el documento ya no cumplie con HTML5.
+
+Por ejemplo, los navegadores que cumplen HTML5 esconden contenido que se marque como <foo hidden>...</foo>, aún cuando <foo> no es un elemento HTML válido.
+---------------
+
+
+Descripción
+
+A continuación enumeramos atributos que se utilizan en THML y que reciben o interactúan con CSS para cumplir con la norma de maquetado actual.
+
+
+•accesskey
+Proporciona y genera un acceso de teclado para el elemento actual. Este atributo consiste en una lista de caracteres, separadas por espacios. El navegador debe utiliar el primero que exista en la distribución del teclado del ordenador.
+
+El valor del atributo debe constar de un solo carácter imprimible (que incluye caracteres acentuados y otros que pueden ser generados por teclado).
+
+HTML
+
+<p>Para probar presioná una <strong><u>X</u></strong> y estarás dando foco a este botón:</p>
+
+<button accesskey="x">Botón de Ejemplo</button>
+
+CSS
+
+.output{
+font: 1rem 'Fira Sans'. sans-serif;
+letter-spacing: 1px;
+}
+
+Funciona con Alt+Shift+key seleccionada en navegadores Chrome y Mozilla, puede modificarse en algún navegador su forma de llamada.
+
+
+•class
+
+Es una lista de clases del elemento, separadas por espacios. Las clasese permiten a CSS y JavaScript seleccionar y acceder a elementos específicos a través de selectores de clases o funciones, como el método Document.getElementByClassName(), que veremos en detalle y usaremos más adelante.
+
+HTML
+
+<p>Periodista: Gracias por la entrevista.</p>
+<p class="nota editorial">Esta es una nota realizada en 2019.-</p>
+<p>Periodista: Como fueron sus comienzos?.</p>
+<p class="nota">[Podés continuar leyendo esta nota en la pat.20]</p>
+
+CSS
+
+.output{
+font: 1rem 'ira Sans', sans-serif,
+}
+
+.nota{
+font-style: italic;
+font-weight:bold;
+}
+
+.editorial{
+background: rgb(255, 0, 0, .25);
+padding: 10px;
+}
+
+.editorial:before{
+content:'Editor:';
+}
+
+•contenteditable
+Es un atributo enumerado que indica si el elemento puede ser modificable por el usuario. Si es así, el navegador modifica el elemento para permitir la edición. el atributo debe tener uno de los siguientes valores:
+
+true o un valor vacío, el cual indica que el elemento debe ser editable.
+false, el cual indica que el elemento no debe ser editable.
+
