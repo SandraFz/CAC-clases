@@ -40,4 +40,37 @@ Los EM y REM son para las fuentes.
 Se puede pisar la configuración asignando un tamaño a las fuentes en el elemento html, el máximo contenedor.
 
 •em:es relativo a la font-size determinada en el padre; si el padre no tiene definido nada, va a la configuración del navegador.
+------------------------
+POSICIONAMIENTO
 
+propiedad => position(trabaja en conjunto con top, bottom, left y right)
+
+valores:
+•static: por defecto.
+
+•relative: se mueve relativamente al lugar en el que estaba originalmente, según lo que indiquen las propiedades top, bottom, left y right. Se reserva el lugar en el layout. 
+
+•absolute: sale del flujo del documento. Si el padre tiene relative, se mueve relativo al padre; de lo contrario del body. O sea, relativiza al padre si el padre tiene relative. Absolute necesia un ancho siempre?
+
+||||background-image: url("archivo.ext") background-repeat, size, attachment(:fixed resulta en imagen fija debajo del resto) y position.||||
+
+||||background: linear-gradient(to right, regba(), rgba(), url("") ///da como resultado una imagen pisada por un color que puede tener una transparencia.|||||
+
+
+||||íntima relación entre right/bottom y top/left|||||
+
+•fixed: sale del flujo del doc y queda fijo en la pantalla.
+
+•sticky: no pierde su lugar en el flujo del doc. pero cuando hace scroll queda en la posición que le indica el bottom? 
+------------
+z-index: capas cuyo valor representa la prioridad (el más alto queda arriba) y el valor máximo es 10)
+
+||||box modeling||||
+
+•
+•
+•
+•
+•
+•
+•
