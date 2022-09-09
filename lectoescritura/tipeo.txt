@@ -1023,3 +1023,552 @@ Es un atributo enumerado que indica si el elemento puede ser modificable por el 
 true o un valor vacío, el cual indica que el elemento debe ser editable.
 false, el cual indica que el elemento no debe ser editable.
 
+
+HTML
+
+<blockequote contenteditable="true">
+	<p>Edite el contenido de este texto</p>
+</blockquote>
+
+<cite contenteditable="true">--Puede escibir algo aquí</cite>
+
+
+CSS
+
+.output{
+font: 1rem 'Fira Sans', sans-serif;
+}
+
+blockquote{
+background: #eee;
+border-radius: 5px;
+margin: 16px 0;
+}
+
+blockquote p{
+padding: 15px;
+}
+
+cite{
+margin: 16px 32px;
+}
+
+blockquote p::before{
+content:'/201C':
+}
+
+blockquote p::after{
+content: '/201D';
+}
+
+[contenteditable='true']{
+caret-color: red;
+}
+
+Nota: content: '/201C'; y content: '/201D'; se refienre a las dobles comillas.
+
+
+data-*
+
+Son atriutos globales que forman una clase denominados atributos de datos personalizados, y que se caracterizan por permitir intercambiar información entre el HTML en el momento de la carga del archivo HTML.
+
+
+HTML
+
+<h1>Socios del Club</h1>
+
+	<ul>
+		<li data-socio="10784">Juan Carlos, Vitalicio.</li>
+		<li data-socio="97865">Roberto Gomez, Juvenit.</li>
+		<li data-socio="45732">Juana Martinez, Juvenil.</li>
+	</ul>
+
+
+CSS
+
+.output{
+font: 1 rem 'Fira Sans', sans-serif;
+}
+
+h1{
+margin: 0;
+}
+
+ul{
+margin: 10px 0 0;
+}
+
+li{
+position: relative;
+width: 200px;
+padding-bottom: 10px;
+}
+
+li:after{
+content: 'N° Socio: 'attr(data-socio);
+position: absolute;
+top: -22px;
+left: 10px;
+background: black;
+color: white;
+padding: 20x;
+border: 1px solid #eee;
+opacity: 0;
+transition: 0.5s opacity;
+}
+
+li:hover_after{
+opacity: 1;
+}
+
+
+dir
+
+Es un atributo enumerado que indica la direccionalidad del texto del elemento. Puede tener los siguientes valores:
+
+ltr, significa left to right y se utiliza para idionas que se escriben de izquierda a derecha (como el Español).
+
+rtl, significa right to left y se utiliza para idiomas que se escriben de derecha a izquierda (como el Árabe);
+
+auto, permite que el navegador decida utilizando un algoritmo básico, que analiza los caracteres dentro del elemento hasta que encuentra un caracter con una direccionalidad fuerte, a continuación, aplica la direccionalidad a todo el elemento.
+
+
+HTML
+
+<p dir="rtl">Esto está en español pero no está bien alineado.</p>
+
+<p dir="ltr">Esto está en español y está bien alineado.</p>
+
+<hr>
+
+<p>هذه الفقرة باللغة العربية ولكن بشكل خاطئ من اليسار إلى اليمين.</p>
+<p dir="auto">هذه الفقرة باللغة العربية ولكن بشكل خاطئ من اليسار إلى اليمين.</p>
+
+
+CSS
+
+.output{
+font: 1rem 'Fira Sans', sans-serif;
+letter-spacing: 1px;
+}
+
+
+hidden
+
+Es un atributo Booleano que indica si el elemento aún no es, o ya no es, relevante. Por ejemplo, puede usarse para ocultar elementos de la página que no pueden usarse hasta que el proceso de ingreso se complete. El navegador no mostrará ni renderizará dichos elementos.
+
+
+HTML
+
+<p hidden>Este texto está oculto</p>
+
+<p>Este texto se puede ver</p>
+
+
+CSS
+
+.output{
+font: 1 rem 'Fira Sans', sans-serif;
+}
+
+p{
+background: #ffe8d4;
+border: 1px solid #f69d3c:
+padding: 5px;
+border-radius: 5px:
+}
+
+
+id Define un identificador único (ID) el cual debe ser único en todo el documento. Su proósito es identificar el elemento para distinguirlo en programación de JavaScript o definir un estilo CSS.
+
+
+HTML
+
+<p>Este es un párrafo normal.</p>
+
+<p id="realtar">Este párrafo queremos que se note mucho!</p>
+
+
+CSS
+
+.output{
+font: 1rem 'Fira Sans', sans-serif;
+}
+
+#resaltar{
+background: linear-gradient(to bottom, #ffe8d4, #f69d3c);
+border: 1px solid #696969;
+padding: 10px:
+border-radius: 10px:
+box-shadow: 20x 20x 10x black;
+}
+
+#resaltar:before{
+content: "i";
+margin-right: 5px;
+}
+
+
+lang
+
+Participa en la definicón del lenguaje del elemento, refiriéndonos exclusivamente al idioma en que s on escritos estos elementos. El tag contiene un solo valor en el formato definido.
+
+
+HTML
+
+<p>Párrafos en diferentes idiomas.</p>
+
+<p lang="en-GB">This paragraph is defined as British English.</p>
+
+<p lang="fr">Ce paragraphe est défini en francais.</p>
+
+
+CSS
+
+.output{
+font: 1rem 'Fira Sans', sans-serif;
+}
+
+p::before{
+padding-right: 5px;
+}
+
+[lang="en-GB"]::before{
+content: url('imagen de una bandera british.flag.png');
+}
+
+[lang="fr"[::before{
+content: url('imagen de una bandera french-flag.png');
+}
+
+PUede consultarse la lista internacional de idiomas definidos por región en:
+
+https://www.iana.org/assignments/language-subtag-registy/language-subtag-registry
+
+
+
+style
+
+Contiene declaraciones de estilo CSS para ser aplicadas al elemento.
+
+Siempre es recomendado que los estilo sean definidos en archivo/s separado/s. Este atributo y el elemento <style> tienen el objetivo principal de permitir un estilizado rápido. por ejemplo con fines de testeo o pruebas.
+
+
+HTML
+
+<div style="background: #ffe7e8; border: 2px solid #e66465;">
+
+<pstyle="margin: 15px; line-height: 1.5; text-align: center;">
+
+Esta es la primer línea del párrafo y ahora un salto de línea<br>
+Esta segunda línea siguesiendo aplicada por el estyle aunque <b>esto debe hacerse con CSS.</b></p>
+</div>
+
+
+CSS
+
+.output{
+font: 1rem 'Fira Sans', sans-serif;
+}
+
+
+tabindex
+
+Es un atributo que recibe un parámetro con un número entero y que indica si el elemento puede obtener el foco del cursor y si debe participar de la navegación secuencial con el teclado. Si se cumplen estas condiciones, también determina en qué posición estára ordenado según la tabulación.
+
+
+Puede tomar diferentes valores:
+
+un valor negativo significa que el elemento debe ser focuseable, pero no debe ser alcanzado vía la navegación secuencial del teclado.
+
+Un cero significa que el elemento puede obtener el foco y alcanzable vía la navegación secuencial del teclado, pero el orden relativo es definido por la convención de la plataforma.
+
+Un valor poditivo que seignifica que puede obtener el foco vía la navegación secuencial del teclado, el orden relativo es definido por el valor del atributo y siguie la secuencia en ordne ascendente según el valor del tabindex.
+
+Si varios elementos comparten el mismo tabindex, su orden relativo sigue su posición en el documento.
+
+
+HTML
+
+<p>Hacé click en cualquiera de esto scomponentes.</p>
+
+<label>Primer elemento:<input type="text"></label>
+
+<div tabindex="0">Segundo elemento</div>
+
+div>Elemento no indexado</div>
+
+<label>Tercer elemento<input type="text"></label>
+
+
+CSS
+
+.output{
+font: 9rem 'Fira Sans'. sans-serif;
+}
+
+p{
+font-style: italic;
+}
+
+div, label{
+display: block;
+letter-spacing: 5px;
+margin-bottom: 1rem;
+}
+
+div:focus{
+font-weight: bold;
+}
+
+
+
+title
+
+Contiene un texto que representa información de asesoramiento en relación al elemento al que pertenece. Dicha información puede típicamente, pero no necesarioamente, presentarse al usuario como un tooltip.
+
+
+HTML
+
+<p>Estamos viendo las siguientes tecnologías:
+<abbr title="Hypertext Markup Language">HTML</abbr>,
+<abbr title="Cascading Stylesheets">CSS</abbr>, and JavaScript.</p>
+
+
+CSS
+
+.output{
+font: 1rem 'Fira Sans', sans-serif;
+}
+
+
+translate
+
+Es un atributo enumerado que se utiliza par aespecificar si los valores de los atributos de un elemento son traducidos cuando su página es localizada, o si hay que dejarlos sin cambios. Puede tener los siguientes valores:
+
+cadena vacía y "yes", indica que el elemento será traducido.
+"no", indica que el elemento no será traducido.
+
+
+Ejemplo:
+
+En este ejemplo, el atributo se utiliza para pedir a las herramientas de traducción que no traduzcan la marca de la empresa en el pie de página.
+
+
+<head>
+	<meta http-equiv="Content-Language" content="es"/>
+</head>
+<html>
+	<body>
+	esta página está en idioma español
+	<footer>
+		<small>C 2020<code translate="no">Brand Name</span></code>
+	</footer>
+	</body>
+
+---------------------------
+
+2.Elementos de bloque
+
+Elementos de bloque
+
+Las etiquetas de bloque intenta ocupar el 100% del ancho del sitio.
+
+Visualmente generan un salto de línea. Esto se da porque, al ocupar todo el ancho disponible, no dejan espacion para que entre otro elemento. Las etiquetas <div> son un ejemplo de etiquetas de bloque muy utilizadas ya que permiten generar divisiones en nuestro sitio.
+
+<div>Mi texto</div>
+<div>Mi otro texto</div>
+
+div{
+background-color:green;
+}
+
+Elementos en línea
+
+Las etiquetas en línea ocupan solo el ancho de su contenido y no cambian ladistribución del sitio. Es decir, no van a generar saltos de línea por defecto, ya que su ancho va a estar determinado por el contenido que lleve dentro.
+
+<span>elemento 1 en l ínea</span>
+
+<span>elemento 2 en línea</span>
+
+span{
+background-color:red;
+}
+
+-------------------
+
+
+Tipos de elementos
+
+inline
+
+Define un elemento con comportamiento en línea, y no recibe algunas propiedades del modelo de caja.
+
+block
+
+Define un elemento con comportamiento de bloque, y puede recibir  propiedades del modelo de caja.
+
+inline-block
+
+Define un elemento con comportamiento de semi-bloque. PUede recibir propiedades del modelo de caja, y también comparte propiedades de elementos de línea.
+
+none
+
+Oculta a un elemento en la visual. No lo elimina de la estructura de HTML, sólo desaparece de la vista. Mediante la propiedad display de CSS podemos cambiar la disposicón del elemento que queramos. Los valores que recibe son bock, inline, inline-block y none.
+
+<span>Elemento span</span>
+
+span{
+background-color: green;
+display: block;
+}
+
+--------------------
+
+3. Modelo caja
+
+Modelo de Caja
+
+Es el comportamiento que hace que todos los elementos de un documento HTML se represente mediante cajas rectangulares. De este modo, permite asignarle propiedades a los elementos, y así afectar el alto, el ancho, el margen, etc..
+
+Este modelo condiciona el diseño de todas las páginas web. Las propiedades de modelo de caja solo aplican a etiquetas de bloque
+
+
+Propiedad Widht
+
+Si un elemento no tiene declarada la propiedad width, al ancho será igual al 100% de su padre contenedor, siempre y cuando  ése sea un elemento de bloque.
+
+Para asignarle valor a esta propiedad, lo podemos hacer usando la medida de porcentaje (%) ó píxeles (px).
+
+div{
+width: 120px:
+}
+
+
+Propiedad Height
+
+Si un elemento no tienen declarada la propiedad height, el alto será igual a la altura que le proporciones su contenido interno. Sea un elemento de bloque o de línea.
+
+Para asignarle valor a esta propiedad, lo podemos hacer usando la medida píxeles (px).
+
+div{
+height: 130px:
+}
+
+div{
+background-color: blue;
+width: 120px;
+height: 130px;
+}
+
+
+Propiedad padding
+
+Hace referencia al margen interior del elemento. Para asignarle valor a esta propiedad, lo podemos hacer usando la medida píxeles (px), indicando 1 valor para los 4 lados de la caja. También podemos hacerlo con 2 valores, el primero va a indicar el padding de arriba y abajo, y el segundo el da la izquierda y la derecha.
+
+div{
+padding: 12px;
+}
+
+div{
+padding: 22px 30px;
+}
+
+div{
+background-color: blue;
+width: 120px;
+height: 130px;
+padding: 12px;
+}
+
+
+Propiedad border
+
+Hace referencia al borde del elemento. Para asignarle valor a esta propiedad, lo hacemos definiendo el estilo de línea, su tamaño y su color. El estilo de línea puede ser solid, dotted, dashed o double.
+
+div{
+border: solid 3px green;
+}
+
+div{
+background-color: blue;
+width: 120px;
+height: 130px;
+padding: 12px;
+border: solid 3px green;
+}
+
+
+Propiedad margin
+
+Hace referencia al margen del elemento. Sirve para separar una caja de la otra. Para asignarle valor a esta propiedad, lo podemos hacer usando la medida píxeles (px), indicando 1 valor para los 4 lados de la caja. También podemos hacerlo con 2 valores, el primero va a indicar el padding de arriba y abajo, y el segundo el de la izquierda y la derecha.
+
+div{
+margin: 30px;
+}
+
+div{
+background-color: blue;
+width: 150px;
+height: 130px;
+padding: 12px;
+border: dotted 3px green;
+margin: 30px;
+}
+
+
+El ancho total de la caja es igual a la suma de su width, padding y border. Además cuenta con 60px de margin
+
+
+Propiedad box-sizing
+
+Esta propiedad permite que el modelo de caja sea más fácil de usar, porque descuenta automáticamente del ancho y alto lo que agregamos en relleno y borde. El único valor que se sigue sumando es el del margin. 
+
+div{
+background-color: blue;
+width: 150px;
+height; 130px;
+padding: 12px;
+border: solid 3px green;
+margin: 30px;
+box-sizing: border-box;
+}
+
+En esta caso el bloque va a tener un ancho total de 15px incluyendo su border, padding y contenido. Va a tener 6px de border, 24px de padding y automáticamente su contenido va a tomar 120px de ancho haciendo un total de 150px.
+--------------------------
+
+
+4.Flotación
+
+Flotación
+
+Los sitios web tienen un flujo natural de disposición. Por defecto, los elementos se van posicionando uno por sobre el otro, como si fueran cajas.
+
+Mediante la propiedad float, le estamos otorgando a un elemento la habilidad de flotar. Es decir, salirse de ese flujo natural del sitio, y decidir hacia dónde queremos que sese elemento flote.
+
+Los valores que recibe son: left, right, none y inherit.
+
+
+Cómo flotar
+
+Es importante determinar un ancho para nuestras cajas. De esta forma, vamos a poder controlar cuántas de ellas entran en una misma línea.
+
+Si la suma de los anchos de las cajas supera el ancho del contenedor padre, éstas no van a entrar en la misma línea, sin importar que tengan asignada la propiedad de float.
+
+
+Cómo se comportan 
+
+Por más de que floten, si los anchos de las cajas superan el ancho del contenedor, bajarán un renglón. Si cuidamos los tamaños podemos tener tantas cajas en una línea como deseeomos.
+
+Es clave usar anchos en porcentajes para poder hacer cálculos sencillos.
+
+Los elementos por debajo del elemento al que le asignamos la flotación, asumen que éste no existe más y ocupan el lugar vacío que el elemento flotante dejó. No sucede lo mismo si los elementos que le siguien son de texto.
+
+La forma más sencilla de "limpiar" flotaciones es usando la propiedad clear: both. Basta con aplicarle dicha propiedad al elemento que se encuentra por debajo de las cajas flotantes, para que éste conserve su posición.
+
+
+Contenedor padre
+
+Al asignarle la propiedad float a un elemento, éste va a salir del fujo natural del sitio web. Por ende, saldrá también del flujo de su contenedor padre, quien intentará ocupar ese lugar "vacío".
+
+La forma de controlar este comportamiento es asignándole al padre propiedad overflow: hidden.
