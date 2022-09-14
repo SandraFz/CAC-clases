@@ -1572,3 +1572,288 @@ Contenedor padre
 Al asignarle la propiedad float a un elemento, éste va a salir del fujo natural del sitio web. Por ende, saldrá también del flujo de su contenedor padre, quien intentará ocupar ese lugar "vacío".
 
 La forma de controlar este comportamiento es asignándole al padre propiedad overflow: hidden.
+------------------------
+
+
+5. Flexbox
+
+Flexbox
+
+Es una metodología de CSS que permite maquetar un sitio utilizando una estructura de filas y columnas.
+
+CSS (Cascade Style Sheet) nace en el año 1994, y desde ese entonces fueron pocas las nuevas implementaciones que recibió el lenguaje.
+
+Recién a mediados del 2008 se empieza a discutir la posibilidad de implementar una nueva forma de maquetación, que implique una estructura de cajas flexibles.
+
+En el año 2011 salió a la luz el primer borrador con las especificaciones para implementar Flexbox. Al ser una técnica nueva, los navegadores en su versión comercial todavía no le aportaban suficiente soporte.
+
+La W3C acpetó y oficializó la implementación de Flexbox en el lenguaje. Los desarrolladores recibieron esto como un cambio muy positivo, entendiendo que les proporcionaba más libertad que el posicionamiento de flotación.
+
+Cuando usamos flotación para posicionar un elemento en un sitio web, el mismo deja de formar parte del flujo natural de la estructura de elementos. Esto genera solapamientos de cajas y estructuras difíciles de mantener.
+
+Flexbox porpone un único flujo, en el que dispondremos de los elementos con mayor libertad para distribuir, redimensionar y reordenar cad uno de ellos en función de ese flujo de trabajo.
+
+En el 2015 fue oficialmente adoptado por las versiones comerciales de todos los navegadores web. Actualmente tiene un soporte de más del 98% en las distintas versiones de cada uno de ellos.
+----------------
+
+
+Estructura Básica de Flexbox
+
+Esta metodología propone una estructura basada en el uso de un contenedor padre (Flex-container) y sus elementos hijos (Flex-items).
+
+Para empezar a trabajar con flexbox tenemos que definir un flex-container. Para eso usamos la propiedad con el valor. De esta forma estamos habilitando un contexto flex para trabajar con los hijos directos del elemento. 
+
+.contenedor-padre{
+display:flex;
+}
+
+Estructura:
+
+Cuando hablamos de un flex-container, hablamos de un elemento HTML que contiene a uno o más elementos. A estos elementos anidados, los llamamos flex-items.
+
+Es en el flex-container en donde configuramos la mayoría de las propiedades flex.
+
+Flex-wrap
+
+Por defecto, los elementos hijos de un contenedor flex, van a tratar de entrar todos en una misma línea. Para aclararle al contenedor que debe respetar el ancho definido de sus hijos, usamos la propiedad con el valor. 
+
+.contnendor-padre{
+display: flex;
+flex-wrap: wrap;
+}
+
+Un flex-item, a su vez, puede convertirse en un flex-container.
+
+Para eso, sólo hace falta asignarle la regla desplay: flex, para que así sus elementos hijos pasen a ser flex-items.
+-----------------
+
+
+Los ejes
+
+Flexbox trabaja con dos ejes para desarrollar todo su flujo enterno: el eje X y el eje Y.
+
+Dentro de un flex-container, tanto el eje x como el eje y toman otros nombres. Cuando trabajamos en un flujo flex hablamos del main axis y el cross axis.
+
+El concepto de trabajo de flexbox está basado en una sola dirección, es decir, los elementos se distribuyen o en filas orizontales o en columnas verticales.
+
+Definiendo el eje principal de nuestro contenedor flex, estamos determinado el flujo que tendrán los elementos dentro dle contenedor. Los mismos se ordenarán en base al eje que definamos.
+
+flex-direction
+
+Con esta propiedad definimos el main axis del contenedor (ejeprincipal), que puede ser tanto horizontal como vertical. El cross axis (eje transversal), será la dirección perpendiclar al main axis.
+
+flex-direction: row
+
+Los ítems se disponene en el eje x, de izquierda a derecha.
+
+Si no le aclaramos la propiedad flex-direction al contenedor, row es el valor por defecto.
+
+flex-direction: row-reverse
+
+Los ítems se disponen en el eje x, de derecha a izquierda.
+
+flex-direction: column
+
+Los ítems se disponen en el eje y, de arriba hacia abajo.
+
+flex-direction: column-reverse
+
+Los ítems se disponen en el eje y, de abajo hacia arriba.
+
+Flexbox nos da dos propiedades para alinear fácilmente los elementos tanto a través del main axis como del corss axis.
+
+justify-content
+
+Con esta propiedad alineamos los ítems a lo largo del main axis. Si es horizontal, se alinearán en función del la fila. Si es vertical, se alinearán en función de la columna.
+
+justify-content: flex-start
+
+Los ítems se alinean respecto del inicio del main axis que hayamos definido. Si no le aclaramos el justify-content al contenedor, flex-start es el valor por defecto.
+
+justify-content: flex-end
+
+Los ítems se alinean respecto del final del main axis que hayamos defindo.
+
+justify-content: center
+
+Los ítems se alinean en el centro del main axis.
+
+justify-content: space-between
+
+Los ítems se distribuyen de manera uniforme. El primer ítem será enviado al inicio del main axis, el último ítem será enviado al final del main axis.
+
+justify-content: space-arond
+
+Los ítems se distribuyen de manera uniforme, con igual espacio alrededro de cada uno.
+
+El primer ítem tendrá una unidad de espacio contra el borde del contenedor, y dos unidades de espacio contra el siguiente ítem, porque el mismo tiene su propio espacio que se aplica. Lo mismo sucede con el último ítem.
+
+align-items
+
+Con esta propiedad alineamos los ítems a lo largo del cross axis. Si no aclaramos esta propiedad, el valor por defecto es stretch.
+
+align-items: stretch
+
+Los ítems se ajustan para abarcar todo el contenedor. Si el corss axis es vertical, se ajustan en función de la columna. Si el cross axis es horizontal, se ajustan en función de la fila.
+
+align-items: flex-start
+
+Los ítems se alinean al inicio del eje transversal.
+
+align-items: flex-end
+
+Los ítems se alinean al final del eje transversal.
+------------------
+
+
+6.PSEUDO-CLASES
+
+Pseudo-clases
+
+Una pseudoclase CSS es un palabra clave que se añade a los selectores y que especifica un estado especial del elemento seleccionado. Por ejemplo, :hover aplicará un estilo cuando el usuario haga hover sobre el elemento especificado por el selector.
+
+div:hover{
+backgroun-color: #F89B4D;
+}
+
+Las pseudoclases, junto con los pseudoelementos, permiten aplicar un estilo a un elemento no sólo en relacón con el contenido del árbol de documento, sino también en relación a factores externos como el historial del navegador (:visited, por ejemplo), el estado de su contenido (como :checked en algunos elementos de formulario), o la posición del ratón (como :hover que permite saber si el ratón está encima de un elemento o no).
+
+Ejemplo: 
+
+https://youtu.be/VIPLT7K0Dvk
+
+Nota: en llugar de usar pseudoclases, pseudo-elements puede usarse para dar estilo auna parte específica de un elemento.
+
+--------------------
+
+7.SELECTORES AVANZADOS
+
+Los selectores descendientes
+
+El combinador de un espacio en blanco (que se supone que representan un espacio, o mejor dicho uno o más espacios en blanco) combina dos selectores tales que el selector combinado incluye sólo los elementos que coinciden con el segundo selector para losque hay un elemento ancestro que coincide con el primer selector. Los selectores descendientes son similares a selectores hijos, pero no requieren que la realción entre los elementos coincidentes ser estrictamente entre padres e hijos.
+
+Sintaxis
+
+selector1 selector2 {propiedades de estilos}
+
+Ejemplo
+
+span {backgroun-color:white;}
+
+div span{background-color:blue;}
+
+<div>
+	<span>Span1.
+		<span>Span2.</span>
+	</span>
+</div>
+<span>Span3.</span>
+
+
+La versión CSS 3 incluye todos los selectores de CSS 2.1 y añade otras decenas de selectores, pseudoclases y pseudo-elementos.
+
+CSS 3 añade tres nuevos selectores de atributos:
+
+•elemento[atributo^="valor"], selecciona todos los elementos que disponene de ese atributo y cuyo valor comienza exactamente por la cadena de texto indicada.
+
+•elemento[atributo$="valor"], selecciona todos los elementos que disponene de ese atributo y cuyo valor termina exactamente por la cadena de texto indicada.
+
+•elemento[atributo*="valor"], selecciona todos los elementos que disponen de ese atributo y cuyo valor contiene la cadena de texto indicada.
+
+De esta forma, se pueden crear reglas CSS tan avanzadas como las siguientes:
+
+/*Selecciona todos los enlaces que apuntan a una dirección de correo electrónico*/
+
+a[href^="mailto:"]{...}
+
+/*Selecciona todos los enlaces que apuntan a una página HTML*/
+
+a[href$=".html"]{...}
+
+/*Selecciona todos los títulos h1 cuyo atributo tittle contenga la palabra "capítulo"*/
+
+h1[title*="capítulo"]{...}
+
+Otro de los nuevos selectroes de CSS 3 es el "selector general de elementos hermanos", que generaliza el selector adyascente de CSS 2.1. Su sintaxis es elemento1 ~ elemento2 y selecciona el elemento2 que es hermano de elemento1 y se encuentra detrás en el código HTML. En el selector adyascente la condición adicional era que los dos elementos debían estar uno detrás de otro en el código  HTML, mientras que ahora la única condición es que uno está detrás de otro.
+
+Si se considera el siguiente ejemplo:
+
+h1 + h2 {...} /*selector adyascente*/
+
+h1 ~ h2 {...} /*selector general de hermanos*/
+
+<h1>...</h1>
+
+<h2>...</h2>
+
+<p>...</p>
+
+<div>
+
+<h2>...</h2>
+
+</div>
+
+<h2>...</h2>
+
+El primer selector (h1 + h2) sólo selecciona el primer elemento <h2> de la página, ya que es el único que cumple que es hermano de <h1> y se encuentra jsuto detrás en el código HTML.
+
+Los pseudo-elementos de CSS 2.1 se mantienen en CSS 3, pero cambia su sintaxis y ahora se utilizan :: en vez de : delante del nombre de cada pseudo-elemento:
+
+::first-line, selecciona la primera línea del texto de un elemento.
+
+::first-letter, selecciona la primera letra del texto de un elemento.
+
+::before, selecciona la parte anterior al contenido de un elemento para insertar  nnuevo contenido generado.
+
+::after, selecciona la parte posterior al contenido de un elemento para insertar nuevo contenido generado.
+
+CSS 3 añade además un nuevo pseudo-elemento:
+
+::selection, selecciona el texto que ha seleccionado un usuario con su ratón o teclado.
+
+Las mayores novedades de CSS 3 se producen en las pseudo-clases, ya que se añaden 12 nuevas, entre las cuales se encuentran:
+
+elemento:nth-child(número), selecciona el elemento indicado pero con la condición de que sea el hijo enésimo de su padre. Este selectro es útil para seleccionar el segundo párrafo de un elemento, el quiento de una lista, etc..
+
+elemento:empty, selecciona el elemento indicado pero cn la condición de que no tengo ningún hijo. La condición implica que tampoco puede tener ningún contenido de texto.
+
+elemento:first-child y elemento:last-child, seleccionan los elementos indicados pero con la condicón de que sean respectivamente los primeros o últimos hijos de su elemento padre.
+
+elemento:nth-of-type(número), selecciona el elemento indicado pero con la condición de que sea el enésimo elemento hermano de ese tipo.
+
+elemento nth-last-of-type(número), idéntico al anterior pero el número indicado se empieza a contar desde el último hijo hacia el primero.
+
+Algunas pseudo-clases como:nth-child(número) permiten el uso de expresiones complejas para realizar selecciones avanzadas.
+
+li:nth-child(2n+1){...}/*selecciona todos lo elemento simpares de una lista*/
+
+li:nth-child(2n){...}/*selecciona todos los elementos pares de una lista*/
+
+/*Las siguientes reglas alternan cuatro estilos diferentes para los párrafos*/
+
+p:nth-child(4n+1){...}
+
+p:nth-child(4n+2){...}
+
+p:nth-child(4n+3){...}
+
+p:nth-child(4n+4){...}
+
+Empleando la pseudo-clase :nth-of-type(número) se pueden crear reglas CSS que alternen la posición de las imágenes en función de la posición de la imagen anterior.
+
+img:nth-of-tye(2m+1){float:right;}
+
+img:nth-of-type(2n){float:left;}
+
+Otro de los nuevos selectores que incluirá CSS 3 es :not(), que se puede utilizar para seleccionar todos los elementos que no cumplen con la condición de un selector:
+
+:not(p){...}/*selecciona todos los elementos de la página que no sean párrafos*/
+
+:not(#especial){...}/*selecciona cualquier elemento cuyo natributo id no se "especial"*/
+
+Aunque todavía faltan muchos años hasta que la versión CSS 3 sustituya a la actual versión CSS 2.1, los navegadores que más se preocupan por los estándares (Opera, Safari y Firefox) incluyen soporte para varios o casi todos los selectores de CSS 3.
+----------------
+
+
+Empieza CSS unidad 3
