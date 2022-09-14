@@ -54,7 +54,7 @@ valores:
 
 ||||background-image: url("archivo.ext") background-repeat, size, attachment(:fixed resulta en imagen fija debajo del resto) y position.||||
 
-||||background: linear-gradient(to right, regba(), rgba(), url("") ///da como resultado una imagen pisada por un color que puede tener una transparencia.|||||
+||||background: linear-gradient(to right, rgba(), rgba(), url("") ///da como resultado una imagen pisada por un color que puede tener una transparencia.|||||
 
 
 ||||íntima relación entre right/bottom y top/left|||||
@@ -66,6 +66,24 @@ valores:
 z-index: capas cuyo valor representa la prioridad (el más alto queda arriba) y el valor máximo es 10)
 
 ||||box modeling||||
+--------------------------
+
+
+
+FLEXBOX
+
+Al aplicar la propiedad flex al padre, los items se convierten en línea.
+
+Por defecto trae propiedades: flow-direction-row(right), flex-direction-column(bottom?), flex-wrap(nowrap)
+
+flex-wrap combina row y column
+justify-content(x)=>(y) solo funciona cuando está wrap
+align-item(y)=>(x)
+En este orden cuando es una fila y alrevés cuando es columna
+
+hijos
+align-self(x)
+align-item(y)
 
 •
 •
