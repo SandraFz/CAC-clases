@@ -50,7 +50,7 @@ valores:
 
 •relative: se mueve relativamente al lugar en el que estaba originalmente, según lo que indiquen las propiedades top, bottom, left y right. Se reserva el lugar en el layout. 
 
-•absolute: sale del flujo del documento. Si el padre tiene relative, se mueve relativo al padre; de lo contrario del body. O sea, relativiza al padre si el padre tiene relative. Absolute necesia un ancho siempre?
+•absolute: sale del flujo del documento. Si el padre tiene relative, se mueve relativo al padre; de lo contrario del body. O sea, relativiza al padre si el padre tiene relative. Absolute necesia un ancho siempre? Se pierde el espacio en el que originalmente estaba el elemento.
 
 ||||background-image: url("archivo.ext") background-repeat, size, attachment(:fixed resulta en imagen fija debajo del resto) y position.||||
 
@@ -84,11 +84,24 @@ En este orden cuando es una fila y alrevés cuando es columna
 hijos
 align-self(x)
 align-item(y)
+-----------------
 
-•
-•
-•
-•
+ÍCONOS, TRANSICIONES Y ANIMACIONES
+
+•fontAWSOME: se linkea en el head en una etiqueta script. El link lo envían al email.
+O mejor. Se descarga la librería y linkea las hojas que tienen las clases que quiero usar.
+Cuando dice .min.css es mejor porque está minificado el cual hace que sea más eficiente.
+
+•lordicon: íconos animados. Se elige "embeber en html." Se pega tal cual las etiquetas que da en el lugar que quiero usar. El script se puede poner en donde uso el ícono o bien en el head o al final del body.
+
+•transform. Valores:translateY(), translateX(), rotate(deg), scale(n,n), skew(deg, deg)
+
+•:hover. transition (para que no sea brusco el movimiento, depende de un disparador: click, hover, etc.). Va en el elemento original (en el que no tiene :hover). 
+transition: transform 2s; o sea, los segundos.
+
+
+pag: Remixicon
+•animaciones: no depende ningún disparador.
 •
 •
 •

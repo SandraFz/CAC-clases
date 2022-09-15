@@ -1856,4 +1856,16 @@ Aunque todavía faltan muchos años hasta que la versión CSS 3 sustituya a la a
 ----------------
 
 
-Empieza CSS unidad 3
+2.ANIMACIONES EN CSS
+
+Animaciones con CSS
+
+A lahora de trabajar con animaciones se vuelve importante determinar un trigger o disparador, que será la acción que determine el inicio de una animación. Ejemplos comunes de trigger son: pasar el mouse por encima de un elemento, hacer click, hacer scroll, recargar la página, entre muchas otras acciones.
+
+En CSS existen sentencias que nos permiten "capturar" dichas acciones en el navegador o determinadas secciones dentro de un elemento HTML, perimitiendo así establecer estilo mediante selectores css especiales en función de su estado o de acciones que ocurren con repecto a los mismos.
+
+A estos selectores especiales se los divide en dos grupos, los cuales son pseudo-clases y pseudo-elementos.
+
+Pseudo-clases:
+
+Harán referencia principalmente a estados o acciones comunes del navegador, así como determinado elemento/s de entre una lista en la estructura HTML, esto nos permitirá identificar a los mismos para establecer reglas CSS que den estilos a elementos en función de esas acciones o eventos. Por ejemplo, que un botón se ilumine al pasar por encima con el mouse, que una slider o switch se desplace al otro lado al hacer click sobre el mismo, etc..
