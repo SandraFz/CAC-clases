@@ -1869,3 +1869,239 @@ A estos selectores especiales se los divide en dos grupos, los cuales son pseudo
 Pseudo-clases:
 
 Harán referencia principalmente a estados o acciones comunes del navegador, así como determinado elemento/s de entre una lista en la estructura HTML, esto nos permitirá identificar a los mismos para establecer reglas CSS que den estilos a elementos en función de esas acciones o eventos. Por ejemplo, que un botón se ilumine al pasar por encima con el mouse, que una slider o switch se desplace al otro lado al hacer click sobre el mismo, etc..
+
+Algunos ejemplos
+
+:visited:hover:first-child
+
+Pseudo-elementos:
+
+Harán refernecia a partes específicas en relación a la estructura HTML o a secciones dentro de un elemento especificado.
+
+Algunos ejemplos:
+
+::before ::after ::first-letter
+
+
+En algunas ocasiones necesitamos realizar animaciones en nuestro sitio o proyecto web de una manera rápida y sencilla, para esto les presento a Animate.css, un librería CSS3 para crear animaciones fácilmente.
+
+Aprenderemos a trabajar con ella, primero descargamos la librería CSS3 del siguiente link: https://animate.style/, dando click en el enlace "Download Animate.css".
+
+Una vez hecho esto ya podremos mostrar diferentes tipos de animaciones en nuestra página web, para esto, dentro del elemento afecado debemos agregar algunos valores en la propiedad "class" como los siguientes:
+
+animated: para identificar el elemento a animar.
+
+infinite: para que la animación siga un bucle infinito.
+
+animación (Ej. shake): la animación como tal, la nimación "shake" puede reemplazarse por cualquiera de las más de 70 animaciones que nos ofrece la librería. 
+
+Podés ver un ejemplo de animaciones en el video que se encuentra en el listado multimedia.
+
+De esta manera hemos visto que con el uso de esta librería podemos crear animaciones sin necesidad de JavaScript o cnocimientos de CSS3, lo recomendable es aprender CSS3 y conocer el funcionamiento de estas animaciones por un tema de formación, optimización y para crear nuestras propias animaciones.
+---------------
+
+
+3.DISEÑO RESPONSIVE
+
+Diseño Responsive
+
+Hasta hace algunos años era imprescindible utilizar el ordenador para navegar por internet; ahora en cambio, es muy probable que la mayoría de accesos se realicen desde plataformas mobile o móviles. Hoy en día todos llevamos un smartphone encima y nos comunicamos y buscamos información constanemente, por lo que se ha convertido en algo esencial optimizar los sitios web para un buen uso en estos tipos de dispositivos.
+
+Si no sabes si tu sitio Web está optimizado para móviles, existe una herramienta online para que puedas comprobarlo.
+
+Solo tienes que hacer click en el enlace (enlace) en introducir la URL principal de tu sitio Web; en pocos segundos, te indicará si la página tiene un diseño optimizado o no.
+
+De manera general podemos distinguir dos formas de optimización: "Responsive Web Design" y "Mobile First Web".
+
+¿En qué se diferencian Responsive Web Design y Mobile First Web?
+
+Aunque van da la mano, hay que diferenciar entre Responsive WebDesign o, lo que viene a ser lo mismo, Diseño Web Adaptativo, y Mobile First Web. Como su propio nombre indica, el Diseño Web Adaptativo es aquel capaz de adaptarse a diferentes tamaños y dispositivos, es decir, dependiendo de qué dispositivo sea en el que se cargue, tu sitio web se verá más accesible y fácil de usar. Sin embargo, lo que propone el término Mobile First es empezar a diseñar un sitio web desde la resolución más pequeña para ir creciendo y adaptando el contenido y el diseño a la resolución más grande.
+
+Hasta ahora todos los sitios web han sido diseñados solo para equipos de sobremesa y el proceso de navegar por las webs en los teléfonos móviles era bastante incómodo, debido a una mala experiencia de usuario. Sin embargo, las tecnologías están cambiando y el principo de Mobile First se está convirtiendo en un concepto cada vez más extendido.
+----------------------
+
+
+Responsive vs. Mobile first
+
+¿Qué conseguimos con el principio Mobile First?
+
+Si empezamos maquetando un sitio web para la versión de escritorio y un usuario se conecta desde un dispositivo, primero cargará todo el contenido utilizado en la primera versión, hasta cargar los recursos necesarios para móvil. Por lo tanto, lo más recomendable es empezar a maquetar para la versión más pequeña, siempre optimizando el contenido que se utilice (hojas de estilos, ficheros, imágenes...), así conseguiremos que el usuario no carge más recursos de los necesaios, reduciendo el tiempo de carga del sitio web.
+
+La clave es conocer el tamaño, resolución o posibles orientaciones de las pantallas en las que necesitmos mostrar nuestro contenido basándonos en los usuarios que tenemos como objetivo.
+
+Los pilares principales del Responsive son las Media Queries y la etiqueta Viewport.
+-----------------
+
+
+Media Queries
+
+Las Media Queries son las herramientas fundamentales que se encargan de aplicar diferentes estilos para diferentes dispositivos, y proporcionan la mejor experiencea para cada tipo de usuario que se encuentra navegando en tu sitio web. Nacen de la necesidad de crear breakpoints o puntos de ruptura en la hoja de estilos CSS que tengas predefinida. Permite que tu sitio Web sea manejable desde diferentes dispositivos.
+
+
+Breakpoints
+
+Si no te ha quedado muy claro, las Media Queries son un módulo de CSS que sirve para detectar el tipo de dispositivo por el que se está navegando; de esa manera el contenido consigue adaptarse al dispositivo concreto a través de las distintas condiciones que tú mismo asignas, como pueden ser ancho y alto de la ventana del navegador, ancho y alto del dispositivo, la resolución del dispositivo o la orientación de la pantalla. Son declaraciones lógicas que actúan dependiendo de las condiciones específicas que tú mismo declaras en la hoja de estilos. Si la premisa se cumple, se aplicarán los estilos definidos; si no , los omitirá por completo.
+
+
+Hay dos formas de implementarlas:
+
+La primera opción para poner en funcionamiento las Media Queries es a través del atributo media de la etiqueta <link>. Como sabemos, esta etiqueta es la que se usa para enlazar una hoja de estilo con un documento HTML. En ese enlace podemos especificar condiciones que deben cumplirse para que los estilos enlazados se apliquen. Debería ir dentro del <head> de nuestro HTML.
+
+Recuerda que la etiqueta <link> tiene esta forma:
+
+<link rel="stylesheet" href="estilos.css">
+
+Pues ahora simplemente agregamos el atributo media indicando la condición que se debe cumplir para que estoy estilos se apliquen:
+
+<link rel="stylesheet" media="only screen and (max-width: 768px)" href="estilos.css">
+
+Lo que concretamente le estamos indicando es que cargue la hoja de estilos "estilos.css" si se cumple que el dispositivo de salida es una pantalla, no una impresora u otro dispositivo (only screen), y si la anchura de la ventana del navegador tiene de máximo 768 píxeles (más-width: 768px).
+
+Si se cumplen las condiciones, los estilos se mostrarán correctamente, en caso contrario, los estilos se omiten por completo, y el contenido se muestra sin estilos definidos:
+
+
+Carga de hojas de estilo
+
+Cargar de esta manera las Media Queries supone un problema, y es que cada vez que queramos cargar diferentes estilo dependiendo de ciertas condiciones que queramos aplicar para distintos dispositivos, tendríamos que cargar una hoja de estilos nueva, Esto conlleva una carga más lenta de tu sitio web, ya que se hacen solicitudes HTTP adicionales, que se podrían evitar.
+
+Hay otro sistema más recomendable para aplicar las Media Queries: basta con incluir todas las condiciones necesarias dentro de un único archivo CSS. Así, incorporaríamos la construcción @media seguido de las condiciones que queremos definir para cada tipo de dispositivo y donde se apliquen entre llaves {} los estilos concretos para cada uno de ellos. Es la manera más aconsejable, ya que la carga es de un único archivo CSS.
+
+La forma de incluir Media Queries dentro de la hoja de estilos CSS es la sigueinte:
+
+@media(max-width:320px){
+<!--Aquí van todos los estilos CSS-->
+}
+
+Esta Media Query se ejecutará sólo cuando la anchura de la ventana del navegador sea menor de 320 píxeles.
+
+@media(min-width:768px){
+<!--Aquí van todos los estilos CSS-->
+}
+
+Esta Media Query se ejecutará sólo cuando la anchura de la ventana del navegador sea mayor de 768 píxeles.
+
+Además de las características para determinar las resoluciones y anchos de pantalla, podemos determinar otros parámetos, como por ejemplo la orientación del dispositivo, importante en dispositivos móviles:
+
+@media(orientation:landscape){
+<!--Aquí van todos los estilos CSS-->
+}
+
+Portrait: orientación vertical 
+Landscape: orientación horizontal
+Portrait vs. Landscape
+-------------------
+
+
+Operadores lógicos para las Media Queries
+
+También se pueden combinar más de una condición en la misma Media Query para concretar todavía más un rango de resolución, mediante los operadores lógicos:
+
+Operador and: las dos condiciones deben cumplirse para que se apliquen los estilos.
+
+Operador not: es un negación de una condición. cuando esta condición no se cumpla, se aplicarán las media queries definidas.
+Operador only: se aplican las reglas solo en el caso de que se cumpla.
+Operador or: se pueden poner varias condicones separadas por comas y en el momento que se cumpla cualquiera de ellas, se aplicarán los estilos.
+
+@media only screen and(min-width:320x) and (max-width: 480px){
+<!--Aquí van todos los estilos CSS-->
+}
+
+Para esta Media Querie se mostrarán los estilos CSS cuando la anchura de la ventana del navegador sea ente 320 píxeles y 380 píxeles, ambos incluidos.
+
+Estos son algunos de los parámetros generales que se pueden emplear a la hora de construir las condiciones en las Media Queries:
+
+width: anchura de la ventana del navegador.
+height: altura de la ventana del navegador.
+devie-width: anchura de la resolución de pantalla.
+orientation (portrait/landscape): dispositivo en horizontal o en vertical.
+resolution: densidad de píxeles.
+Excepto la orientación, el resto de parámetos admiten los valores "max" y "min".
+
+max-width: la anchura será menor que la indicada.
+min-width: la anchura será mayor que la indicada.
+
+Alg a tener en cuenta a la hora de utilizar las Media Queries, es diferenciar entre el ancho de ventana del navegador y la resolución de la pantalla del dispositivo, es decir:
+
+@media only screen and (min-device-width: 960px){
+/*Aquí van todos los estilos CSS*/
+}
+
+En esta Media Querie que hemos definido, el atributo min-devie-width se refiere a la resolución de la pantalla del dispositivo a la hora de cargar la hoja de estilos definida.
+
+atributo min-device-width
+
+Esto quiere decir que si reducimos el ancho del navegador, seguirá mostrándose de la misma manera, ya que la resolución de la pantalla seguirá siendo la misma y no se adaptará al nuevo ancho de la ventana del navegador (es decir, si la pantalla de nuestro móvil tiene 450 px y el navegador detecta que lo óptimo sería visualizarla con 600 px así lo hará si no usamos la meta-etiqueta Viewport).
+
+En caso de usar los atributos para la resolución de la pantalla, la etiqueta Viewport es necesaria.
+----------------
+
+
+¿Qué hace la meta-etiqueta Viewport?
+
+El Viewport es el área visual donde se plasma el contenido del documento HTML de tu sitio web. Se podría traducir como vista o ventana y nos sirve para definir qué área de pantalla está disponible al enderizar un documento, la escala/zoom que debe mostrar inicialmente. Todo ello, con parámetros que le damos a la propia etiqueta meta, separados por comas en caso de utilizar más de uno.
+
+Prácticamente todos los navegadores de smartphone al entrar a un sitio analizan el tamaño total y lo escalan para ver que se muestre completo en la pantalla, este procedimiento genera muchas veces resultados inapropiados.
+
+Por ejemplo, esta imagen mide 320 píxeles al igual que la pantalla del dispositivo, ahora bien, la imagen aparece con un tamaño inferior a causa del efecto de la escala automática.
+
+Sin etiqueta Viewport
+
+La escala automática se puede evitar y controlar muy fácil con el uso de este atribuo. Viewport: es un atributo del tag <meta> que debe incluirse entre las etiquetas <head> del documento HTML de tu sitio web:
+
+<meta name="viewport" content="width=device=width"/>
+
+Con solo agregar estas líneas de código, la imagen se adaptará al dispositivo:
+
+
+Con etiqueta Viewport
+
+Es posible definir un tamaño específico para el área visible del documento; muchos sitios web ajsutan directamente al Viewport a 320 px para ajustar la apariencia al disply vertical de un smartphone, usando un código similar a este:
+
+<meta name="viewport" content="width=320"/>
+
+Pero, con los diferentes equipos, dispositivos y tamaños de pantalla, definir un tamaño específico puede ser una mala práctica que puede mostar resultados erróneos en algunos equipos o cuando el dispositivo cambia de posición. Afortunadamente podemos configurar el viewport para ajustarse dinámicamente al tamaño de cada dispositivo usando el atribuo "device-width", que es equivalente al 100% del ancho de la pantalla del dispositivo, independientemente de su tamaño, posición o resolución:
+
+<meta name="viewport" content="width=device-width"/>
+
+El alto de la pantalla también es configurable con las mismas propiedades a través del atributo "height", aunque -salvo condiciones muy específicas- no es necesrio definirlo. Esta propiedad se asignará automáticamente a través del scroll.
+
+También podemos controlar la escala de la vista con el atributo "initial-scale". El sitio se mostrará al doble de su tamaño original:
+
+<meta name="viewport" cñontent="width=devie-width; initial-scale=2"/>
+
+
+Atributo "initial-scale"
+
+Es posible además, limitar el tamaño al que se pued escalar el sitio con el atributo "maximum-scale". El siguiente ejemplo muestra el documento en escala correcta y permite ampliar (zoom) hasta al doble de su tamaño.
+
+<meta name="viewport" content="width=device-width, maximum-scale=2"/>
+
+Por último, está el atributo "user-scalable", que controla los permisos de reducir/ampliar el documetno. Con el siguiente código, el sitio se muestra en su escala original y no es posible cambiar el tamaño desde el dispositivo móvil (importanta mencionar que no se recomienda deshabilitar la opción de escalar el contenido).
+
+<meta name="viewport" content="width=devie-width, usar-scalable=no"/>
+
+En general, el atributo viewport permite muchas configuraciones, pero para asegurar compatibilidad con la mayor cantidad de pantallas y navegadores móviles, se recomienda utilizar este formato como base:
+
+<meta name="viewport" content="width=devie-width, initial-scale=1, maximum-scale=1"/>
+--------------------
+
+
+Web optimizada para los diferentes anchos de pantalla
+
+Para conseguir que nuestro sitio web se adapte a los diferentes anchos de pantalla, estos parámetros serán muy útiles:
+
+Lo primero, y lo más importante es dejar de usar píxeles y usar porcentajes a la hora de tomar medidas (por ejemplo: width: 60%).
+
+Que el ancho de la página sea 100% no significa que queramos que la pantalla esté en una alta resolució, sino que, si queremos limitar el ancho/alto junto al máximo/mínimo del contenido, debemos usar los diferentes parámetros apropiados para ello (max-width o si quisiésemos establecer un alto máximo max-height; para establecer el mínimo sería min-width y min-height).
+
+Las posiciones absolutas o fijas no son recomendables usarlas para posicionar contenido (menos cuando hagan falta). Lo mejor es utilizar el atributo float (float:left/right), es una técnica muy usada.
+
+Hay que hacer que las imágenes y videos no sobresalgan de la estructura; si no, aparecerá un scroll lateral en los dispositivos móviles que descolocará totalmente el diseño.
+
+En resumen, ¿cuál es la mejor opción para tu sitio web? La experiencia del usuario siempre será lo primero.
+
+A los usuarios no les importa qué versión utilices ni cómo estés optimizando tu sitio web; su objetivo es poder encontrar lo qeu buscan de manera más eficiente y rápida. Por tanto, si tu web está más centrada en el contenido, es mejor un Responsive Web Design. Pero si necesitas que el usuario interaccione mucho con la web, es mejor una Mobile First, ya que cada vez se consume más información desde los dispositivos móviles.
+
+La conclusión es sencilla, los clientes están yendo más rápido que las propias empresas y estas deben adaptarse a ellos y asus nuevas costumbres de consumo online a través de dispositivos. Esto es una solució para reducir la tasa de rebote, haciendo que el usuario pase más tiempo en la página por su facilidad, comodidad, y óptima visualización y lectura de los contenidos.
+
+Es de destacar que actualmente Google valora todas aquellas páginas web que se adaptan perfectamente a cualquier dispositivo, ya sea PC, smartphone, tablet... por ello, es necesario optimizar un sitio web de modo que cualquier usuario pueda visualizar la página sin importar el medio por el cual acceda.
