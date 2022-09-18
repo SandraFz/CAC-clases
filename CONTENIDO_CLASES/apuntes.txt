@@ -102,6 +102,11 @@ transition: transform 2s; o sea, los segundos.
 
 pag: Remixicon
 •animaciones: no depende ningún disparador.
+-----------------------------------
+
+PREGUNTAS:
+1)Cuando usamos backgound-image ¿cómo se puede agregar el atributo alt?
+
 •
 •
 •

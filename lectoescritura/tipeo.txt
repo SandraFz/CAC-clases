@@ -74,3 +74,495 @@ En resumen, la estructura básica de tus páginas debería ser:
 <!--Option 1: Bootstrap Bundle with Popper-->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkl1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THR>" crossorigin="anonymous"></script>
+
+<!--Option ": Separate Popper and Bootstrap JS-->
+
+<!--
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU5JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous">
+</script>
+
+-->
+
+</body>
+
+</html>
+
+Antes de comenzar a diseñar el layout o estructura de contenidos de las páginas, es necesraio tener en cuenta algunas cosas importantes.
+
+
+Se requiere el doctype de HTML5
+
+Bootstrap utiliza algunos elementos HTML y algunas propiedades CSS que requieren el uso del doctype de HTML5. No olvides incluir este doctype en todas tus páginas con el siguiente código:
+
+<!doctypw html>
+<html lang="en">
+...
+</html>
+
+
+Diseño "responsive"
+
+bootstrap promueve el diseño de tipo "mobile first", en el que primero se diseñan los contenidos para que se vean bien en un móvil y luego se hacen los ajustes necesraios para que se vea bien en dispositivos más grandes como tablets y notebooks y computadoras de escritorio.
+
+Añade la siguiente etiqueta <meta> para que los contenidos se vean por defecto en los móviles y el zoom funcione como esperan los usuarios:
+
+<head>
+<!-- -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+
+La propiedad box-sizing
+
+Para que sea más fácil controlar con CSS la anchura/altura de los elementos, Bootstrap cambia el valor de la propiedad box-sizing para no usar el valor por defecto content-box y en su lugar border-box. Este cambio hace que la propiedad padding no afecte al tamaño final de los elementos, pero podría causar algunos pequeños errores con código de terceros como Google Maps o Google Custom Search Engine.
+
+Si alguna vez tienes que cambiar este valor para algún elemento concreto, utiliza lo siguiente:
+
+.selector-de-algun-elemento{
+box-sizing: content-box;
+}
+
+
+Normalización de estilos 
+
+Bootstrap utiliza la hoja de estilos Rebbot y así la forma de los diseños se ven en diferentes navegadores y en algunas oportunidades para aplicar un estilo por defecto ligeramente diferente a algunos elementos HTML.
+
+
+Descargando Bootstrap
+
+Además de enlazar directamente los archivos CSS y JavaSCript ofrecidos por BootstrapCDN (tal y como se explicó anteriormente), existen otras formas de integrar Bootstrap en tus proyectos.
+
+
+Cargando los archivos CSS y JavaScript
+
+Visita la página oficial de descargas de Bootstrap para descargar un archivo ZIP comprimido con los archivos CSS y JavaScript listos para usar. Los archivos se entregan compilados y minimizados, pero no incluyen ni documentación, ni el código fuente, ni las dependencias JavaScript como jQuery y Popper.js.
+
+
+Cargando el código fuente
+
+Visita la página de descargas de Bootstrap para descubrir la forma en la que puedes descargar el código fuente original de los archivos CSS y JavaScript de Bootstrap.
+
+Para integrar esos archivos en tu aplicación, necesitarás herramientas adicionales como un compilador Sass, la librería Autoprefixer, etc..
+
+
+Gestores de paquetes
+
+Otra alternativa para incluir el código fuente de Bootstrap en tus aplicaciones es añadir Bootstrap como dependencia de tu proyecto usando cualquiera de los siguientes gestores de paquetes.
+
+
+El gestor npm
+
+Permite integrar Bootstrap en tus proyectos Node.js y JavaScript en general mediante npm o yarn:
+
+$ npm install bootstrap
+
+aunque esta opción ya queda fuera del alcance de este curso de FrontEnd.
+
+Compatibilidad con los navegadores
+
+Bootstrap es compatible con las versiones estables más recientes de todos los navegadores y sistemas operativos más populares.
+
+
+Uso de JavaScript en Bootstrap
+
+Los plugins de Bootstrap se pueden incluir individualmente (usando los archivos js/dist/*.js de cada uno de ellos) o todos juntos mediante el archivo bootstrap.js o su versión minimizada bootstrap.min.js (incluye solo uno de ellos, no los dos).
+
+
+Dependencias
+
+Algunos plugins JavaScript y componentes CSS depehnden de otros plugins. Así que si utilizas los plugins individualmente, tienes que comprobar sus dependencias en la documentación y añadirlas a mano.
+
+Al margen de esto, todos los plugins dependen de jQuery, por lo que debes incluir jQuery en la página antes de usar algún plugin. Además, los plugins de dropdowns, poovers y tooltips también dependen de Pooper.js.
+
+
+Accesibilidad
+
+La accesibilidad de un proyecto diseñado con Bootstrap depende fundamentalmente del código HTML y los estilos/plugins que añadas tú mismo. Aún así, Bootstrap hace todo lo posible para ayudarte a conseguir que tus sitios sean accesibles.
+
+
+Elementos HTML
+
+La documentación de Bootstrap siempre muestra en sus ejemplos los elementos y atributos HTML recomendados para hacer tus aplicaciones accesibles.
+
+
+Componentes interactivos
+
+Los componentes interactivos, como las ventanas modales y los menús desplegable han sido diseñados para que funcionen con el ratón, el teclado y también las pantallas táctiles de los móviles. Gracias al uso de los atributos WAI-ARIA, estos componentes también son accesibles mediante dispositivos como lectores de pantalla.
+
+
+Contraste de colores
+
+Dessafortunadamente, la mayoría de colores de las paletas generadas por Bootstrap no tienen un nivel de contraste suficiente según el estándar WCAG 2.0, que requiere un ratio de 4.5:1 cuando utiliza un color de fondo claro. Así que tendrás que definir tus propios colores si quieres lograr ese objetivo.
+
+
+Ocultando contenidos
+
+Los contenidos que no se muestran por pantalla pero que se incluyen para que sean accedidos por dispositivos como los lectores de pantalla, se pueden ocultar aplicando la clase CSS .sr-only (el nombre viene de las siglas en inglés de "screen reader" o lector de pantalla):
+
+<p class="text-danger">
+<span class="sr-only">ADvertencia:</span>
+Esta acción es irreversible.
+</p>
+
+Para los elementos ocultos de tipo "Ir directamente al contenido", puedes combinar la clase .sr-only con la clase .sr-only-focusable. Esto hace que el contenido sea visible cuando se selecciona (útil para los usuarios que utilizan el teclado):
+
+<a class="sr-only sr-only-focusable" href="#content">Ir al contenido</a>
+
+
+
+Reduciendo el movimiento
+
+Bootstrap también soporta el uso de la opción prefers-reduced-motion mediante la cual los navegadores indican que el usuario prefiere reducir el movimiento de los elementos de la página. Si está activada, las ventanas modales por ejemplo no muestran ninguna animación ni al abrirse ni al cerrarse.
+
+--------------------------------------
+
+
+3.DISEÑO
+
+Cuadrícula de Bootstrap
+
+La cuadrícula basada en flexbox (una forma de maquetado en CSS) para dispositivos móviles y para crear diseños de todas las formas y tamaños gracias a un sistema de doce columnas, cinco niveles de respuesta predeterminados, con variables Sass y mixins, y docenas de clases predefinidas.
+
+
+Cómo funciona
+
+El sistema de cuadrícula de Bootstrap utiliza una serie de contenedores, filas y columnas para diseñar y alinear el contenido.
+
+A continuación se muestra un ejemplo y una mirada en profundidad de cómo se utiliza la cuadrícula.
+
+El siguiente detalle saldrá del código a continuación:
+
+Una de tres columnas Una de tres columnas Una de tres columnas
+
+
+Código
+
+<div class="container">
+<div class="row">
+<div class="col-sm">
+Una de tres columnas
+</div>
+
+<div class="col-sm">
+Una de tres columnas
+</div>
+
+<div class="col-sm">
+Una de tres columnas
+</div>
+</div>
+</div>
+
+El ejemplo anterior crea tres columnas de igual ancho en dispositivos pequeños,  medianos, grandes y extra grandes utilizando nuestras clases de cuadrícula predefinidas. Esas columnas están centradas en la página con la clase de .container.
+
+
+
+Desglosándolo, así es como funciona:
+
+Los contenedores proporcionan un medio para centrar y rellenar horizontalmente el contenido de su sitio. Utilizando .container para un ancho de píxel receptivo o .container-fluid para width: 100% en todos los tamaños de vista y dispositivo.
+
+Las filas col-sm son representativas de columnas. Cada columna tiene una horizontal padding (o margen interno) para controlar el espacio entre ellas. Esto padding luego se contrarresta en las filas con márgenes negativos. De esta manera, todo el contenido de sus columnas se alínea visulamente en el lado izquierdo.
+
+En un diseño de cuadrícula, el contenido deve colocarse dentro de las columnas y solo las columnas pueden ser hijos inmediatos de las filas.
+
+Gracias a la tecnología flexbox, las columnas de la cuadrícula sin un especificado width se distribuirán automáticamente como columnas de igual ancho. Por ejemplo, cuatro  instancias de .col-sm tendrán automáticamente un 25% de ancho desde el punto de interrupción pequeño y hacia arriba.
+
+Las clases de columna indican la cantidad de columnas que le gustaría usar de las 12 posibles por fila. Entonces, si deseas tres columnas de igual ancho, podés usar .col-4.
+
+Las columnas width se estableces en porcentajes, por lo que siempre son fluidas y tienen un tamaño relativo a su elemento principal.
+
+Las columnas tienen horizontales padding para crear los margenes verticales entre columnas individuales, sin embargo, podés eliminar de las margin filas y padding de las columnas con .no-gutters en .row.
+
+Para que la cuadrícula responda, hay cinco puntos de interrupción de la cuadrícula, uno para cada punto de interrupción de respuesta: todos los puentos de interrupción (extra pequeños), pequeños, medianos, grandes y extra grandes.
+
+Los puntos de interrupción de la cuadrícula se basan en consultas de medios de ancho mínimo, lo que significa que se aplican a ese único punto de interrupción y a todos los que están por encima de él (por ejemplo, se .col-sm-4 aplica a dispositivos pequeños, medianos, grandes y extragandes, pero no al primer xs punto de interrupxión).
+
+Podés usar clases de cuadrícula predefinidas (como .col-4) o mixins de Sass para un marcado más semántico. 
+
+Hay que tener en cuenta que existen limitaciones y en flexbox, como la imposibilidad de utilizar algunos elementos HTML como contenedores flexibles.
+
+
+Opciones de cuadrícula
+
+Mientras Bootstrap usa em o rem para definir la mayoría de tamaños, px se usan para puntos de interrupción de cuadrícula y anchos de contenedor. Esto se debe a que el ancho de la ventana gráfica está en pixeles y no cambia con el tamaño de fuente.
+
+Vea cómo funcionan los aspectos del sistema de cuadrícula Bootstrap en múltiples dispositivos con una práctica tabla.
+
+			|Extra pequeño	|Pequeño	|Medio	|Grande	|Extragrande
+			|<576px		|>=576px	|>=768px	|>=992px	|>=1200px
+----------------------------------------------------------------------------------------
+Ancho máximo 	|Ninguno		|		|		|		|
+del contenedor	|Automático		|540px	|720px	|960px	|1140px
+----------------------------------------------------------------------------------------
+Prefijo de clase	|.col-xs		|.col-sm-	|.col-md-	| .col-lg-	|.col-xl-
+----------------------------------------------------------------------------------------
+# de columnas	|12			
+----------------------------------------------------------------------------------------
+Ancho de canal 	|30px (15px a cada lado de una columna)		
+(márgenes)		|
+----------------------------------------------------------------------------------------
+Pueden encastrarse|Sí
+columnas		|
+----------------------------------------------------------------------------------------
+Orden de columnas	|Sí
+----------------------------------------------------------------------------------------
+
+
+Columnas de diseño automático
+
+Utilice clases de columa específicas de puntos de interrupción para facilitar el tamaño de la columna sin una clase numerada explícita como .com-sm-6.
+
+
+
+Igual ancho
+
+Por ejemplo, aquí hay dos diseños de cuadrícula que se palican a todos los dispositivos y ventanas gráficas, desde xs hasta xl. Agregué cualquier cantidad de clases sin unidades para cada punto de interrupción que necesite y cada columna tendrá el mismo ancho.
+
+.		.		.		.		.
+1 de 2			|2 de 2
+
+.		.		.	
+1 de 3	2 de 3	3 de 3
+
+Código:
+
+<div class="container">
+<div class="row">
+<div class="col">
+1 de 2
+</div>
+
+<div class="col">
+2 de 2
+</div>
+
+</div>
+
+<div class="row">
+<div class="col">
+1 de 3
+</div>
+<div class="col">
+2 de 3
+</div>
+<div class="col">
+3 de 3
+</div>
+
+</div>
+
+</div>
+
+
+Multilínea de igual ancho
+
+Cree columnas de igual ancho que abarquen varias líneas insertando un lugar .w-100 donde desee que las columnas se dividan en una nueva línea. Haga que los descansos sean repectivos mezclándolos .w-100 con algunas utilidades de pantalla responsives.
+
+Hubo un error en Safari flexbox que impidió que esto funcionara sin un explícito flex-basis o border. Existen soluciones para las versiones anteriores del navegador, pero no deberían ser necesarias si los navegadores de destino no caen en las versiones con errores.
+
+col		col
+
+[espacio]
+
+col		col
+
+Código
+
+<div class="container">
+<div class="row">
+<div class="col">col</div>
+<div class="col">col</div>
+<div class="w-100">[espacio]</div>
+<div class="col">col</div>
+<div class="col">col</div>
+
+</div>
+
+</div>
+
+
+
+Establecer un ancho de columna
+
+El diseño automático de las columnas de la cuadrícula de flexbox también significa que podés establecer el ancho de una columna y hacer que las columnas hermanas tomen una nueva dimensión automáticamente a su alrededor. Podés usar clases de cuadrícula predefinidas (como se muestra a continuación), combinaciones de cuadrículas o anchos en línea. Tenga en cuenta que las otras columnas cambiarán de tamaño sin importar el ancho de la columna central.
+
+
+1 de 3		2 de 3 (6 col)		3 de 3
+1 de 3 		2 de 3 (5 col) 		3 de 3
+
+
+Código 
+
+
+<div class="container">
+<div class="row">
+
+<div class="col">
+1 de 3
+</div>
+
+<div class="col-6">
+2 de 3 (6 col)
+</div>
+
+<div class="col">
+3 de 3
+</div>
+
+</div>
+
+<div class="row">
+<div class="col">
+1 de 3
+</div>
+
+<div class="col-5">
+2 de 3 (5 col)
+</div>
+
+<div class="col">
+3 de 3
+</div>
+
+</div>
+
+</div>
+
+
+Contenido de ancho variable
+
+Use col-{breakpoint}-auto clases para dimensionar columnas según el ancho natural de su contenido.
+
+Código
+
+<div class="container">
+<div class="row justify-content-md-center">
+<div class="col col-lg-2">
+1 of 3
+</div>
+
+<div class="col-md-auto">
+Variable width content
+</div>
+<div class="col col-lg-2">
+3 of 3
+</div>
+
+</div>
+
+
+<div class="row">
+<div class="col">
+1 of 3
+</div>
+
+<div class="col-md-auto">
+Variable width content
+</div>
+
+<div class="col col-lg-2">
+3 of 3
+</div>
+
+</div>
+
+</div>
+
+
+Clases responsivas
+
+La cuadrícula de Bootstrap incluye cinco niveles de clases predefinidas para crear complejos de respuesta. Personalice el tamaño de sus columnas en dispositivos extra pequeños, pequeños, medianos,grandes o extragrandes como mejor se la plazca.
+
+
+Todos los puntos de interrupción
+
+Para cuadrículas que son iguales desde el dispositivo más pequeño al más grande, use las clases .col y .col-*. Especifique una clase numerada cuando necesite una columna de tamaño especial; de lo contrario, no dude en seguir .col.
+
+
+Código
+
+<div class="container">
+<div class="row">
+<div class="col">col</div>
+<div class="col">col</div>
+<div class="col">col</div>
+<div class="col">col</div>
+</div>
+
+<div class="row">
+<div class="col-8">col-8</div>
+<div class="col-4">col-4</div>
+</div>
+
+</div>
+
+
+Apilado a horizontal
+
+
+con un solo conjunto de .col-sm-*clases, podés crear un sistema de cuadrícula básico que comienza apilado y se vuelve horizontal en el pequeño punto de interrupción (sm).
+
+
+Código
+
+<div class="container">
+<div class="row">
+<div class="col-sm-8">col-sm-8</div>
+<div class="col-sm-4->col-sm-4</div>
+</div>
+<div class="row">
+<div class="col-sm">col-sm</div>
+<div class="col-sm">col-sm</div>
+<div class="col-sm">col-sm</div>
+</div>
+</div>
+
+
+Mezclar y combinar
+
+Para que las columnas simplemente se apilen en algunos niveles de cuadrícula podemo sutilizar una combinación de diferentes clases para cada nivel según sea necesario. Vea el ejemplo a continuación para tener una mejor idea de cómo funciona todo.
+
+
+Código
+
+<div class="container">
+<div class="row">
+<div class="col-md-8"</div>
+<div class="col6 col-md-4">.col-6 .col-md-4</div>
+</div>
+
+<div class="row">
+<div class="col-6 col-md-4">.col-6 .col-md-4</div>
+<div class="col-6 col-md-4">.col-6 .col-md-4</div>
+<div class="col-6 col-md-4">.col-6 .col-md-4</div>
+</div>
+<div class="row">
+<div class="col-6">.col6</div>
+<div class="col-6">.col6</div>
+</div>
+</div>
+
+
+Padding
+
+Los paddings se pueden ajustar de manera responsive mediante el relleno específico del punto de interrupción y las clases de utilidad de margen negativo. Para cambiar los márgenes en una fila determinada y que empareje con un margen negativo en .row y las utilidades de relleneo coincidentes en el .coñ. Es posible que el .container o el .container-fluid padre también deba ajustarse para evitar un desbordamiento no deseado, utilizando nuevamente la utilidad de relleno coincidente.
+
+Aquí hay un ejemplo de cómo personalizar la cuadrícula Bootstrap en el lg punto de interrupción. Hemos aumentado el .col acolchado con .px-lg-5, lo hemos contrarrestado con .mx-lg-n5 en el padre .row y luego hemos ajustado el .container con .px-lg-5.
+
+
+Código
+
+<div class="container px-lg-5">
+<div class="row mx-lg-n5">
+<div class="col py-3 px-lg-5 border bg-light">Custome column padding</div>
+<div class="col py-3 px-lg5 border bglight">Custom column padding</div>
+</div>
+</div>
+
+
+Row-Cols
+
+Utilizar las .row-cols-* clases responsives para establecer rápidamente la cantidad de columnas que mejor representen tu contenido y diseño. Mientras que las .col-* clases normales se aplican a las columnas individuales (p. Ej.; .col-md-4). Las clases de columnas de fila se establecen en el padre .row como una forma rápida.
+
+Utilizar estas clases de filas y columnas para crear rápidamente diseños de cuadrícula básicos o para controlar los diseños de tur tarjetas.
