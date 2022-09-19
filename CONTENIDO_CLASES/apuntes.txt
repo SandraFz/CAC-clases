@@ -107,6 +107,8 @@ pag: Remixicon
 PREGUNTAS:
 1)Cuando usamos backgound-image ¿cómo se puede agregar el atributo alt?
 
+2)Quise poner el favicom pero no me deja descargar. O sea, descarga pero no aparece después. Y si copio, cambia.
+
 •
 •
 •
