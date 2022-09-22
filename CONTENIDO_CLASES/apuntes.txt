@@ -107,8 +107,39 @@ pag: Remixicon
 PREGUNTAS:
 1)Cuando usamos backgound-image ¿cómo se puede agregar el atributo alt?
 
-2)Quise poner el favicom pero no me deja descargar. O sea, descarga pero no aparece después. Y si copio, cambia.
+2)Quise poner el favicom pero no me deja descargar. O sea, descarga pero no aparece después. Y si copio, cambia. HECHO.
 
-•
+3)El prototipo tiene algunos detalles que parecen defecto como las imágenes de las tarjetas que no quedan a la misma altura. Lo corregimos o lo hacemos igual. Yo quise hacerlos quedar parejos pero me cambió el margin o el padding bottom. No sé cuál es porque solo puedo corregirlo dejando el defecto de las imágenes a diferentes alturas. 
+-------------------------------
+-------------------------------
+______________________________
+===============================
+Lunes, 19 de septiembre de 2022
+
+RESPONSIVE DESIGN
+
+
+•MediaQueries. Breakpoint 914x412 y landscape (A51). 600x450 ó 700x460 está bien como tamaño representativo de celulares.
+
+20:58, trabaja sobre en nav del proyecto.
+@media screen and (min-width: 500px){
+}
+
+El valor INIT borra el valor anterior y la devuelve al valor inicial previo.
+
+INHERIT: hereda el valor del padre.
+
+WIREFRAME (prototipo para celulares para Mobile First Design).
+
+Rangos de 
+-celulares 0 a 768px
+-tablet min769px-max1024px
+-desktop min 1024px a más grande.
+
+Para maquetados:
+behance.net
+
+filter:blur;
+backdrop-filter:
 •
 •

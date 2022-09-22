@@ -1128,3 +1128,714 @@ BARRA DE HERRAMIENTAS DE BOTONES
 Combiná conjuntos de grupos de botones en barras de herramientas de botones para obtener componentes más complejos. Utilizá las clases de servicios según sea necesario para espaciar grupos, botones y más.
 
 <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+<div class="btn-group mr-2" role="groupp" aria-label="First group">
+<button type="button" class="btn btn-secondary">1</button>
+<button type="button" class="btn btn-secondary">2</button>
+<button type="button" class="btn btn-secondary">3</button>
+<button type="button" class="btn btn-secondary">4</button>
+</div>
+<div class="btn-group mr-2" role="group" aria-label="Second group">
+<button type="button" class0"btan btn-secondary">5</button>
+<button type="button" class="btn btn-secondary">6</button>
+<buttón type="button" class="btn btn-secondary">7</button>
+</div>
+<div class="btn-group" role="group" aria-label="Third group">
+<button type="button" class="btn btn-secondary">8</button>
+</div>
+</div>
+
+
+Al igual que en el ejemplo anterior, es probable que necesite algunas utilidades para espaciar las cosas correctamente.
+
+1234
+
+
+@
+
+
+<div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with botton groups">
+<div class="btn-group mr-2" role="grou" aria-label="First group">
+<button typw="button" clas="btn btn-secondary">1</button>
+<button type="button" class="btn btn-secondary">2</button>
+<button typw="button" class="btn btn-secondary">3</button>
+<button type="button" class="btn btn-secondary">4</button>
+</div>
+<div class="input-group">
+<div class="input-group-prepend">
+<div class="input-group-text" id="btnGroupAddon">@</div>
+</div>
+<input type="text" class0"form-control" placeholder="input group example" aria-label="iniput group example" aria-describedby="btnGroupAddon">
+</div>
+</div>
+<div class="btn-toolbar jsutify-content-between"role="toolbar" aria-label="Toolbar with button groups">
+<div class="btn-group" role="goup" aria-label="First group">
+<button type="button" class="btn btn-secondary">1</button>
+<button type="button" class="btn btn-secondary">2</button>
+<button type="button" class="btn btn-secondary">3</button>
+<button type="button" class="butn btn-secondary">4</button>
+</div>
+<div class="input-group">
+<div class="inpu-group-predend">
+<div class="input-group-text" id="btnGroupAddon2">@</div>
+</div>
+<input type="text" class="form-control" placeholder="input group example" aria-label="input group example" aria-describedby="btnGroupAddon2>
+</div>
+</div>
+
+
+DIMENSIONAMIENTO
+
+En lugar de aplicar clases de tamaño de botón a botón de un grupo, simplemente agregalo a cada uno de los .btn-grou-* .btn-group, incluso cada uno cuando anides varios grupos.
+
+<div class="btn-group btn-group-lg" role="group" aria-label="...">...</div>
+<div class0"btn-group" role="group" aria-label="...">...</div>
+<div class="btn-group btn-group-sm" role="group" aria-label="...">...</div>
+
+
+ANIDAMIENTO
+
+Colocá un .btn-group dentro de otro .btn-group cuando desees que los menús desplegables se mezclen con una serie de botones.
+
+Copiar
+
+<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+<button typw=2button" class="btn btn-secondary">1</button>
+<button typw="button" class="btn btn-secondary">2</button>
+
+<div class="btn-group" role="group">
+<button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" datta-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+
+Dropdown
+
+</button>
+<div class="dropdown-menu" aria-labelldby="btnGroupDrop1">
+<a class="dropdown-item" href="#">Dropdown link</a>
+<a class=2dropdown-item" href="#">Dropdown link</a>
+</div>
+</div>
+</div>}
+____________________________________
+
+
+8.COMPONENTES GRÁFICOS
+
+Alertas
+
+Proporciona mensajes de retroalimentación contextual para las acciones típicas del usuario con un puñado de mensajes de alerta disponibles y lfexibles.
+
+
+Ejemplos
+
+Las alertas están disponibles para cualquier longitud de texto, así como un botón de descarte opcional. Para un estilo adecuado, usá una de las ocho clases contextuales requeridas (por ej.: alert-success). Para el mostrar en línal, usá el complemnto de alertas jQuery.
+
+Una simple alerta primario: ¡compruébalo!
+Una simple alerta secundaria: ¡compruébalo!
+Una simple alerta de éxito: ¡compruébalo!
+Una simple alerta de peligro: ¡compuébalo!
+Una simple alerta de advertencia: ¡compruébalo!
+Una simple alerta de informacón: ¡compruébalo!
+Una simple alerta de luz: ¡compruébalo!
+Una simple aleta oscura: ¡compruébalo!
+
+Código
+
+<div class="alert alert-primary" role="alert">
+A simple primary alert-check it out!
+</div>
+<div class="alert alert-secondary" role="alert">
+A simple secondary alert-check it out!
+</div>
+
+<div class="alert alert-success" role="alert">
+Asimple success alert-check it out!
+</div>
+<div class="alert alert-danger" role="alert">
+A simple danger alert-check it out!
+</div>
+<div class="alert alert-warning" role="alert">
+A simple warning alert-check it out!
+</div>
+<div class="alert alert-info" role="alert">
+A simple info alert-check it out!
+</div>
+<div class="alert alert-light" role="alert">
+A simple light alert-check it out!
+</div>
+<div class="alert alert-dark" role="alert"
+A simple dark alert-check it out!
+</div>
+<div class="alert alert-light" role="alert">
+A simple light alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+</div>
+<div class="alert alert-dark" role="alert">
+A simple dark alert with <a href="#" class="alert-link">an example link</a>.Give it a click ir you like.
+</div>
+
+
+Badges
+
+Las Badges se escalan para coincidir con el tamaño del elemento principal inmediato mediante el uso de em unidades y tamaños de fuente relativos.
+
+Código
+
+<h1>Encabezado deejemplo<span class="badge badge-secondary">Nuevo</span></h1>
+<h2>Encabezado de ejemplo<span class="badge badge-secondary"> Nuevo</span></h2>
+<h3>Encabezado de ejemplo <span class="badge badge-secondary"> Nuevo</span></h3>
+<h4>Encabezado de ejemplo <span class="badge badge-secondary"> Nuevo</span></h4>
+<h5> Encabezado de ejemplo  <span class="badge badge-secondary"> Nuevo</span></h5>
+<h6> Encabezado de ejemplo <span class="baadge badge-secondary"> Nuevo</span></h6>
+
+Los badges se pueden usar como parte de enlaces o botones para proporcionar un contador.
+
+Notificaciones 4
+
+Copiar
+
+<button type="button" class="btn btn-primary">
+
+Notifications <span class="badge badge-light"4</span>
+</button>
+
+
+Variaciones contextuales
+
+Agregá cualquiera de las clases de modificadores que se menciona a continuación para cambiar la apariecia de una insignia.
+
+
+Copiar
+
+<span class="badge badge-rpimary">Primary</span>
+<span class="badge badge-secondary">Secondary</span>
+<span class="badge badge-success">Success</sapn>
+<span class="badge badge-danger">Danger</span>
+<span class="badge badge-warning">Warning</span>
+<span class="badge badge-info">Info</span>
+<span class="badge badge-light">Light</span>
+<span class="badge badge-dark">Dark</span>
+
+
+Badges de pastillas
+
+Utilice la clase mdificadora .badge-pill para hacer que las badges sean más redondeadas (con una border-radius horizontal más grande y adicional padding).
+
+Copiar
+
+<span class0"badge badge-pill badge-primary">Primary</span>
+<span class="badge badge-pill badge-secondary">Secondadry</span>
+<span class="badge badge-pill badge-success">Success</span>
+<span class="badge badge-pill badge-danger">Danger</span>
+<span class="badge badge-pill badge-warning">Warning</span>
+<span class="badge badge-pill badge-info">Info</span>
+<span class="badge badge-pill badge-light">Light</span>
+<span class="badge badge-pill badge-dark">Dark</span>
+
+
+Enlaces
+
+El uso de las clases contextuales .badge-* en un elemento <a> proporciona rápidamente badges procesables con estados de desplazamiento y enfoque.
+
+Copiar
+
+<a href="#" class="badge badge-primary">Primary</a>
+<a href="#" class="badge badge-secundary">Secondary</a>
+<a href="#" class="badge badge-success">Success</a>
+<a herf="#" class="badge badge-danger">Danger</a>
+<a href="#" class="badge badge-warning">Warning</a>
+<a href="#" cass=2badge badge-info">Info</a>
+<a href"#" class="badge badge-light">Light</a>
+<a href="#" class="badge badge-dark">Dark</a>
+
+
+Botones
+
+Usá los estilos de botones personalizados de Bootstrap para acciones en formularios, cuadros de diálogo y más, con soporte para múltiples tamaños, estados etc..
+
+Bootstrap incluye varios estilos de botones predefinidos, cada uno de loscuales tiene supropio propósito semántico, con algunos extras para un mayor control.
+
+Código
+
+<button type="button" clas="btn btn-primary">Primary</button>
+<button typw="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button typw="button" class="btn btn-danger">Danger</button>
+<button type="button class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+<button typw="button" class="btn btn-link">Link</button>
+
+
+Deshabilitar el ajuste de texto
+
+Si no deseas que el texto del botón se ajuste, podés agregar la clase .text-nowrap al botón. En Sass, podés configurar $btn-white-space: nowrap para deshabilitar el ajuste de texto para cada botón.
+
+Etiquetas de botón
+
+Las .btn clases están diseñadas para usarse con el elemento <button>. Sin embargo, también podés usar estas clases en elementos <a> o <input> (aunque algunos navegadores pueden alicar una representación ligeramente defierente).
+
+Cuando se utilizan clases de botones en elementos <a> que se utilizan para activar una funcionalidad en la página (com oel contenido que se contrae), en  lugar de vincular a nuevas páginas o secciones dentro de la página actual, estos vínculos deben tener una role="button" para transmitir adecuadamente su propósito a tecnologías de asistencia com lectores de pantalla.
+
+Copiar
+
+<a class="btn btn-primary" href="#" role="button">Link</a>
+<button class0"btn btn-primary" type="submit">Button</button>
+<input class="btn btn-primary" type="button" vale="input">
+<input class="btn btn-primary" type="submit" vlaue="submit">
+<input class="btn btn-primary" type="reset" value="reset">
+
+
+Botones de contorno
+
+¿Necesitas un botón, pero no los colores de fondo que traen? Reemplazá las clases de modificadores predetermiandas ocn las .btn-outline-* que eliminan todas las imágenes y colores de fondo en cualquier botón.
+
+Código
+
+<button type="button" clas="btn btn-outline-primary">Primary</button>
+<buton type="button" class0" btn btn-outline-secondary">Secondary</button>
+<button type="button" class="btn btn-outline-success">Success</button>
+<button type="button" class="btn btn-outline-danger">Danger</button>
+<button type="button" class="btn btn-outline-warning">Warning</button>
+<button type="button" class0"btn btn-outline-info">Info</button>
+<button type)"button" class="btn btn-outline-light">Light</button>
+<button type="button" class0"btn btn-outline-dark">Dark</button>
+
+
+Tamaños
+
+¿Necesitás botones más grandes o más pequeños? Agregá .btn-lg o .btn-sm para tamaños adicionales.
+
+Código
+
+<button type="button" class="btn btn-primary btn-lg">Large button</button>
+<button type="button" class="btn btn-secondary btn-lg">Large button</button>
+
+<button type="button" class="btn btn-primary btn-sm">Small button</button>
+<button type="button" class=2btn btn-secndary btn-sm">Small button</button>
+
+Creá botones de nivel de bloque, que abarcan todo el ancho de un padre, agregando .btn-block.
+
+<button type="button" class=2btn btn-primary btn-lg btn-block">Block level button</button>
+<button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button>
+
+
+
+Estado activo
+
+Los botonoes aparecerán presionados (con un fondo más oscuro, un borde más oscuro y una sombra insertada) cuando estén activos. No es necesario agregar una clase a <button>, ya que usan una pseudoclase. Sin embargo, aún podés forzar la misma apariencia activa con .active (e incluir el atributo aria-pressed="true") en caso de que necesites replicar el estado mediante programación.
+
+<a href="#" class)"btn btn-primary btn-lg active" role="button" aria-pressed="true">Primary link</a>
+<a href="#" class=2 btn btn-sendary btn-lg active" role="button" aria-pressed="true">Link</a>
+
+
+Estado disabled
+
+Haga que los botones parezcan inactivos agregando el atributo disabled booleano a cualquier elemento <button>.
+
+Código
+
+<button type="button" class="btn btn-lg btn-primary" disabled>Primary button</button>
+<button type="button" class="btn btn-secondary btn-lg" disabled>Button</button>
+
+Los botones deshabilitados que usan el elemento <a> se comportan un poco diferente:
+
+<a> no admite el atributo "disabled", por lo que debe agregar la clase .disabled para que aparezca visualmente deshabilitada.
+
+Se incluyen algunos estilos para el futuro para deshabilitar todos los pointer-events botones de anclaje. en los anvegadores que admiten esa propiedad, no verá el cursor deshabilitado en absoluto.
+
+Los botones deshabilitados ddeben incluir el atributo aria-disabled="true" para indicar estado del elemento a las tecnologías de asistencia.
+
+
+Código
+
+<a href="#" class="btn btn-primary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">Primary link</a>
+
+<a href=2#" class="btn btn-secondary btn-lg disabled" tabindex="-1" role="button" aria-disables="true">Link</a>
+
+
+Advertencia sobre la funionalidad del enlace
+
+La .disabled clase usa pointer-events:none para intentar deshabilitar la funcionalidad de enlace de <a>, pero esa propiedad CSS aún no está estandarizada. Además, incluso en los navegadores compatibles pointer-events:none, la navegación con el teclado no se veafectada, loq ue seignifica que los usuarios videntes del teclado y los usuarios de tecnologías de asistencia aún podrían activas estos enlaces. Entonces, para setar seguro, agregá un atributo tabindex="-1" enestos enlaces (para evitar que reciban el enfoque del teclado) y usá JavaScript personalizado para deshabilitar su funcionalidad.
+===================================
+_____________________________________
+====================================
+
+
+
+9.TARJETAS
+
+Tarjetas
+
+Las terjetas de Bootstrap proporcionan un contenedor de contenido flexible y extensible con mpultiples variantes y opciones.
+
+Una tarjeta es un contenedor de contenido que incluye opciones para encabezados y pies de página, una amplia variedad de contenido, colores de fondo contextuales y potentes opciones de visualización. si estás familiarizado con Bootstrap 3, las tarjetas reemplazan nuestros viejos paneles y miniaturas.
+
+
+Ejemplo
+
+Las tarjetas se crean con la menor cantidad de marcas y estilos posibles, pero aún así logran ofrecer un montón de control ypersonalización. construidos con flexbox, ofrecen una alineaciónfácil y se combinan bien con otros componentes de Bootstrap. No tienen margin por defecto, así que usá las utilidades de espaciado según sea necesario.
+
+A continuación se muestra un ejemplo de una tarjeta básica con contenido mixto y un ancho fijjo. Las tarjetas no tienen un ancho fijo para comenzar, por lo que naturalmente llenarán el ancho completo de su elemento principal. Esto se puede personalizar fácilmente con diversas opciones de tamaño.
+
+
+Cógigo fuente
+
+<div class=2card" style=2width: 18rem;">
+<img src="..." class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class=2card-title">Card title</h5>
+<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card0s content.
+</p>
+<a href=2#" class=2bn btn-primary">Go somewhere</a>
+</div>
+</div>
+===============================
+
+
+
+10.CARROUSEL
+
+Carrusel
+
+Un componente de presentaciónde diapositivas para recorrer elementos (imágenes o diapositivas de texto) como un carrusel.
+
+Cómo funciona?
+
+El carrusel es una presentación de diapositivas par arecorrer una serie de contenido, construido con transfomaciones CSS 3D y un poco de JavaScript. Funciona con una serie de imágenes, texto o marcado personalizado. También incluye soporte para controles e indicadores anteriores / siguientes.
+
+En los navegadores en los que se admite la API de visibilidad de la página, el carrusel evitará que se deslice cuando el usuario no pueda ver la página web (por ejemplo, cuando la pestaña del navegador está inactiva, la ventana del navegador está minimizada, etc.).
+
+El efecto de animación de este componenete depende de prefers-reduced motion.
+
+Tené en cuenta que los carruseles anidados no son compatibles y, por lo general, los carruseles no cumplen con los esetándares de accesibilidad.
+
+Por último, si estás desarrollando en JavaScript este ejemplo requiere util.js.
+
+Ejemplo
+
+Los carruseles no normalizan automáticamente las dimensiones de las diapositivas. Como tal, es posible que debe utilizar utilidades adicionales o estilos personalizados para dimensionar el contenido de manera adecuada. Si bien los carruseles admiten controles e indicadores anteriores/siguientes, no se requieren explícitamente tendrías que personalizar como mejor te parezca.
+
+La clase .active debe agregarse a una de las diapositivas, de lo contrario, el carrusel no será visible. También asegurate de establecer uan identificación única en los controles .carousel opcionales especialmente si estás utilizando varios carruseles en una sola página. Los elementos de control e indicador deben tener un atributo data-target (o href para enlaces) que coincida con el id del elemento .carousel.
+
+Solo diapositivas
+
+Aquí hay un carrusel con solo diapositivas. Tené en cuenta la presencia de .d-block y .w-100 en las imágenes del carrusel para evitar la alineación de la imagen predeterminada del navegador.
+
+<div id="carouselExamleSlidesOnly" class="carousel slide" data-ride="carousel">
+<div class="carousel-inner">
+<div class="carousel-item active">
+<img src="..." class02d-block w-100" alt="...">
+</div>
+<div class="carousel-item">
+<img src="..." class="d-block w-100 alt="...">
+</div>
+</div>
+</div>
+
+Con controles
+
+Añadiendo los controles anterior y siguiente:
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+<div class="carousel-inner">
+<div class="carousel-item active">
+<img src="..." class="d-block w-100" alt="...">
+</div>
+<div class="carousel-item">
+<img src="..." class="d-block w-100" alt="...">
+</div>
+<div class="carousel-item">
+<img src="..." class="d-block w-100" alt="...">
+</div>
+</div>
+<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+<span class="sr-only">Next</span>
+</a>
+</div>
+
+
+Con indicadores
+
+Tambiénpuede agregar los indicadores al carrusel, junto con los controles.
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<ol class="carousel-indicators">
+<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+<li data-target="#carouselExampleIndicators" data-slide="2"></li>
+</ol>
+<div class="carousel-inner">
+<div class="carousel-item active">
+<img src="..." class="d-block w-100" alt="...">
+</div>
+<div class="carousel-item">
+<img src="..." class="d-block w-100" alt="...">
+</div>
+<div class="carousel-item">
+</div>
+</div>
+<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="sr-only">Next</span>
+</a>
+</div>
+
+
+Con subtítulos
+
+Agregar subtítulos a tus diapositivas fácilmente con el elemento .carousel-caption dentro de cualquier .carousel-item. Se puede ocultar fácilmente en ventanas gráficas más pequeñas, como se muestra a continuación. Los ocultamos inicialmente con .d-none y los traemos de vuelta en dispositivos de tamaño mediano con .d-md-block.
+
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+<ol class="carousel-indicators">
+<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+<li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+</ol>
+<div class="carousel-inner">
+<div class="carousel-item active">
+<img src="..." class="d-block w-100" alt="...">
+<div class="carousel-caption d-none d-md-block">
+<h5>First slide label</h5>
+<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+</div>
+</div>
+<div class="carousel-item">
+<img src="..." class="d-block w-100" alt="...">
+<div class="carousel-caption d-none d-dm-block">
+<h5>Second slide label</h5>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div>
+</div>
+<div class="carousel-item">
+<img src="..." class="d-block w-100" alt="...">
+<div class="carousel-caption d-none d-md-block">
+<h5>Third slide label</h5>
+<p>Praesent commodo cursus magn, vel sceleerisque nisl consectetur.</p>
+</div>
+</div>
+</div>
+<a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="sr-only">Next</span>
+</a>
+</div>
+
+_____________________________________
+
+
+
+11-COMPONENTES DE NAVEGACIÓN
+
+Navs
+
+Documentación y ejemplos sobre cómo utilizar los componentes de navegación incluidos en Bootstrap.
+
+Navegación base
+
+La navegación disponible en Bootstrap comparte marcas y estilo generales, desde la clase .nav base hasta los estados activo y deshabilitado. Intercambia clases de modificadores para cambiar entre cada estilo.
+
+El componenente .nav base está construido con flexbox y proporciona una base sólida para construir todo tipo de componenetes de navegación. Incluye algunas modificaciones de estilo (para trabajar con listas), algo de relleno de enlaces para áreas de impacto más grandes y estilos básico deshabilitado.
+
+No incluye ningún estado .active. Los siguientes ejemplos incluyen la clase, principalmente para demostrar que esta clase en particular no activa ningún estilo especial
+
+<ul class="nav">
+<li class="nav-item">
+<a class="nav-link active" href="#">Active</a>
+</li>
+<li class="nav-iten">
+<a class="nav-link" href="#">Link</a>
+</li>
+<li class="nav-item">
+<a class="nav-link href="#">Link</a>
+</li>
+<li class="nav-item">
+<a class="nav-link disables" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+</li>
+</ul>
+
+
+
+Estilos disponibles
+
+El estilo del .nav con modificaciones y utilidades y combinar según sea necesario, o creá el tuyo propio.
+
+alineación horizontal
+
+Cambiá la alineación horizontal de su navegador con las utilidades de flexbox. De forma predetermianda, los navegadores están alineados a la izquierda, pero puede cambiarlos fácilmente al centro o a la derecha.
+
+Centrado con .justify-content-center:
+
+activo
+
+enlace
+
+enlace
+
+disebled
+
+Código
+
+<ul class="nav justify-content-end">
+<li class="nav-item">
+<a class="nav-link active" href="#">Active</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">Link</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">Link</a>
+</li>
+<li class="nav-item">
+<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="tru">Disabled</a>
+</li>
+</ul>
+
+
+Vertical
+
+Cambiando la dirección del elemento flexible con la utilidad .flex-column. Utilizá las versiones receptivas (por ejemplo, .flex-sm-column).
+
+Activo
+Enlace
+Enlace
+Desbled
+
+Código
+
+<ul class="nav flex-column">
+<li class="nav-item">
+<a class="nav-link active" htref="#">Active</a>
+</li>
+<li class=2nav-item">
+<a class="nav-link" href="#">Link</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">Link</a>
+</li>
+<li class="nav-item">
+<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="tru">Disabled</a>
+</li>
+</ul>
+
+
+Como siempre, la navegación vertical también es posible sin <ul>-
+
+ActivoEnlaceEnlaceDisabled
+
+
+Código
+
+<nav class="nav flex-column">
+<a class="nav-link active" href="#">Active</a>
+<a class="nav-link" href="#">Link</a>
+<a class="nav-link" href="#">Link</a>
+<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+</nav>
+
+
+Pestañas
+
+La navegación básica desde arriba y agrega la clase .nav-tabs para generar una interfaz con pesetañas. Úselos para crear regiones tabulares.
+
+
+Código
+
+<ul class="nav nav-tabs">
+<li class="nav-item">
+<a class="nav-link active" href="#">Active</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">Link</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">Link</a>
+</li>
+<li class="nav-link" href="#">Link</a>
+</li>
+<li class="nav-item">
+<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+</li>
+</ul>
+
+
+Usar menús desplegables
+
+Agregá menús desplegables con un poco de HTML adicional y el complemento JavaScript desplegable.
+
+Pestañas con menús desplegables
+
+<ul class="nav nav-tabs">
+<li class="nav-item">
+<a class="nav-link active" href="#">Active</a>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="#">Action</a>
+<a class="dropdown-item" href="#">Another action</a>
+<a class="dropdown-item" href="#">Something else here</a>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="#">Separated link</a>
+</div>
+</li>
+<li class0"nav-item">
+<a class="nav-link" href="#">Link</a>
+</li>
+<li class="nav-item">
+<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</aZ
+</li>
+</ul>
+_________________________________
+
+
+12.FORMULARIOS
+
+Formularios
+
+Ejemplos y pautas de uso para estilos de control de formularios, opciones de diseño y componentes personalizados para crear una amplia variedad de formularios.
+
+Visión general
+
+Los controles de formularios de Bootstrap se expanden estilos de formularios reiniciados con clases. Utilizá estas clases para optar por su pantallas personalizadas para una representació más consistente en todos los navegadores y dispositivos.
+
+Asegúrese de utilizar un atributo type apropiado en todoas las entradas (por ejemplo, email para la dirección de correo electrónico o number para información numérica) para aprovechar los controles de entrada más nuevos, como la verificaicón de correo electronico, la seleción de números y más.
+
+aquí hay un ejemplo rápido para demos trar los estilo de formulario de Bootstrap. Siga leyendo para obtener documentación sobre las clases requeridas, el diseño de formularios y más.
+
+Dirección de correo electrónico 
+Contraseña
+Me echa un vistazo
+Enviar
+
+
+<form>
+<div class="form-grou">
+<label for="ExampleInputEmail1">Email address</label>
+<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+<smaill id="emailHelp" class="form-text text-muted">We'll never share your email anyone else.</small>
+</div>
+<div class="form-group">
+<label for="exampleInputPassword1">Password</label>
+<input type="password" class="form-control" id="exampleInputPassword1">
+</div>
+<div class="form-group form-check">
+<input type="checkbox" class="form-check-input" id="exampleCheck1">
+<label class="form-check-label" for="exampleCheck1">Check me out</label>
+</div>
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+Dimesionamiento
