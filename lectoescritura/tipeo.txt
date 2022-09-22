@@ -1839,3 +1839,70 @@ Enviar
 
 
 Dimesionamiento
+
+Podés establecer alturas usando clases como .form-control-lg y .form-control-sm.
+
+Código
+
+<select class="form-control form-control-lg">
+<option>Large select</option>
+</select>
+<select class="form-control">
+<option>Default select</option>
+</select>
+<select class="form-control form-control-sm">
+<option>Small select</option>
+</select>
+
+
+Solo lectura
+
+Agregue el atributo booleano readonly en una entrada para evitar la modificación del valor de la entrada. Las entradas de solo lectura aparecen más claras (al igual que las entradas desactivadas), pero retienen el cursor estándar.
+
+Código 
+
+<input class="form-control" type="text" placeholder="readonly input here..." readonly>
+
+Texto sin formato de solo lectura
+
+Si desea que los elementos de esu formulario tengan un estilo de texto sin formato, use la clase .form-control-plaintext para eliminar el estilo predeterminado del campo del formulario y conservar el margen y el relleno correctos.
+
+Email
+Contraseña
+
+Copiar
+
+<form>
+<div class="form-group row">
+<label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+<div class="col-sm-10">
+<input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+</div>
+</div>
+<div class="form-group row">
+<label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+<div class="col-sm-10">
+<input type="password" class="form-control" id="inputPassword">
+</div>
+</div>
+</form>
+
+Email
+Contraseña
+Confirmar identidad
+
+Código
+
+<form class="form-inline">
+<div class=2form-group mb-2">
+<label for="staticEmail2" class="sr-only">Email</label>
+<input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
+</div>
+<div class="form-group mx-sm-3 mb-2">
+<label for="inputPassword2" class="sr-only">Password</label>
+<input type="password" class="form-control" id="inputPassword2" placeholder="password">
+</div>
+<button type="submit" class="btn btn-primary bm-2">Confirm indentity</button>
+</form>
+
+Entradas
