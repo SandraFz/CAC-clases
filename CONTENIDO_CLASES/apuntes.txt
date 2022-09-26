@@ -117,7 +117,16 @@ ______________________________
 Lunes, 19 de septiembre de 2022
 
 RESPONSIVE DESIGN
-
+____________________________________________________________________________________
+|	FreeCodeCamp / breakpoins estándares							|
+|	Vamos a ver ahora los breakpoints comunes según el ancho de los dispositivos:	|
+|														|	
+|	320px — 480px: Dispositivos móviles								|
+|	481px — 768px: iPads, tablets									|
+|	769px — 1024px: pantallas pequeñas, ordenadores portátiles				|
+|	1025px — 1200px: pantallas grandes, ordenadores de escritorio			|
+|	1201px y más —  pantallas extra-grandes, televisores					|
+|___________________________________________________________________________________|
 
 •MediaQueries. Breakpoint 914x412 y landscape (A51). 600x450 ó 700x460 está bien como tamaño representativo de celulares.
 
@@ -150,8 +159,8 @@ X-Small			None			<576px
 Small				sm			≥576px
 Medium			md			≥768px
 Large				lg			≥992px
-Extra large			xl		≥1200px
-Extra extra large		xxl		≥1400px
+Extra large			xl			≥1200px
+Extra extra large		xxl			≥1400px
 
 •
 •
