@@ -161,6 +161,31 @@ Medium			md			≥768px
 Large				lg			≥992px
 Extra large			xl			≥1200px
 Extra extra large		xxl			≥1400px
+________________________________________________________________________
 
-•
+26/09/2022
+
+GitHub page - hosting
+
+-settings/pages/deploy form a branch/master/root/save
+-about(al costado)/arreglar el dominio al final del dominio para crear el link.
+-
+
+
+
+
+Netifly - hosting
+
+
+•filter: 50% al padre para oscurecer la imagen.
+__________________________________________
+
+JAVASCRIPT
+
+Investigar:
+
+pseudocódigo
+tablas de verdad diagramas de flujo
+
+
 •
