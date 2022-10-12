@@ -82,5 +82,187 @@ cadenaConcatenada=cadena1+cadena2//cadena concatenada vale "holamundo"
 
 Un detalle importante que se puede ver en este caso es que el operador + sirve para dos usos distintos, si sus operandos son números los suma, pero si se trata de cadenas las concatena. Esto pasa en general con todos los operadores que se repiten en el lenguaje, javascript es suficientemente listo para entender qué tipo de operacón realizar mediante una comprobación de los tipos que están implicados en ella.
 
-Un caso que resultaría confuso es el uso del operador + cuando se realiza la operación con operadores texto y numéricos entremezclados. En este caso javascript asume que se desea realizar una concatenación y trata a los dos operandos como
+Un caso que resultaría confuso es el uso del operador + cuando se realiza la operación con operadores texto y numéricos entremezclados. En este caso javascript asume que se desea realizar una concatenación y trata a los dos operandos como si de cadenas de caracteres se trataran, incluso si la cadena de texto que tenemos fuese un número. Esto lo veremos más fácilmente con el siguiente ejemplo.
+
+miNumero=23
+miCadena1="pepe"
+miCadena2="456"
+resultado1=miNumero+miCadena1 //resultado1 vale "23pepe"
+resultado2 = miNumero + miCadena2 ahora vale "45623"
+
+Como hemos podido ver, también en el caso del operador +=, si estamos tratando con dos cadenas de texto y números entremezclados, tratará a los dos operadores como si fuesen cadenas.
+
+No se encuentran muchas operaciones típicas a realizar con cadenas, para las cuales no existen operadoes. Es porque esas funcionalidades se obtienen a través de la clase String de Javascript.
+
+Operadores condicionales de la clase
+
+Sirven para realizar expresiones condicionales todo lo complejas que deseemos. Estas expresiones se utlizan para tomar decisiones en función de la comparación de varios elementos, por ejemplo si un número es mayor que otro o si son iguales.
+
+Los operadores condicionales se utilizan en las expresiones condicionales para tomas de decisiones.
+
+Seguidamente podemos ver la tabla e operadores condicionales.
+
+== Comprueba si dos valores son iguales
+!= Comprueba si dos valores son distintos tipos
+> Mayor que, devuelve true si el primer opernado es mayor que el segundo.
+<Menor que, es true cuando el elemento de la izquierda es menos que el de la derecha
+>= Mayor iguales
+<= Menor igual
+
+Operadores lógicos
+
+Estos operadores sirven para realizar operaciones lógicas, que son aquellas que dan como resultado un verdadero o falso, y se utilizan para tomar decisiones en nuestro scripts. En vez de trabajar con números, para realizar este tipo de operaciones se utilizan operndo boleanos, que conocimos anteriormente, que son el verdadero (true) y el falso (false). Los oeradores lógicos relacionan los operando boleanos para dar como resultado otro opernado boleano.
+
+
+Los operadores lógicos de JavaScirpt son:
+
+NOT (!),
+AND (&&),
+OR (||).
+
+El operador NOT produce falso si su operando es verdadero, y viceversa. 
+El operndor AND produce verdadero sólo si ambos operandos son verdaderos; si cualquiera de los opernados es falso, produce falso.
+
+El operador OR produce verdadero si cualquiera de los operandos es verdadero, y falso en case de que los dos operando sean falsos.
+
+Operadores Lógicos Tabla de Verdadero
+
+La tabla de verdad es la que se emplea en la mayoría de los lenguajes de programamción:
+
+Ahora que conocemos la tabla de verdad, es momento de emplearla en lo que es el lenguaje de programación, para ello veremos algún ejemplo práctico. Retomemos a lo que eran los comparadores relacionales en el cual utilizábamos los símbolos <, >, ==, etc..
+
+Miremos el siguiente código: 
+
+console.lot(4>2);
+
+Esto daba como resultado el Booleano true
+
+Si teníamos el siguiente código:
+
+consolo.log(2>4);
+
+En este caso daba como resultado False.
+
+En ambos ejemplos solo utilizamos una relación pero si utilizamos los operadores lógicos podemos comparar dos valores o más, con el cual nos dará un resultado booleano.
+
+Ejemplo Práctico Operador AND (&&)
  
+En principio utilizaremos el operador lógico AND (&&), recordemos que este solo da valor verdadero (True) si al comparar dos valores, los mismos dan como resultado true.
+
+Ejemplo:
+
+consolo.log(4>2 &&5>1)
+
+En este caso por un lado compara el resultado del valor 4>2 = True y 5>1 = True, y siguiendo la regla de la tabla lógica, cuando dos valores son del tipo True el resultado final es True, caso contrario sería false, veamos un ejemplo práctico en el cual nos de false.
+
+consolo.log(4>2 && 1>3)
+
+En ese ejemplo el valor de la primera relación 4>2 es True pero la segunda relación 1>3 es False, el resultado general es False ya que mirando la tabla AND, en el caso que algun o de los valores sea False el resultado general es False.
+
+Ejemplo Práctico Operador OR (||)
+
+Ahora haremos un ejemplo práctico para ver cómo trabaja el operador lógico OR, para ello recordemos la tabla.
+
+En este caso solo da valor verdadero si alguno de los resultados da True, para ello podemos comprobarlo con el siguiente ejemplo práctico. 
+
+Ejemplo:
+
+consolo.log(4>2 || 3>1)
+
+En el ejemplo anterior las dos operaciones de relacón dan valor True, 4>2 = True y 3>1 = True, probemos con otro ejemplo distinto.
+
+Ejemplo: 
+
+console.log(4>1 || 3<1)
+
+En el ejemplo anterior da como resultado general True ya que cumple con que alguno de los valores es True, 4>1=true y 3<1=false, probemos con otro ejemplo dist
+
+Ejemplo Práctico Operador NOT (!)
+
+El operador NOT lo que hace es negar la expresión como se ve en su tabla:
+
+En este caso veremos cómo trabaja el operador:
+
+Ejemplo:
+
+consolo.lot(!4>2)
+
+Como se ve en el ejemplo anterior, la expresion en sí 4>2 da como resultado True pero al tener el signo de negación NOT (!), lo que hace es invertir el resultado, en este caso da False.
+
+Ejemplo:
+
+console.log(!1>3)
+
+En este último ejemplo el resultado general es false ya que 1 no es mayor a 3 pero al tener el operador NOT, da como resultado True.
+
+En el siguiente grupo de operadores veremos sobre los operadores condicionales, que se pueden utilizar junto cno los operadores lógicos para realizar sentencias todo lo complejas que necesitemos.
+
+Por ejemplo:
+
+if(x==2 && y!=3){
+    //Si la variable x vale 2 y la variable y es distinta de tres
+}
+
+En la expresión condicional anterior estamos evaluando dos comprobaciones que se relacionan con un operador lógico. Por una parte x==2 devolverá un true en caso de que la variable x valga 2 y por otra, y!=3 devolverá un true cuando la variable tenga un valor distinto de 3. Ambas comprobaciones devuelven un boleano cada una, que luego se le aplica el operador lógico && para comprobar si ambas comprobaciones se cumplieron al mismo tiempo.
+
+Para ver ejemplo de operadores condicionales, necesitamos aprender estructuras de control como if, a las que no hemmos llegado todavía.
+
+! Operador NO o negación. Si era true pasa a false y viceversa.
+
+&& Operador Y, si son los dos verdaderos vale verdadero.
+
+|| Oerador O, vale verdadero si por lo menos uno de ellos es verdadero.
+
+Ejemplo:
+
+miBoleano = True
+miBoleano =!miBoleano //miBoleano ahora vale False
+tengoHambre = True
+tengoComida = True
+comoComida = tengoHambre && tengoComida
+
+Precedencia de los Operadores
+
+La evaluación de una sentencia de las que hemos visto en los ejemplos anteriores es bastante sencilla y fácil de interpretar, pero cuando en una sentencia entran en juego multitud de operadores distintos puede ser difícil interpretar qué operadores son los que se ejecutan antes que otros.
+
+Para marcar unas pautas en la evaluación de las sentencias y que estas se ejecuten siempre igual y con sentido común existe la precedencia de operadores, que no es más que el orden por el que se irán ejecutando las operaciones que ellos representan. En un principio todos los operadores se evalúan de izquierda a derecha, pero existn unas normas adicionales, por las que determinados operadores se evalúan antes que otros. Muchas de estas reglas de precedencia se basan de normas matemáticas y son comunes a otros lenguajes, las podemos ver a continuación.
+
+()[]. Paréntesis, corchetes y el operador punt que sirve para los objetos
+
+! - ++ -- negación, negativo e incrementosa
+
+* / % Multiplicación, división y módulos de
+
++ - Suma y restar
+
+<<>> >>> Cambios a nivel de BREAKPOINT
+
+< <= > >= Operadores condicionales
+
+== != Operadores condicionales de igualdad y desigualdad
+
+& ^ | Lógicos a nivel de BREAKPOINT
+
+&& || Lógicos booleanos
+
+En los siguientes ejemplos podemos ver cómo las expresiones podrían llegar a ser confusas, pero con la tabla de precedencia de operadores podremos entender sin errores cuál es el orden por el que se ejecutan.
+
+12 * 3 + 4 - 8 / 2 % 3
+
+En este caso primero se ejecutan los operadores * / y %, de izquierda a derecha, con lo que se realizarían estas operaciones. Primero la multiplicación y luego la división por estar más a la izquierda del módulo.
+
+36 + 4 - 4 % 3
+
+Ahora el módulo.
+
+36 + 4 - 1
+
+Por último las sumas y las restas de izquierda a derecha.
+
+40 - 1
+
+Lo que nos da como resultado el valor siguiente.
+
+39
+
+De todos modos, el uso de los paréntesis puede ahorrarnos mucho tiempo de desrrrollo cuando veamos poco claro el orden con el que se ejecutarán las sentencias, ya que podemos utilizarlos y así forzar que se evalúe antes el segmento de expresión que se encuenra dentro de los paréntesis.
