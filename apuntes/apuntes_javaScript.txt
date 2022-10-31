@@ -1,0 +1,23 @@
+JavaScript 12/10/2022
+
+Buena práctica:
+
+utilizar el console.log()
+
+console.log= objeto.loguea esto
+___________________________________
+
+Variables
+
+Tiempo de ejecución=mientras el usuario interactúa con la página.
+
+hardcodeado: yo, programador, escribo en la variable y no tomado del usuario.
+
+La misma variable puede cambiar de dato, ojo!
+
+JavaCript es case sensitive.
+
+let no permite dos variables con el mismo nombre. 
+var sí lo permite.
+
+&& = doble ampersan

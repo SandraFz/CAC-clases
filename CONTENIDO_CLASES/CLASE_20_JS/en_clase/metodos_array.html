@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>metodos Arrays</title>
+</head>
+<body>
+    <script>
+
+            const estudiantes = [];
+
+            //*agregar elementos al array
+            for (let i = 0; i < 10; i++) {
+                estudiantes.push('Estudiante ' + i);
+            }
+            console.log(estudiantes); 
+            // recorrer un array que no sabemos cuantas posiciones tiene y dentro mostramos el valor de cada posicion
+            for (let i = 0; i < estudiantes.length; i++) {
+                console.log(estudiantes[i]);
+           
+            }
+
+            
+            for (let indice in estudiantes) {
+                console.log(estudiantes[indice]);
+            }
+
+            const frutas = ['manzana','pera','banana','naranja','mandarina','sandia','melon','kiwi','durazno','uva'];
+            for (let fruta of frutas) {
+                console.log(fruta);
+            }
+
+            const autos = ['BMW', 'Audi', 'Volvo'];
+            autos.push('Mercedes Benz');
+            console.log(autos);
+            console.log(autos.pop());// el ultimo elemento del array
+            // si el auto es volvo el que va a quitar muestre un msj 
+           /* if (){
+                console.log('El elemento existe');
+            }*/
+            console.log(autos);
+            autos.splice(1, 0, 'Fiat');// agrega antes del elemento de la posicion start 
+            autos.splice(1, 1, 'Fiat');// reemplaza
+            console.log(autos);
+            // como copiar los valores de un array para que sean independientes y realmente guarde una copia 
+            const copiaAutos = autos.slice();
+            console.log(copiaAutos);
+            autos.pop();
+            console.log("copia autos")
+            console.log(copiaAutos);
+            console.log("autos")
+            console.log(autos);
+
+            const productos = [
+                {id: 1, nombre: 'Monitor 20 pulgadas', precio: 500},
+                {id: 2, nombre: 'Televisión 50 pulgadas', precio: 700},
+                {id: 3, nombre: 'Tablet', precio: 300},
+                {id: 4, nombre: 'Audifonos', precio: 200},
+                {id: 5, nombre: 'Teclado', precio: 50},
+                {id: 6, nombre: 'Celular', precio: 500},
+                {id: 7, nombre: 'Bocinas', precio: 300},
+                {id: 8, nombre: 'Laptop', precio: 800},
+            ];
+            let nombreAPasar = 'Producto';
+            const productosDescuentos= productos.map( producto => {     
+              return {
+                 ...producto, // todos los datos del producto
+                descuento : 10,
+                precioDescuento : producto.precio * 0.9,
+                nombre : producto.nombre.toUpperCase(),
+                nombre : producto.nombre + ' - 10% de descuento',
+                nombreNuevo : 'producto'
+                
+               // aca puedo tamnbien alterar los datos del objeto
+              }
+            }); 
+           // console.log(productos);
+             console.log(productosDescuentos);
+           /*
+            productosDescuentos.forEach(function (producto, index , productosDescuentos) {
+                console.log(producto.nombre);
+                console.log(producto);
+                console.log(index);
+                console.log(productosDescuentos);
+            });*/
+    </script>
+</body>
+</html>

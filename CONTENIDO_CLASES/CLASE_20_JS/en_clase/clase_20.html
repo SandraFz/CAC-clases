@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrays-objetos-funciones</title>
+</head>
+<body>
+    <script>
+        /*
+        let nombres = ['Pedro','Juan','Ana','Maria','Jose','Luis','Rosa','Sofia','Marta','Lorena'];
+        let persona =['Pedro','Lopez', 45, 1.75, true];// 0 = nombre , 1 = apellido , 2 = edad , 3 = altura , 4 = legustan los animales
+        let personas = [
+            ['Pedro','Lopez', 45, 1.75, true],//0
+            ['Juan','Perez', 25, 1.65, false],//1
+            ['Ana','Gomez', 35, 1.55, true],//2
+            ['Maria','Gonzalez', 55, 1.85, false],//3
+            ['Jose','Martinez', 65, 1.95, true],//4
+            ['Luis','Gutierrez', 75, 1.75, false],//5
+            ['Rosa','Rodriguez', 85, 1.65, true],//6
+            ['Sofia','Fernandez', 95, 1.55, false],//7
+            ['Marta','Diaz', 105, 1.45, true],//8
+            ['Lorena','Moreno', 115, 1.35, false]//9
+        ];
+
+        console.log(personas[0][3]);
+
+        nombres = persona ; // arrays en js son objetos, esta igualdad asigna el valor del espacio en memoria que me asigno la memoria cuando cree el array
+        console.log("array nombres" + nombres);
+        console.log("array persona" + persona);
+        persona[0] = 'Rocio';
+        console.log(nombres);
+
+        let a =  10 ;
+
+        let b = 20 ;
+
+        a = b ;
+        console.log(a);
+        console.log(b);
+        b = 30 ;
+        console.log(a);
+        console.log(b);
+
+        const apellidos = ['Gonzalez']; // APUNTA A UNA CELDA DE MEMORIA
+        const apellidosNuevos= ['Lopez']; // APUNTABA A OTRA CELDA DE MOMORIA DISTINTA 
+        apellidos = apellidosNuevos; // LOS DOS APUNTAN A LA CELDA DE apellidosNuevos
+        console.log(apellidos);
+        console.log(apellidosNuevos);
+        apellidosNuevos[0] = 'Perez'; // CAMBIO EL VALOR DE LA CELDA DE MEMORIA QUE APUNTAN LOS DOS ARRAYS
+        console.log(apellidos);
+        console.log(apellidosNuevos);
+     // let persona =['Pedro','Lopez', 45, 1.75, true];// 0 = nombre , 1 = apellido , 2 = edad , 3 = altura , 4 = legustan los animales
+        // objetos literales
+        const personaNueva = {
+            nombre: 'Pedro',
+            apellido: 'Lopez',
+            edad: 45,
+            altura: 1.75,
+            legustanlosanimales: true
+        };
+        const arrayPersonas = [
+            {nombre: 'Juan', edad : 25},
+            {nombre:'Pedro', edad: 45},
+            {nombre:'Ana', edad: 35},
+            {nombre:'Lucia', edad: 55}
+          
+        ]
+        const objetosVarios = {
+            clima :{
+                temperatura: 25,
+                humedad: 50
+            },
+            personas: [
+                {nombre: 'Juan', edad : 25},
+                {nombre:'Pedro', edad: 45},
+                {nombre:'Ana', edad: 35},
+                {nombre:'Lucia', edad: 55}
+            ],
+            dias: ['lunes','martes','miercoles','jueves','viernes','sabado','domingo'],
+            animales : {
+                perros: ['pitbull','labrador','pastor aleman','chihuahua'],
+                gatos: ['siames','persa','angora','siamés'],
+                aves: ['canario','loro','periquito','gallina']
+            }
+        }*/
+        // funciones 
+        function MostrarMensaje(){
+            console.log('Hola mundo');
+        }
+        MostrarMensaje();
+
+        function SumarDosNumeros(a, b){ // parametros
+            //to do TAREA :  aca tendria que hacer las validaciones necesarias para asegurarme que los parametros que me pasan son numeros
+           /*
+            //validacion 
+            if (a y b son numeros ) {}
+               let suma = a + b;
+               return suma;}
+            else{
+                return false; 
+            }
+           */
+        }
+
+        let resultado = SumarDosNumeros(100,500);// argumentos
+        console.log(resultado);
+        resultado = SumarDosNumeros(50,300);// argumentos
+        console.log(resultado);
+        resultado = SumarDosNumeros("Gisele ","Gonzalez");// argumentos
+        console.log(resultado);
+        if (!resultado){
+            console.log('No se pudo realizar la suma');
+        }
+      
+        function AgregarPersona(nombre='', apellido='',edad=0, altura=0, legustanlosanimales=false){
+            const persona = {
+                nombre: nombre,
+                apellido: apellido,
+                edad: edad,
+                altura: altura,
+                legustanlosanimales: legustanlosanimales
+
+            };
+            return persona;
+
+        }
+      
+        const nuevaPersona = AgregarPersona();
+        console.log(nuevaPersona);
+        const nuevaPersonaDos = AgregarPersona("Rosana","Gonzalez", 45, 1.75, true);
+        console.log(nuevaPersonaDos);
+        const nuevaPersonaTres = AgregarPersona("Gisele","Gonzalez", 45);
+        console.log(nuevaPersonaTres);
+
+        // funciones anonimas
+        const funcionAnonima = function(mensaje=''){
+            console.log('soy una funcion anonima' + mensaje);
+        }
+        funcionAnonima('Hola mundo');
+
+        // funciones flecha 
+        const funcionFlecha = (mensaje='') => console.log('soy una funcion flecha' + mensaje);
+
+        const agregarPersonaFlecha = (nombre='', apellido='',edad=0, altura=0, legustanlosanimales=false) =>{
+            const persona = {
+                nombre: nombre,
+                apellido: apellido,
+                edad: edad,
+                altura: altura,
+                legustanlosanimales: legustanlosanimales
+
+            };
+            return persona;
+
+        }
+        const nuevaPersonaCuatro = agregarPersonaFlecha("Jose","Alonso", 34);
+        console.log(nuevaPersonaCuatro);
+    </script>
+</body>
+</html>

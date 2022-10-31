@@ -187,5 +187,302 @@ Investigar:
 pseudocódigo
 tablas de verdad diagramas de flujo
 
+prompt(devuelve string)
 
-•
+
+CONVERSIONES
+parseIn
+parseFloat
+Number
+conversión implícita (solo JavaScript)
+al colocar el signo + adelante funciona igual que number.
+
+typeOf
+
+null=/=undefine (solo en JavaScript)
+
+
+OPERADORES
+aritméticos
+lógicos
+relacionales
+
+
+INCREMENTOS/DECREMENTOS ARITMÉTICOS
+(asignan y ejecutan)
+
+let numero=10
+
+numero = numero +1; 
+numero +=1;
+numero ++;
+
+LÓGICOS
+
+and &&
+or ||
+not !
+
+RELACIONALES
+
+>
+<
+>=
+<=
+==
+!=
+
+____________________
+= asignación
+== comparación (valor independiente del tipo)
+=== excluyente (tipo de dato y contenido idéntico)
+____________________________________
+
+•if/else condicionales simples
+•switch condicional múltiple para cuando una variable puede tomar varios diferentes valores.
+
+
+document.write();
+_____________________________________
+
+JAVASCRIPT - 19/10/2022
+
+Condicionales - estructuras posibles
+
+if(){}
+
+if(){} else {}
+
+if(){} else if {}
+
+if(){} else if {} else {}
+
+______________________________________
+
+Condicional terniario???
+
+estructura: condición ? respuesta del true : respuesta del false
+
+_______________________________________
+
+SWITCH
+
+TAREA: transformar el código del ejemplo del los animales en switch.
+________________________________________
+
+BUCLES
+________________________________________
+
+FOR clásico
+
+estructura
+for(inicialización; condición; actualización){
+bloque de código}
+
+̉inicialización: se ejecuta una vez;
+condición: se evalúa antes de entrar al bloque de código;
+actualización: cuando termina.
+
+
+continue (dentro de un condicional en el for): continua el bucle pero no pasa al siguiente bloque.
+
+break (dentro de un condicional en el for): cuando se cumple la condición, sin concretar la actualización, pasa al siguiente bloque de código.
+_____________________________________
+
+WHILE
+
+Se utiliza cuando yo no sé cuándo se va a cortar el bucle.
+
+estructura
+
+while(condición){
+bloque de código}
+
+while(condición){
+bloque de código;
+condición=cambia;} //para que corte y no sea infininto.
+
+TAREA: resolver lo de la edad que se pide mientras no sea determinado número.
+
+____________________________________
+
+DO WHILE
+
+ A diferencia del while, se ejecuta una vez al menos antes de evaluar la condición.
+
+estructura
+
+do{bloque} while (condición);
+______________________________________
+
+ARRAY's
+
+array(reserva espacio de memoria, dirección de espacio en memoria)=/=variable(guarda el dato directamente?)
+
+Los arrays en JavaScript son del tipo Objeto, son mutables.
+____________________________
+
+Matriz: array de arrays.
+
+Los arrays se declara como constante para que guarde el valor?
+
+Hay métodos para "copiar" los valores y guardarlos.
+
+_________________________
+
+Objetos literales (clásica declaración de objeto, similar a Json)
+
+const persona={
+nombre:"Pedro";
+apellido:"Lopez";
+};
+
+Array de objeto
+
+const arrayPersonas=[
+{},
+{},
+{}
+]
+
+Objeto de objetos
+
+const objetosVarios={
+clima:{},
+persona:{}
+}
+______________________________
+
+Funciones
+Fragmento de código reutilizable
+Objetos de tipo function
+
+sintaxis/declaración(se declaran arriba, primero en el script)
+
+sin return
+function MostrarMensajes(){
+	instrucciones...
+};
+
+con return sin parámetros
+function SumarDosNumeros(){
+let a=1;
+let b=2;
+return a+b;
+}
+
+con parámetros
+function SumarDosNumeros(a,b){
+return a+b;
+}
+
+A los parámetros se les puede asignar un valor por defecto
+
+function FuncionArray(nombre="", apeelido=""){
+código...
+return
+}
+
+invocación:
+
+MostrarMensaje();
+
+Puedo asignar el return a una variable.
+
+let sumaTotal=SumarDosNumeros(5,7);
+___________________________________
+
+
+Funciones anónimas
+La declaración se la asigna a una variable.
+
+Se declara como constante como todo objeto.
+
+const funcionAnonima=function(parámetro){
+código}
+
+Se la llama por la variable
+
+funcionAnonima(argumento)
+
+______________________________________
+
+Funciones flecha
+También se asigna a una variable, no tiene ni la palabra reservada function.
+Se puede quitar las llaves si se muestra en una sola línea.
+
+const agregarPersonaFlecha =(parámetros)=>{código;
+return;
+}
+___________________________
+
+Volvemos a arrays/métodos
+
+Push (agregar en la última posición)
+Pop (quitar en la última posición)
+
+Propiedades
+array.length
+
+for clásico
+for (let indice in estudiantes){(recorre)}
+for (let estudiante of estudiantse){}
+
+______________________________
+
+Map
+
+recorre un array y lo devuelve modificado como queremos.
+
+______________________________________
+
+DOM = Document Object Model (representación de html en js; no es un lenguaje sino elementos)
+
+Cada etiqueta html en js es un element
+
+El archivo en el que están es un document.
+
+El contenido de cada elemento, text.
+
+Los atributos, atribute: attr.
+
+Cada elemento para js se llama object o node
+
+Js tiene métodos.
+
+El navegador carga en memoria los objetos que representan el html, lo que le  permite modificar...
+
+Los nodos más importantes:
+document
+element
+text
+attr
+
+Métodos comunes
+
+getElementById('id') 
+
+Eventos: onchange, onblur, onclick, etc...
+
+Evento + controlador de evento (para que se pueda manipular): addEventListener(evento, funición anónima)
+
+__________________________________________________
+
+INTEGRADOR
+
+Resumen: recibe el click y la función. 
+función: validar que ingresen los inputs// Calcular el monto según cantidad y categoría// Insertar en total a pagar el valor total a pagar.
+Borrar: ya tiene su programacón.
+
+
+Solución:
+
+Declarar constantes.
+Declarar variables// Levantar en variables los elementos del DOM.
+Declarar funciones.
+Llamada de las funciones.
+
+INVESTIGAR: expresiones regulares, cómo se escriben
+
+
+querySelectorAll(devuelve un array)

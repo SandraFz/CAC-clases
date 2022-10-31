@@ -1,86 +1,518 @@
-2. Operadores JavaScript
+2.Arrays
 
-Operadores Javascript
+Arrays
 
-Al desarrollar programas en cualquier lenguaje se utilizan los operadores, que sirvenpara hacer los cálculos y operaciones necesarios para llevar a cabo tus objetivos. Hasta el menor de los programas imaginables necesita delos operadodes para realizar cosas, ya que un programa que no realizase operaciones, sólo se limitaría a hacer siempre lo mismo.
+El objeto Array de JavaScript es un objeto global que es usando en la construcción de arrays, que son objetos tipo lista de alto nivel.
 
-Es el resultado de las operaciones lo que hace que un programa varíe su comportamiento según los datos que tenga para trabajar y nos ofrezca resultados que sean relaventes para el usuario que utilice. Existen operaciones más sencillas o complejas, que se pueden realizar con operandos de distintos tipos, como números o textos.
+Descripción
 
-Ejemplos de uso de operadores
+Los arrays son objetos similares a una lista cuyo prototipo proporciona métodos para efectuar operaciones de recorrido y de mutación. Tanto la longitud como el tipo de los elementos de un array son variables. Dado que la longitud de un array puede cambiar en cualquier momento, y los datos se pueden almacenar en ubicaciones no contiguas, no hay garantías de que los arrays de JavaScript sean correlativos y de extensión fija. Esto depende de cómo el programador elija usarlos. En general estas características son cómodas, auque si algún caso particular, no resultan deseables, se puede considerar el uso de arrays con tipo.
 
-Antes de enumerar los distintos tipos de operadores vamos a a ver ejemplos de éstos. En el primer ejemplo vamos a realizar una suma utilizando el operador suma.
+Operaciones habituales
 
-3 + 5
+Crear un Array
 
-Esta es una expresión muy básica que no tiene mucho porque no se hace nada con el resultado. Normalmente se combinan más de un operador para crear expresiones más útiles. La expresión siguiente es una combinación entre dos operadores, uno realiza una operación matemática y el otro sirve para guardar el resultado.
+let frutas=["Manzana", "Banana"]
+console.log(frutas.length)
+//2
 
-MiVariable =23*5
+Acceder a un elemento de Array mediante su  índice
 
-En el ejemplo anterior, el operador * se utiliza para realizar una multiplicación y el operador = se utiliza para asignar el resultado en una variable, de modo que guardemos el valor para su posterior uso.
+let primero=frutas[0]
+//Manzana
 
-Los operadores se pueden clasificar según el tipo de acciones que realizan:
+let ultimo=frutas[frutas.lenght-1]
+//Banana
 
-Operadores aritméticos
+Recorrer un Array
 
-Son lo utilizados para la reaización de operaciones matemáticas simples como la suma, resta o multiplicación. En JavaScript son los siguientes:
+frutas.forEach(function(elemento, índice, array){
+console.log(elemento, indice);
+}) 
+//Manzana 0
+//Banana 1
 
-+ Suma de dos valores
-- Resta de dos valores, también puede utilizarse para cambiar el signo de un número si lo utilizamos con un solo operando -23
-* Multiplicación de dos valores
-/ División de dos valores
-% El resto de la división de dos números (3%2 devolvería 1, el resto de dividir 3 entre 2)
-++ Incremento en una unidad, se utiliza con un solo operando
--- Decremento en una unidad, utilizado con un solo operando
+Añadir un elemento al final de un Array
+
+let nuevaLongitud=frutas.push('Naranja')//Añade "Naranja" al final
+//["Manzana", "Banana", "Naranja"]
+
+Eliminar el último elemento de un Array
+
+let ultimo=frutas.pop()//Elimina "Naranja" del final
+//["Manzana", "Banana"]
+
+Añadir un elemento al principio de un Array
+
+let nuevaLongitud=frutas.unshift('Fresa')// Añade "Fresa" al inicio
+//["Fresa", "Manzana", "Banana"]
+
+Eliminar el primer elemento de un Array
+
+let primero=frutas.shift()//Elimina "Fresa" del inicio
+//["Manzana", "Banana"]
+
+Encontrar el índice de un elemento del Array
+
+frutas.push('Pera')
+//["Manzana", "Banana", "Pera"]
+
+let pos=frutas.indexOf('Banana')//(pos) es la posición para abreviar
+//1
+
+
+Eliminar un único elemento mediante su posición
+
+Ejemplo:
+
+Eliminamos "Banana" del array pasándole dos parámetros: la posición del primer elemento que se elimina y el número de elementos que queremos eliminar. De esta forma, .splice(pos,1) empieza en la posición que nos indica el valor de la variable pos y elimina 1 elemento. En este caso, como pos vale 1, elimina un elemento comanzando en la posición 1 del array, es decir "Banana".
+
+let elementoEliminado=frutas.splice(pos,1)
+//["Manzana", "Pera"]
+Eliminar varios elementos a partir de una posición
+
+
+Nota:
+Con .splice() no solo se puede eliminar elementos del array, sino que también podemos extraerlos guardándolo en un nuevo array. Al hacer esto estaríamos modificando el array de origen.
+
+let vegetales=['Repollo', 'Coliflor', 'Zapallo', 'Zanahoria']
+console.log(vegetales)
+//["Repollo", "Coliflor", "Zapallo", "Zanahoria"]
+
+let pos=1, numElementos=2
+
+let elementosElimiinados=vegetales.splice(pos, numElementos)
+
+console.log(vegetales)
+//["Zapallo", "Zanahoria"]==>Lo que actualmente tiene "vegetales"
+
+
+Copiar un Array
+
+let copiaArray=vegetales.slice();
+
+let copiaArray=vegetales.slice();
+//["Repollo", "Zanahoria"]; ==>Copiado en "copiaArray"
+
+Acceso a elementos de un array
+
+Los índices de los arrays de JavaScript comienzan en cero, es decir, el índice del primer elemento de un array es 0, y el del último elemento es igual al valor de la propiedad lenght del array restándole 1.
+
+Si se utiliza un número de índice no válido, se obtendrá undefined.
+
+let arr=['este es el primer elemento', 'este es el segundo elemento', 'este es el último elemento']
+
+console.log(arr[0])// escribe en consola 'este es el primer elemento'
+console.log(arr[1])// escribe en consola 'este es el segundo elemento'
+console.log(arr[arr.lenght-1])// escribe en consola 'este es el último elemento'
+
+Los elementos de un array puedne considerarse propiedades del objeto tanto como toString (sin embargo, para ser precisos, toString() es un método), Sin embargo, se obtendrá un error de sintaxis si se intenta acceder a un elemento de un array de la forma siguiente, ya que el nombre de la propiedad no sería válido:
+
+console.lot(arr.0)// error de sintaxis
+
+No hay nada especial ni en los arrays de JavaScript ni en sus propiedades que ocasione esto. En JavaScript, las propiedades cuyos nombres comienzan con un dígito no pueden referenciarse con la notación punto y debe accederse a ellas mediante la notación corchete.
+
+Por ejemplo, dado un objeto cn una propiedad de nombre '3d', sólo se podría accederse a dicha propiedad con la notación corchete.
+
+let decadas=[1950, 1960, 1970, 1990, 2000, 2010]
+
+console.log(decadas.0)//error de sintaxis
+console.log(decadas.[0])//funciona correctamente
+renderizador.3d.usarTextura(modelo, 'personaje.png')
+renderizador['3d'].usarTextura(modelo, 'personaje.png')
+
+En el último ejemplo, ha sido necesario poner '3d' entre comillas. Es p osible usar también comillas con los índices de los arrays de JavaScript (p. ej., decadas['2'] en vez de decadas[2]), aunque no es necesario.
+
+El motor de JavaScript transforma en un string el 2 de decadas[2] a través de una conversión implícita mediante toString. Por lo tanto, '2' y '02' harían refernecia a dos posiciones direntes en el objeto decadas, y el siguiente ejemplo podría dar true como resultado:
+
+console.log(decadas['2']!=decadas['02'])
+
+Relación entre lenght y las propiedades numéricas
+
+La propiedad length de un array de JavaScript está conectada con algunas otras de sus propiedades numéricas.
+
+Varios de los métodos propios de un array (p.ej., join(), slice(), indexOf(), etc.) tienen en cuenta el valor de la propiedad length de un array cuando se les llama.
+
+Otros métodos (p. ej., push(), spllice(), etc,) modifican la propiedad length de un array.
+
+const fruts = []
+frutas.push('bnana', 'manzana', 'pera')
+
+console.log(frutas.length)//3
+
+Cuando se le da a una propiedad de un array JavaScript un valor que corersponda a un índice válido para el array pero que se encuentre fuera de sus límites, el motos actualizará el valor de la propiedad length como corresponda:
+
+frutas[5]='pera'
+console.log(frutas[5])//'pera'
+console.log(Object.keys(frutas))//['0', '1', '2', '5']
+console.log(frutas.length)//6
+
+Si se aumenta el valor de length:
+
+frutas.length=10
+
+console.log(frutas)//['banana', 'manzana', 'pera', <2 empty items>, 'pera', <4 emty items>]
+
+console.log(Object.keys(frutas))//['0', '1', '2', '5']
+
+console.log(frutas.length)//10
+console.log(frutas[8])// undefined
+
+
+Si se dismiinuye el valor de la propiedad length pueden eliminarse elementos:
+
+frutas.length=2
+
+console.log(Object.keys(frutas))//['0', '1']
+console.log(frutas.length)//2
+
+_____________________________________
+
+Every
+
+El método every ejecuta una función callback (en clases futuras veremos de qué se tratan) dada una vez por cada elemento presente en el arreglo hasta encontrar uno  que haga retornar un valor falso a callback (un valor que resulte falso cuando se convierta a booleano). Si no se encuentra tal elemento, el método every de inmediato retorna false. O si callback retorna verdadero para todos los elementos, every retronará true. callback es llamada sólo para índices del arreglo que tengan valores asignados; no se llama para índices que hayan sido eliminados o a los que no se les haya asignado un valor.
+
+callback es llamada con tres argumentos: el vlaor del elemento, el índice del elemento y el objeto Array que está siendo recorrido.
+
+Si se proporciona un parámetro thisArg a every, será pasado a la función callback cuando sea llamada, usándolo com valor this. En otro caso, se pasará el valor undefined para que sea usado como valor this. El valor this observable por parte de callback se determina de acuerdo a las normas usuales para determinar el this visto por una función.
+
+every no modifica el arreglo sobre el cual es llamado.
+
+El intervalo de elementos procesados por every se establece antes de la primera llamada callbackj. Los elementos que se agreguen al arreglo después de que la función every comience no serán vistos por  la función callback. Si se modifican elementos existentes en el arreglo, su valor cuando sea pasado a callback será el valor que tengan cuando sean visitados; los elementos que se eliminen no serán visitados.
+
+every opera como el cuantificador "para todo" en matemáticas. En particular con el arreglo vacío retorna true. (es un true que todos los elementos del conjunto vacío satisfacen una condición dada.)
 
 Ejemplos
 
-precio=128//introduzco un 128 en la variable precio
+Probando el tamaño de todos los elementos de un arreglo
 
-unidades = 10 //otra asignación, luego veremos operadores de asignación
+El siguiente ejemplo prueba si todos lo elementos de un arreglo son mayores que 10.
 
-factura= precio * unidades //multiplico precio por unidades, obtengo el valor factura
+function esGrande(elemento, indice, arreglo){
+return elemento >=10;
+}
+[12, 5, 8, 130, 44].every(esGrande); //false
 
-resto= factrura %2 //obtengo el resto de dividir la variable factura por 3
-
-precio ++ //incrementa en una unidad el precio (ahora vale 129)
-
-Operadores de asignación
-
-Sirven para asignar valores a las variables, ya hemos utilizado en ejemplos anteriores el operador de asignación =, pero hay otros operadoes de este tipo, que provienen del lenguaje C y que muchos de los lectores ya conocerán.
-
-= Asignación. Asigna la parte de la derecha del igual a la parte de la izquierda. A la derecha se colocan los valores finales y a la izquierda generalmente se coloca una variable donde queremos guardar el dato.
-
-+= Asignación con suma. Realiza la suma de la parte de la derecha con la de la izquierda y gurada el resultado en la parte de la izquierda.
-
--= Asignación con resta
-
-*= Asignación de la multiplicación
-
-/= Asignaci´no de la divisió
-
-%= Se obtien el resto y se asigna.
+[12, 54, 18, 130, 44].every(esGrande);// true
 
 
-Ejemplos ahorros = 7000 // asigna un 7000 a la variable ahorros
+Usar funciones flecha
 
-ahorros += 3500 //incrementa en 3500 la variable ahorros, ahora vale 10500
+Las funciones flecha proveen una sintaxis más corta para la misma prueba.
 
-ahorros /= 2 //divide entre 2 mis ahorros, ahora quedan 5250
+[12, 5, 8, 130, 44].every(elem=>elem>=10); //false
+
+[12, 54, 18, 130, 44].every(elem=>elem>=10); //true
 
 
-Operadores de cadenas
+filters
 
-Las cadenas de caracteres, o variables de texto, también tienen sus propios operadores para realizar acciones típicas sobre caadenas. Aunque javascript solo tiene un operador para cadenas se pueden realizar otras acciones con una serie de funiones predefinidas en el lenghuaje que veremos más adelante.
+filter() llama a la función callback sobre cada elemento del array, y construye un nuevo array con todos los valores para los cuales callback devuelve un valor verdadero. callback es invocaada sólo para índices del array que tengan un valor asignado. No se invoca csobre indices que hayn sido borrados o a los qu eno les haya asignado algún valor. Los elementos dle array que no cumplan la condición callback simplemente los salta, y no son incluidos en el nuevo array.
 
-+ Concatena dos cadenas, une la segunda cadena a continuación de la primera.
+callback se invoca con tres argumentos:
 
-Ejemplo
+El valor de cada elemento
 
-cadena1="hola"
-cadena2="mundo"
-cadenaConcatenada=cadena1+cadena2//cadena concatenada vale "holamundo"
+El índice del elemento
 
-Un detalle importante que se puede ver en este caso es que el operador + sirve para dos usos distintos, si sus operandos son números los suma, pero si se trata de cadenas las concatena. Esto pasa en general con todos los operadores que se repiten en el lenguaje, javascript es suficientemente listo para entender qué tipo de operacón realizar mediante una comprobación de los tipos que están implicados en ella.
+El objeto Array que se está recorriendo
 
-Un caso que resultaría confuso es el uso del operador + cuando se realiza la operación con operadores texto y numéricos entremezclados. En este caso javascript asume que se desea realizar una concatenación y trata a los dos operandos como
- 
+Si se proporciona un parámetro thisArg a filter(), este será pasado a callback cuadno sea invocado, para usarlo como valor this. De lo contrario, se pasará el valor undefined como valor this. El valor this dentro del callback se determina conforme a las normas habituales para determinar el this visto por una función.
+
+filter() no modifica el array sobre el cual es llamado.
+
+El rango de elementos procesados por filter() se establece antes de la primera invocacón de callback. Los elementos qu ese añadan al array despue´s de que comience la llamada a filter() no será visitados por callback. Si se modifica o elimina un elemeto exitente del array, cuando pase su valor a callback será el que tenga cuando filter() lo recorra; los elementos qu eson eliminados no son recorridos.
+
+Ejemplos
+
+Filtrando todos los vlaores pequeños
+
+El siguiente ejemplo usa filter() para crear un array filtrado que excluye todos los elementos con valores inferiores a 10. 
+
+function esGrande(elemento){
+return elemnto>=10;
+}
+
+var filtrados=[12, 5, 8, 130, 44].filter(esGrande);
+
+//filtradoes es [12, 130, 44]
+
+
+Some()
+
+some() ejecuta la función callback una vez por cada elemento presente en el array hasta que encuentre uno donde callback retorna un valor verdadero (true). Si se encuentra dicho elemento, some() retorna true inmediatamente. Si no, some() retorna false. callback es invocada sólo para los índices del array que tienen valores asignados; no es invocada para índices que han sido borrados o a los que nunca se les han asignado valores.
+
+callback es invocada con tres argumetnos: el valor del elemento, el índice del elemento, y el objeto array sobre el que es itera.
+
+Si se indica un parámetro thisArg a some(), se pasará a callback cuando es invocada, para usar como valor this. Si no, el valor undefined será pasado par ausar como valor this. El valor this value observable por callback se determina de acuerdo a las reglas habituales para determinar el this visible por una función. 
+
+some() no modifica el array con el cual fue llamada.
+
+El rango de elementos procesados por some() es configurado antes de la primera invocación del callback. Los elementos anexados al array luego de que comience la llamada a some() no serán visitados por callback. si un elemento existente y no visitado del array es alterado por callback, su valor pasado al callback será el valor al momento que some() visita el índice del elemenot; los elementos borrados no son visitados.
+
+Ejemplos
+
+Verificando el valor de los elementos de una array
+
+Elsigiente ejemplo verifica si algún elemento del array es mayor a 10.
+
+function masquediez(element, index, array){
+return element >10;
+}
+
+[2, 5, 8, 1, 4].some(masquedies); //false
+
+[12, 5, 8, 1, 4].some(masquediez);//
+_____________________
+
+3.Funciones
+
+En términos generales, una función es un "subprograma" que puede ser llamado por código externo (o interno en caso de recursión) a la función. Al igual que le programa en sí mismo, una función se compone de una secuencia de declaraciones, que conforman el llamado cuerpo de la función. Se pueden pasar valores a una función, y la funció puede devolver un valor.
+
+Una función es un bloque de código que podemos invocar todas las veces que necesitemos.
+Puede realizar una tarea específica y retornar un valor.
+Nos permite agrupar el código que vayamos a usar muchas veces.
+
+General
+
+Las funciones no son lo mismo que los procedimientos. Una función siempre devuelve un valor, pero un procedimiento, puede o no puede devolver un valor.
+
+Para devolver un valor específico distinto del predeterminado, una función debe tener una sentencia return, que especifique el valor a devolver. Una función sin una instrucción return devolverá el valor predetermiando.
+
+Los parámetros en la llamada a una función son los argumentos de la función. Los argumentos se pasan a las funciones por valor. Si la funcio´n cambia el valor de un argumento, este cambio no se refleja globalmente ni en la llamada de la funcóin. Sin embargo, las referencias a objetos también son valores, y son especiales: si la función cambia las propiedades del objeto referenciado, ese cambio es visible fuera de la función, tal y como se muestra en el siguiente ejemplo:
+
+Estructura básica de una Función:
+
+Usamos la palabra function para indicarle a Javascript que vamos a escribir una función.
+
+function sumer(a,b){
+return a+b;
+}
+
+Nombre: Definimos un nombre para referirnos a nuestra función al momento de querer invocarla, en este caso el nombre de la función es sumar.
+
+Parpametro: escribimos los paréntesis y dentro de ellos los parámetros de la función. Si tiene más de uno, los podemos separar mediante una coma. Si la función no lleva parámetros, escribimos los paréntesis sin nada adentro.
+
+Dentro de nuestra funci´n podremos acceder a los parámetros como si fueran variables. Es decir, con solo escribir los nombres de los parámetros, podremos trabajar con ellos.
+
+Cuerpo: Entre las llaves de aprertura y cierre escribimos la lógica de nuestra función, es decir, el código que queremos que se ejecute cada vez que llamemos a la función.
+
+El retorno: es muy común a la hora de escribir una funcnión que necesitemos devolver al exterior el resultado del proceso que estamos haciendo dentro de ella, para esto utilizamos una palabra reservada return.
+
+Funciones declarativas
+
+Son aquellas que se declaran usando la estructura básica. Reciben un nombre formal a través del cual la podemos invocar.
+
+function mostrarEdad(edad){
+return edad;
+}
+
+Funciones expresivas
+
+En la expresión de función, l adeclaración se inicia con la palabra reservada var, donde se generará una variable que guardará una función anónima.
+
+var nombre= function mostrarEdad(edad){
+return edad;
+}
+
+Invocación de una función
+
+La forma de llamar a una función (invocar) es escribiendo su nombre seguido de apertura y cierre de paréntesis.
+
+nombreFuncion();
+
+En el caso de que necesitemos guardar el valor que retorna una función, será necesario almacenarlo en una variable, también podemos mostrarlo usando console.log.
+
+var edad=nombreFuncion(edad)
+console.log(nombreFuncion(edad));
+
+Si la función espera argumentos, se los podemos pasar dentro de los paréntesis, es muy importante respetar el orden si hay más de un parámetro de bido a que Javascript los asignara en el orden que vayan llegando.
+
+Function mostrarEdad(edad, nombre){
+return "mostrar" + nombre + "tienen" + edad;
+}
+
+mostrarEdad(18,"juan");
+
+Los parámetros son las variables que escribimos cuando definimos la función.
+
+Los argumentos son los valores que enviamos cuando invocamos la función.
+
+__________________
+
+4. Arrows Functions
+
+Arrows Functions
+
+Una expresión de función flecha es una alternativa compacta a una expresión de función tradicional, pero es llimitada y no se puede utilizar en todas las situaciones.
+
+
+Comparación de funciones tradicionales con funciones flecha
+
+Desglose de una "función tradicional" hasta la "función flecha" más simple:
+
+Nota: cada paso a lo largo del camino es una "función flecha" válida.
+
+//Función tradicional
+
+function (a){
+return a+100;
+}
+
+//Función flecha, desglose
+//1.Elimina la palabra "function" y coloca la flecha entre el argumento y el corchete de apertura.
+
+(a)=>{
+return a + 100;
+}
+
+//2.Quita los corchetes del cuerpo y la palabra "return" - el return está implícito.
+
+(a)=>a + 100;
+
+//3.Surpime los paréntesis de los argumentos
+
+a=>a+100;
+
+Como se muestra a rriba, los {corchetes}, (paréntesis) y "return" son opcionales, pero pueden ser obligatorios.
+
+Por ejemplo, con varios argumentos o ningún argumento, tenés que volver a introducir paréntesis alrededor de los argumentos:
+
+//Función tradicional
+
+function (a,b){
+return a + b + 100;
+}
+
+//Función tradicional (sin argumentos)
+
+let a=4;
+let b=2;
+function(){
+return a+b+100;
+}
+
+//Función flecha (sin argumentos)
+
+let a=4;
+let b=2;
+()=>a+b+100;
+
+Del mismo modo, si el cuerpo requiere líneas de procesamiento adicionales, tenés que volvera a introducir los corchetes más el "return" (las funciones flecha no adivinan qué o cuándo querés "volver"):
+
+//Función tradicional
+
+function (a,b){
+let edad=42;
+return a+b+edad;
+}
+
+//Función flecha
+
+(a,b)=>{
+let edad=42;
+return a+b+edad;
+}
+
+Y finalmente, en las funciones con nombre tratamos las expresiones de flecha como variables
+
+//Función tradicional 
+function suma(a){
+return a+100;
+}
+
+//Función flecha
+
+let suma = a=> a+100;
+
+
+Sintaxis básica
+
+Un parámetro con una expresión simple no se necesita return:
+
+param=>expresion
+
+Varios parámetros requieren paréntesis. Con una expresión simple no se necesita return:
+
+(param1, paramN)=>expression
+
+Las declaraciones de varias líneas requieren corchetes y return:
+
+param=>{
+let a=1;
+return a+b;
+}
+
+Varios parámetros requieren paréntesis. Las declaraciones de varias líneas requieren corchetes y return:
+
+(param1, paramN)=>{
+let a=1;
+return a+b;
+}
+
+"this" y funciones flecha
+
+Una de las razones por las que se introdujeron las funciones flecha fue para eliminar complejidades del ámbito (this) y hacer que la ejecuión de las funciones sea mucho más intuitiva.
+
+This se refiere a la instancia. Las instancias se crean cuando se invoca la palabra clave new. De lo contrario, this se establecerá -de forma predeterminada- en el ámbito o alcance de window.
+
+En las funciones tradicionales de manera predeterminada this está en el ámbito de window:
+
+window.age = 10; // <--definición de age por primera vez
+
+function Person(){
+this.age = 42; // <--definición de age por segunda vez
+
+setTimeout(function()) {// <--La funcion tradicional se está ejecutando en el ámbito de window
+console.log("this.age", this.age); //genera "10" porque se ejecuta en el ámbito window
+}, 100);
+}
+
+var p = new Person();
+
+Las funciones flecha no predeterminan this al ámbito o alcance de window, más bine se ejecutan en el ámbito o alcance en que se crean:
+
+window.age = 10; // <--acá
+
+function Person(){
+this.age = 42; // <--acá
+
+setTimeout(() => {// <--Función flecha ejecuándose en el ámbito de "p" (una instancia de Person)
+console.log("this.age", this.age); //genera "42" porque la funci´n se ejecuta en el ámbito de Person
+}, 100);
+}
+
+var p=new Person();
+
+En el ejemplo anterior, la función flecha no tiene su propio this. Se utiliza el valor htis del ámbito léxico adjunto; las funcines flecha siguen las reglas normales de variables. Entonces, mientras busca this que no está presente en el ámbito actual, una función flecha termina encontrando el this en su ámbito adjuto.
+
+call, apply y bind
+
+Los métodos call, apply y bind NO son adecuados para las funciones flecha, ya que rfueron diseñados para permitir que los métodos se ejecuten dentro de diferentes ámbitos, porque las funciones flehca establecen "this" según el ámbito dentro del cual se define la función flecha.
+
+Por ejemplo, call, apply y bind funcionan como se esperaba con las funciones tradicionales, porque establecen el ámbito para cada uno de los métodos:
+
+//-----------------------
+//Ejemplo tradicional
+//-----------------------
+//Un objeto simplista con su propio "this".
+
+var obj={
+num:100;
+}
+
+//Establece "num" en window para mostar cómo NO se usa.
+
+window.num=2020; //¡Ay!
+
+//Una función tradicional simple para operar en "this"
+
+var add=function(a, b, c){
+return this.numb + a + b + c;
+}
+
+//call
+
+var result = add.call(obj, 1, 2, 3) //establece el ámbito como "obj"
+
+console.log(result) //resultado 106

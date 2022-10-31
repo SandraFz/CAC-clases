@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js clase 17</title>
+</head>
+<body>
+    <h1>sintaxis js</h1>
+    <script>
+        console.log("hola mundo tengo 34 años");
+
+        var productos;
+        console.log(productos);
+        productos = "heladera";
+        console.log(productos);
+        productos = 34 ;
+        console.log(productos);
+
+        var miNombre = "Gisele Gonzalez";
+        var nombre = "Gisele";
+        var apellido = "Gonzalez";
+
+        var nombreYapellido ="Mi nombre es :" + nombre + " " + apellido ;
+        console.log(nombreYapellido);
+
+        var numeroUno = 10;
+        var numeroDos = 20;
+        var resultado = numeroUno + numeroDos;
+        console.log(resultado);
+
+        nombre = "Pedro";
+        apellido = "Perez";
+        var miEdad = 35;
+
+        var frase = "Mi nombre es " + nombre + " " + apellido + " y tengo " + miEdad + " años";
+        console.log(frase);
+
+        var miFrase = "me gusta la programación";
+        //var mifrase = "me gusta la programación";
+       // console.log(mifrase);
+       // console.log("estamos debajo del error");
+      //  let miFrase = "me gusta la programación";
+        const iva21 = 21 ;
+
+        var miPerro = "Manchitas";
+        var tuPerro;
+        tuPerro = miPerro;
+        console.log(tuPerro);
+
+        numeroUno = "10";
+        numeroDos = "20";
+        console.log(numeroUno + numeroDos);//1020
+        var numeroDosInt = parseInt(numeroDos);
+        var numeroUnoInt = parseInt(numeroUno);
+        console.log(numeroUno + numeroDos);//1020
+
+        resultado = parseInt(numeroUno) + parseInt(numeroDos); //30
+        console.log(numeroUno + numeroDos);//1020
+        console.log(resultado) ;//30
+        console.log(numeroUnoInt + numeroDosInt);
+
+      /* let edad = parseInt(prompt("ingrese su edad")); 
+       console.log("la edad es : " + edad);
+
+       console.log(typeof(edad));//apellido*/
+
+
+       // Lunes 17 clase 18 js 
+       /* let edad = Number(prompt("ingrese su edad"));
+        console.log("la edad es : " + edad);
+        console.log(typeof(edad));*/
+
+        let numeroIncrementado = 10;
+
+        numeroIncrementado = numeroIncrementado + 1;
+        numeroIncrementado += 1;
+        numeroIncrementado++;
+
+        let numeroDecrementado = 10 ;
+
+        numeroDecrementado = numeroDecrementado - 1;
+        numeroDecrementado -= 1;
+        numeroDecrementado--;
+        //  un solo = es de asignacion de valor a una variable
+        // dos == es de comparacion de valor
+        // tres === es de comparacion de valor y tipo de dato
+       
+        numeroUno = 15;
+        let numeroStringDos = "15";
+        console.log("evaluar condiciones relacionales");
+
+        console.log(Number(numeroUno == numeroStringDos));//true
+        console.log(Number(numeroUno === numeroStringDos));//false
+
+       // let  edad = Number(prompt("ingrese su edad")); // edad=  "35"   edad=35
+          let edad = parseInt(prompt("ingrese su edad"));
+        // 35 Años   "35 Años" edad = NaN
+        
+        // Number( "cadena")  devuelve NaN si no recibe una cadena de caracteres numerica 
+        if ( isNaN(edad) ) {
+
+            // bloque de codigo que se va a ejecutar si la condicion es verdadera
+            console.log("la edad ingresada no es un numero");
+            edad = parseInt(prompt("ingrese su edad correctamente"));
+            if(isNaN(edad)){
+                console.log("la edad ingresada no es un numero");
+                edad = parseInt(prompt("ingrese su edad correctamente"));
+            }
+        } 
+        else {
+            // bloque de codigo que se va a ejecutar si la condicion es false
+            console.log("la edad ingresada es un numero");
+            document.write("Su edad es de : " + edad + " años");
+        }
+         let animal = 'Gato';
+        if (animal == 'Perro') {
+            console.log("Es un perro");
+        }
+        let animal2 = 'Perro';
+
+        if (animal =='Gato'){
+            console.log("es un gato");
+        }else if(animal=='Perro'){
+            console.log("es un Perro");
+        }else if(animal=='Caballo'){
+            console.log("es un Caballo");
+        }else{
+            console.log("no es ni Perro, ni gato ni caballo");
+        }
+
+        if ( animal =='Gato' || animal=='Perro' || animal=='Caballo'){
+            console.log("el animal es un: " + animal)
+
+        }else{
+            console.log("no es ni Perro, ni gato ni caballo");
+        }
+        /*no es eficiente evaluar de esta manera*/
+        if (animal =='Gato'){
+            console.log("es un gato");
+        }
+
+        if (animal =='Perro'){
+            console.log("es un perro");
+        }
+
+        if(animal =='Caballo'){
+            console.log("es un caballo");
+        }
+        console.log("la edad es : " + edad);
+        console.log(typeof(edad));
+
+        //clase 3 de js Miercoles 19/10
+        console.log("MIERCOLES 19/10");
+        let numero = 5;
+        // condicion ? true : false
+        let resultado2 = numero % 2 == 0 ? "par" : "impar";
+        console.log(resultado2);
+
+        // CONDICIONAL MULTIPLE
+        let dia = 8;
+        switch (dia) {
+        case 1:
+            console.log("Lunes");
+            break;
+        case 2:
+            console.log("Martes");
+            break;
+        case 3:
+            console.log("Miercoles");
+            break;
+        case 4:
+            console.log("Jueves");
+            break;
+        case 5:
+            console.log("Viernes");
+            break;
+        case 6:
+            console.log("Sabado");
+            break;
+        case 7:
+            console.log("Domingo");
+            break;
+        case '1':
+            console.log("Lunes");
+            break;
+        default:
+            console.log("No es un dia de la semana");
+            break;
+        } 
+       // console.log("termino el condicional multiple");
+        //* tarea para el hogar transformar este if 
+        /* if (animal =='Gato'){
+            console.log("es un gato");
+        }else if(animal=='Perro'){
+            console.log("es un Perro");
+        }else if(animal=='Caballo'){
+            console.log("es un Caballo");
+        }else{
+            console.log("no es ni Perro, ni gato ni caballo");
+        }*/
+        // en un switch
+
+        // BLUCLES
+        /*for (inicialización; condición; actualización) {
+            //sentencias a ejecutar en cada iteración
+        }*/
+        //*me muestra el valor de i del 0 al 9
+         let i= 0;
+         
+         for (let i = 0; i < 10; i++) 
+         /*evaluacion i< 10*/
+         {
+            console.log(i);
+          //  i = 25;
+         } // i++ 0+1 / 1+1 / 2+1 / 9+1 /25 +1
+       
+        // let i = 10;
+         console.log("el valor de i es " + i);
+         for (let i = 9; i >= 0; i--) {
+             console.log(i); //9,8,7,6,5,4,3,2,1,0
+        }
+       console.log("continue");
+        for (let i = 0; i < 10; i++) {
+            if (i === 5) {
+                console.log('Cinco'); // cinco
+                continue; // i++ y no sigue con el bloque de codigo de abajo y sigue evaluando condiciones
+            }
+            console.log(i); // 0 , 1 , 2 , 3 ,4 , 6 , 7 , 8 , 9
+        } 
+        console.log("break");
+        for (let i = 0; i < 10; i++) {
+            if (i === 5) {
+                console.log('Cinco'); // cinco
+                break; // no sigue con el bloque de codigo de abajo y sale for
+            }
+            console.log(i); // 0 , 1 , 2 , 3 ,4 ,cinco
+        } 
+        console.log("while");
+        /*
+        let verdad = true ;
+        while(verdad){
+            console.log("entro al while");
+            verdad = false;
+        }*/
+       /*
+        let j = 0;
+        while (j < 10) {
+            console.log(j);
+            j++;
+        } */
+        /*
+        let color = "";
+        while (color != "rojo" && color!="ROJO" && color!='Rojo'  ){
+            color = prompt("dame un color (escribe rojo para salir)")
+
+        }*/
+        /*
+        let salirSistema = "N";
+        while (salirSistema != "S") {
+            salirSistema = prompt("Desea salir del sistema? (S/N)");
+        }*/
+
+        console.log("do while");
+        // do while
+        let k = 0;
+        do {
+            console.log(k);
+            //k++;
+            k='juan';
+        } while (k < 10);
+
+        // VARIABLES PRIMITIVAS DE js
+        // string
+        let nombre = "Juan";
+        // number
+        let numero2 = 10;
+        // boolean
+        let verdadero = true;
+        // VARIABLES DE OBJETOS js
+
+        // array
+        let arreglo = ['PEDRO', '36589877', '01115879654', 'LOPEZ', 'PEPITO'];
+
+    </script>
+</body>
+</html>
